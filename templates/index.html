@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+<div class="indexheadercontainer">
+    <img class="indexheaderphoto" src="{{ url_for('static', filename='kc-andrew-peterson.jpg') }}">
+    <div class="indexheadercontainerchild">
+        <p class="indexheader">Providing cost-effective construction solutions with integrity</p>
+    </div>
+</div>
+<div class="servicescontainer">
+    <div class="servicesheadercontainer">
+        <p class="servicesheader">Builds Include</p>
+    </div>
+    <div class="servicestypecontainer">
+        <div class="servicetype">
+            <img class="serviceimage" src="{{ url_for('static', filename='commercial1x1.png') }}">
+            <p class="service">Commercial</p>
+        </div>
+        <div class="servicetype">
+            <img class="serviceimage" src="{{ url_for('static', filename='industrial.jpg') }}">
+            <p class="service">Light Industrial</p>
+        </div>
+        <div class="servicetype">
+            <img class="serviceimage" src="{{ url_for('static', filename='tenantfinish.jpg') }}">
+            <p class="service">Tenant Finish</p>
+        </div>
+    </div>
+</div>
+<div class="featuredprojectcontainer">
+    <div class="featuredprojectcontainerchild">
+        <p class="featuredprojectheader">Featured Project</p>
+    </div>
+</div>
+<div class="featuredparagraphcontainer">
+    <p class="featuredparagraph">
+        Renovation of existing office space, adding 5,000 square feet of medical clinic to the Blue Valley Dermatology facility.
+        The newly finished area includes Moh's surgery suites, Moh's and Pathology Labs, offices, exam rooms and reception areas.
+        The work included demolition, carpentry, finishes, casework, fire sprinkler, plumbing, HVAC, electrical and fire alarm.
+    </p>
+</div>
+<div class="featuredphotoscontainer">
+        <img class="featuredphoto" src="{{ url_for('static', filename='BVD Phase 1 Reception Desk.jpg') }}">
+        <img class="featuredphoto" src="{{ url_for('static', filename='admin1.JPG') }}">
+        <img class="featuredphoto" src="{{ url_for('static', filename='admin2.JPG') }}">
+        <img class="featuredphoto" src="{{ url_for('static', filename='rcptn1.JPG') }}">
+        <img class="featuredphoto" src="{{ url_for('static', filename='rcptn2.JPG') }}">
+        <img class="featuredphoto" src="{{ url_for('static', filename='ktchn3.JPG') }}">
+        <img class="featuredphoto" src="{{ url_for('static', filename='ktchn2.JPG') }}">
+        <img class="featuredphoto" src="{{ url_for('static', filename='br1.JPG') }}">
+        <img class="featuredphoto" src="{{ url_for('static', filename='office1.JPG') }}">
+</div>
+{% endblock %}
+

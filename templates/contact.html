@@ -1,0 +1,100 @@
+{% extends "layout.html" %} {% block title %} Contact Us {% endblock %} {% block
+main %}
+
+<head>
+  <head>
+    <script
+      src="https://www.google.com/recaptcha/enterprise.js"
+      async
+      defer
+    ></script>
+  </head>
+</head>
+<div class="contactintrocontainer">
+  <p id="contactintro">Contact Next Level Builders, LLC</p>
+  <p id="advise">
+    Please fill out the contact form below, click send, and we will get back
+    with you shortly
+  </p>
+</div>
+<div class="contactformcontainer">
+  <form action="contact" method="POST">
+    <label>First Name</label>
+    <input
+      autocomplete="off"
+      id="firstname"
+      name="firstname"
+      placeholder=""
+      type="text"
+      required
+    />
+    <label>Last Name</label>
+    <input
+      autocomplete="off"
+      id="lastname"
+      name="lastname"
+      placeholder=""
+      type="text"
+      required
+    />
+    <label>Email</label>
+    <input
+      autocomplete="off"
+      id="email"
+      name="email"
+      placeholder=""
+      type="text"
+      required
+    />
+    <label>Phone Number</label>
+    <input
+      autocomplete="off"
+      id="phonenumber"
+      name="phonenumber"
+      placeholder=""
+      type="text"
+      required
+    />
+    <label>Subject</label>
+    <input
+      autocomplete="off"
+      id="subject"
+      name="subject"
+      placeholder="Commercial Build For..."
+      type="text"
+      required
+    />
+    <label>Body</label>
+    <textarea
+      autocomplete="off"
+      id="body"
+      name="body"
+      placeholder="Hello! I am reaching out to..."
+      required
+    ></textarea>
+    <div
+      class="g-recaptcha"
+      data-sitekey="6Le3A4opAAAAANi1AFZzkcsUPzkdiWpSwh4Ig2w1"
+      data-action="LOGIN"
+    ></div>
+    <br />
+    <div class="buttoncontainer">
+      <button id="submitcontactform" type="submit">Send</button>
+    </div>
+  </form>
+</div>
+<!-- JavaScript code to handle the click event and reCAPTCHA challenge -->
+<script>
+  // Function to handle the click event and trigger reCAPTCHA challenge
+  function onClickVerify() {
+    grecaptcha.execute();
+  }
+
+  // Function to handle reCAPTCHA challenge completion
+  function onSubmit(token) {
+    // Handle token submission or form submission here
+    // For example, you can submit a form via AJAX with the token
+    console.log("reCAPTCHA token:", token);
+  }
+</script>
+{% endblock %}
