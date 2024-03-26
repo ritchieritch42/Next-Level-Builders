@@ -1,10 +1,7 @@
 from flask import Flask, render_template, request, flash
 from helpers import send_email
 from dotenv import load_dotenv
-import os
-import requests
-import secrets
-from dotenv import load_dotenv
+import os, requests, secrets
 
 #Function loads key value pairs from the .env (non-syndicated environment file)
 load_dotenv()
