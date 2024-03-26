@@ -1,7 +1,7 @@
-import os
 from email.message import EmailMessage
-import ssl
-import smtplib
+from google.cloud import recaptchaenterprise_v1
+from google.cloud.recaptchaenterprise_v1 import Assessment
+import os, ssl, smtplib
 
 #Define the send mail function to use in our app routes in app.py
 def send_email(subject, body):
