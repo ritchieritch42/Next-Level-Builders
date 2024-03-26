@@ -1,5 +1,12 @@
 {% extends "layout.html" %} {% block title %} Contact Us {% endblock %} {% block
 main %}
+<head>
+  <script
+    src="https://www.google.com/recaptcha/enterprise.js"
+    async
+    defer
+  ></script>
+</head>
 
 <div class="contactintrocontainer">
   <p id="contactintro">Contact Next Level Builders, LLC</p>
@@ -9,6 +16,13 @@ main %}
   </p>
 </div>
 <div class="contactformcontainer">
+  {% with messages = get_flashed_messages() %} {% if messages %}
+  <ul>
+    {% for message in messages %}
+    <li class="error">{{ message }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %} {% endwith %}
   <form action="contact" method="POST">
     <label>First Name</label>
     <input
@@ -63,6 +77,11 @@ main %}
       placeholder="Hello! I am reaching out to..."
       required
     ></textarea>
+    <div
+      class="g-recaptcha"
+      data-sitekey="6Le3A4opAAAAANi1AFZzkcsUPzkdiWpSwh4Ig2w1"
+      data-action="LOGIN"
+    ></div>
     <div class="buttoncontainer">
       <button id="submitcontactform" type="submit">Send</button>
     </div>

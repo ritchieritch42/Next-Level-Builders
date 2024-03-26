@@ -1,846 +1,874 @@
 /* For all desktop templates */
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 
-body
-{
-    font-family: "Raleway", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 200;
-    font-style: normal;
-    max-width: 100%;
-    margin: 0px;
+body {
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+  max-width: 100%;
+  margin: 0px;
 }
 
 /* Layout.html */
 .navbar {
-    background-color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    height: 12vh;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 12vh;
 }
 
 .logoandname {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: 50%;
-    height: inherit;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 50%;
+  height: inherit;
 }
 
 .logo {
-    width: 5vw;
-    height: 5vw;
+  width: 5vw;
+  height: 5vw;
 }
 
-
 .businessname {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center;
-    font-size: 2.66rem;
-    font-weight: 300;
-    margin: 1%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 2.66rem;
+  font-weight: 300;
+  margin: 1%;
 }
 
 .links {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    border: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border: none;
 }
 
-.navbarlinks
-{
-    display: flex;
-    flex-wrap: wrap;
+.navbarlinks {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.navbarlink
-{
-    margin-left: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.75rem;
-    color: #38393b;
-    padding: 1vw;
-    text-decoration: none;
-    border-left: thin solid gray;
-    text-shadow: 0.25px 0.25px 0.5px rgba(0, 0, 0, 0.5);
+.navbarlink {
+  margin-left: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.75rem;
+  color: #38393b;
+  padding: 1vw;
+  text-decoration: none;
+  border-left: thin solid gray;
+  text-shadow: 0.25px 0.25px 0.5px rgba(0, 0, 0, 0.5);
 }
 
-.navbar .navbarlink:hover
-{
-    color: white;
-    background-color: #cd280e;
-    transition: 0.5s;
+.navbar .navbarlink:hover {
+  color: white;
+  background-color: #cd280e;
+  transition: 0.5s;
 }
 
-.footer
-{
-    margin: 3vw;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-top: 0.1vh solid white;
-    font-size: 1rem;
-    background-color: #38393b;
-    margin: 0px;
-    height: 10vh;
+.footer {
+  margin: 3vw;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 0.1vh solid white;
+  font-size: 1rem;
+  background-color: #38393b;
+  margin: 0px;
+  height: 10vh;
 }
 
 /* index.html */
 .indexheadercontainer {
-    display: flex;
-    height: 75vh;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    position: relative;
+  display: flex;
+  height: 75vh;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  position: relative;
 }
 
 .indexheaderphoto {
-    display: flex;
-    max-width: 100%;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    opacity: 0.9;
-    position: absolute;
-    background-color: rgba(85,86,88,255);
+  display: flex;
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  opacity: 0.9;
+  position: absolute;
+  background-color: rgba(85, 86, 88, 255);
 }
 
 .indexheadercontainerchild {
-    width: 100%;
-    background-color: rgba(56,57,59, 0.75);
-    border-radius: 100px 100px 100px 100px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 50%;
+  width: 100%;
+  background-color: rgba(56, 57, 59, 0.75);
+  border-radius: 100px 100px 100px 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
 }
 
 .indexheader {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
-    font-size: 2rem;
-    margin: 2vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  font-size: 2rem;
+  margin: 2vw;
 }
 
 .servicescontainer {
-    display: flex;
-    justify-content: space-between;
-    align-content: center;
-    height: 45vh;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  height: 45vh;
 }
 
 .servicesheadercontainer {
-    display: flex;
-    flex-wrap: wrap;
-    width: 25%;
-    height: 100%;
-    justify-content: center;
-    align-content: center;
-    background-color: rgba(205, 40, 14, 0.9);
+  display: flex;
+  flex-wrap: wrap;
+  width: 25%;
+  height: 100%;
+  justify-content: center;
+  align-content: center;
+  background-color: rgba(205, 40, 14, 0.9);
 }
 
 .servicesheader {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: center;
-    font-size: 2.5rem;
-    color: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  font-size: 2.5rem;
+  color: white;
 }
 
 .servicestypecontainer {
-    display: flex;
-    width: 75%;
-    justify-content: center;
-    text-align: center;
-    background-color: #38393b;
-    max-width: 100%;
+  display: flex;
+  width: 75%;
+  justify-content: center;
+  text-align: center;
+  background-color: #38393b;
+  max-width: 100%;
 }
 
 .servicetype {
-    width: 100%;
-    height: 45vh;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  height: 45vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .serviceimage {
-    width: inherit;
-    height: inherit;
-    object-fit: fill;
-    opacity: 0.25;
+  width: inherit;
+  height: inherit;
+  object-fit: fill;
+  opacity: 0.25;
 }
 
 .service {
-    color: white;
-    position: absolute;
-    font-size: 2rem;
+  color: white;
+  position: absolute;
+  font-size: 2rem;
 }
 
-.servicetype:hover .service{
-    opacity: 0;
-    transition: 0.25s;
+.servicetype:hover .service {
+  opacity: 0;
+  transition: 0.25s;
 }
 
-.servicetype:hover .serviceimage{
-    opacity: 1;
-    transition: 0.5s;
+.servicetype:hover .serviceimage {
+  opacity: 1;
+  transition: 0.5s;
 }
 
 .featuredprojectcontainer {
-    display: flex;
-    max-width: 100%;
-    width: 100%;
-    height: 20vh;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    background-color: #38393b;
+  display: flex;
+  max-width: 100%;
+  width: 100%;
+  height: 20vh;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  background-color: #38393b;
 }
 
 .featuredprojectcontainerchild {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    justify-content: center;
-    align-content: center;
-    flex-direction: column;
-    background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  background-color: white;
 }
 
 .featuredprojectheader {
-    color: #38393b;
-    font-size: 3rem;
-    font-weight: 300;
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: center;
-    margin: 1vw;
+  color: #38393b;
+  font-size: 3rem;
+  font-weight: 300;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  margin: 1vw;
 }
 
 .featuredphotoscontainer {
-    display: flex;
-    max-width: 100%;
-    width: 100%;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    background-color: #38393b;
+  display: flex;
+  max-width: 100%;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  background-color: #38393b;
 }
 
 .featuredparagraphcontainer {
-    background-color: #38393b;
-    display: flex;
-    justify-content: center;
-    align-content: center;
+  background-color: #38393b;
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 
 .featuredparagraph {
-    color: white;
-    font-size: 1.75rem;
-    width: 75%;
+  color: white;
+  font-size: 1.75rem;
+  width: 75%;
 }
 
 .featuredphoto {
-    width: 600px;
-    height: 450px;
-    object-fit: flex;
-    object-position: top;
-    padding: 1vw;
+  width: 600px;
+  height: 450px;
+  object-fit: flex;
+  object-position: top;
+  padding: 1vw;
 }
 
 .featuredcreditcontainer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    background-color: #38393b;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  background-color: #38393b;
 }
-
 
 /* about.html */
 .about {
-    display: flex;
-    height: 90vh;
-    justify-content: center;
-    align-content: center;
-    background-color: #38393b;
+  display: flex;
+  height: 90vh;
+  justify-content: center;
+  align-content: center;
+  background-color: #38393b;
 }
 
 .aboutchild {
-    display: flex;
-    max-width: 100%;
-    width: 50vw;
-    height: 100%;
-    justify-content: center;
-    align-content: center;
-    flex-wrap: wrap;
+  display: flex;
+  max-width: 100%;
+  width: 50vw;
+  height: 100%;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
 }
 
 .aboutheadercontainer {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }
 
-
 .aboutheader {
-    color: white;
-    font-size: 2rem;
+  color: white;
+  font-size: 2rem;
 }
 
 .aboutpicture {
-    width: 300px;
-    height: 300px;
-    object-fit: scale-down;
-    background-color: #38393b;
-    color: white;
-    margin: 30px;
-    border-radius: 50%;
-    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.25);
-    padding: 20px;
+  width: 300px;
+  height: 300px;
+  object-fit: scale-down;
+  background-color: #38393b;
+  color: white;
+  margin: 30px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.25);
+  padding: 20px;
 }
 
 .abouttopical {
-    color: white;
-    font-size: 2rem;
+  color: white;
+  font-size: 2rem;
 }
 
 .aboutparagraphscontainer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: center;
 }
 
 .aboutparagraphs {
-    color: rgba(56, 57, 59, 0.85);
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    font-size: 1.4rem;
-    font-weight: 300;
-    background-color: white;
-    width: 80%;
-    height: 100%;
-    border-radius: 1vw;
+  color: rgba(56, 57, 59, 0.85);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  font-size: 1.4rem;
+  font-weight: 300;
+  background-color: white;
+  width: 80%;
+  height: 100%;
+  border-radius: 1vw;
 }
 
 p.aboutparagraphs {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    padding: 1vw;
-
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  padding: 1vw;
 }
-
 
 /* contact.html */
 .contactintrocontainer {
-    display: flex;
-    flex-direction: column;
-    max-width: 100%;
-    width: 100%;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    text-align: center;
-    color: white;
-    font-size: 1.5rem;
-    background-color: #38393b;
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  color: white;
+  font-size: 1.5rem;
+  background-color: #38393b;
 }
 
 .contactformcontainer {
-    display: flex;
-    flex-direction: column;
-    max-width: 100%;
-    width: 100%;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    background-color: #38393b;
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: #38393b;
 }
 
 form {
-    width: 700px;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    flex-direction: column;
+  width: 700px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
 }
 
 input {
-    font-family: "Carrois Gothic SC", sans-serif;
-    font-weight: 200;
-    font-style: normal;
-    font-size: 1.75rem;
+  font-family: "Carrois Gothic SC", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 1.75rem;
 }
 
 label {
-    color: white;
-    font-size: 1.75rem;
+  color: white;
+  font-size: 1.75rem;
 }
 
 textarea {
-    width: 700px;
-    height: 600px;
-    font-family: "Carrois Gothic SC", sans-serif;
-    font-weight: 200;
-    font-style: normal;
-    font-size: 1.75rem;
+  width: 700px;
+  height: 600px;
+  font-family: "Carrois Gothic SC", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 1.75rem;
 }
 
 .buttoncontainer {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 button {
-    font-family: "Carrois Gothic SC", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 2rem;
-    margin: 2vh;
-    color: white;
-    background-color: rgba(205, 40, 14, 1);
-    border-radius: 1vw;
-    width: 25%;
+  font-family: "Carrois Gothic SC", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2rem;
+  margin: 2vh;
+  color: white;
+  background-color: rgba(205, 40, 14, 1);
+  border-radius: 1vw;
+  width: 25%;
 }
 
 button:hover {
-    background-color: rgba(205, 40, 14, 0.5);
-    transition: 0.5s;
+  background-color: rgba(205, 40, 14, 0.5);
+  transition: 0.5s;
+}
+
+.error {
+  color: white;
 }
 
 /*Media query to adjust for square sized screens from 1000px to 1300px*/
 @media screen and (min-width: 1001px) and (max-width: 1300px) {
-    .businessname, .navbarlink, .indexheader, .servicesheader, .service {
-        font-size: 1.5rem;
-    }
+  .businessname,
+  .navbarlink,
+  .indexheader,
+  .servicesheader,
+  .service {
+    font-size: 1.5rem;
+  }
 
-    .servicescontainer, .servicestypecontainer, .servicetype {
-        height: 35vh;
-    }
+  .servicescontainer,
+  .servicestypecontainer,
+  .servicetype {
+    height: 35vh;
+  }
 
-    .aboutheader, .abouttopical {
-        font-size: 1.5rem;
-    }
+  .aboutheader,
+  .abouttopical {
+    font-size: 1.5rem;
+  }
 
-    .aboutparagraphs {
-        font-size: 1.18rem;
-    }
+  .aboutparagraphs {
+    font-size: 1.18rem;
+  }
 
-    .aboutheadercontainer {
-        margin: 10px;
-    }
+  .aboutheadercontainer {
+    margin: 10px;
+  }
 
-    .featuredprojectheader {
-        font-size: 2rem;
-    }
+  .featuredprojectheader {
+    font-size: 2rem;
+  }
 }
 
 /*Media query for tablet-sized devices*/
 @media screen and (min-width: 701px) and (max-width: 1000px) {
-    .logo {
-        width: 8vw;
-        height: 8vw;
-    }
+  .logo {
+    width: 8vw;
+    height: 8vw;
+  }
 
-    .businessname, .navbarlink, .indexheader, .servicesheader, .service {
-        font-size: 1.5rem;
-    }
+  .businessname,
+  .navbarlink,
+  .indexheader,
+  .servicesheader,
+  .service {
+    font-size: 1.5rem;
+  }
 
-    .servicescontainer, .servicestypecontainer, .servicetype, .featuredprojectcontainer {
-        height: 20vh;
-    }
+  .servicescontainer,
+  .servicestypecontainer,
+  .servicetype,
+  .featuredprojectcontainer {
+    height: 20vh;
+  }
 
-    .featuredprojectheader {
-        font-size: 2rem;
-    }
+  .featuredprojectheader {
+    font-size: 2rem;
+  }
 
-    .featuredphoto {
-        width: 300px;
-        height: 225px;
-    }
+  .featuredphoto {
+    width: 300px;
+    height: 225px;
+  }
 
-    .featuredparagraph {
-        font-size: 1rem;
-    }
+  .featuredparagraph {
+    font-size: 1rem;
+  }
 
-    .aboutheader, .abouttopical {
-        font-size: 1.3rem;
-    }
+  .aboutheader,
+  .abouttopical {
+    font-size: 1.3rem;
+  }
 
-    .aboutparagraphs {
-        font-size: 1rem;
-    }
+  .aboutparagraphs {
+    font-size: 1rem;
+  }
 
-    .aboutpicture {
-        width: 250px;
-        height: 250px;
-    }
+  .aboutpicture {
+    width: 250px;
+    height: 250px;
+  }
 
-    .aboutheadercontainer {
-        margin: 10px;
-    }
+  .aboutheadercontainer {
+    margin: 10px;
+  }
 
-    .contactintrocontainer {
-        font-size: 1rem;
-    }
+  .contactintrocontainer {
+    font-size: 1rem;
+  }
 
-    form, textarea {
-        width: 575px;
-    }
+  form,
+  textarea {
+    width: 575px;
+  }
 
-    input, label, textarea {
-        font-size: 1rem;
-    }
+  input,
+  label,
+  textarea {
+    font-size: 1rem;
+  }
 
-    button {
-        font-size: 1.25rem;
-    }
+  button {
+    font-size: 1.25rem;
+  }
 }
 
 @media screen and (min-width: 401px) and (max-width: 700px) {
-    .navbar {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: auto;
-        width: 100%;
-    }
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 100%;
+  }
 
-    .logoandname {
-        padding: 10px;
-        width: 80%;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-content: center;
-    }
+  .logoandname {
+    padding: 10px;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+  }
 
-    .logo {
-        width: 12vw;
-        height: 12vw;
-    }
+  .logo {
+    width: 12vw;
+    height: 12vw;
+  }
 
-    .businessname {
-        font-size: 1.5rem;
-    }
+  .businessname {
+    font-size: 1.5rem;
+  }
 
-    .links {
-        background-color: #38393b;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 7.5vh;
-    }
+  .links {
+    background-color: #38393b;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 7.5vh;
+  }
 
-    .navbarlinks {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: stretch;
-        padding: 20px;
-    }
+  .navbarlinks {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    padding: 20px;
+  }
 
-    .navbarlink {
-        color: white;
-        width: 33%;
-        height: 100%;
-        margin: 0px;
-        padding: 0px;
-        border: none;
-        font-size: 1.25rem;
-    }
+  .navbarlink {
+    color: white;
+    width: 33%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    font-size: 1.25rem;
+  }
 
-    .servicesheader, .service {
-        font-size: 1rem;
-    }
+  .servicesheader,
+  .service {
+    font-size: 1rem;
+  }
 
-    .indexheadercontainer {
-        height: 40vh;
-    }
+  .indexheadercontainer {
+    height: 40vh;
+  }
 
-    .indexheader {
-        font-size: 1rem;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        flex-direction: row;
-        align-items: center;
-        text-align: center;
-    }
+  .indexheader {
+    font-size: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+  }
 
-    .indexheadercontainerchild {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        flex-direction: row;
-        align-items: center;
-        text-align: center;
-    }
+  .indexheadercontainerchild {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+  }
 
-    .servicescontainer, .servicestypecontainer, .servicetype, .featuredprojectcontainer {
-        height: 12.5vh;
-    }
+  .servicescontainer,
+  .servicestypecontainer,
+  .servicetype,
+  .featuredprojectcontainer {
+    height: 12.5vh;
+  }
 
-    .featuredprojectheader {
-        font-size: 1.5rem;
-    }
+  .featuredprojectheader {
+    font-size: 1.5rem;
+  }
 
-    .featuredphoto {
-        width: 150px;
-        height: 100px;
-    }
+  .featuredphoto {
+    width: 150px;
+    height: 100px;
+  }
 
-    .featuredparagraph {
-        font-size: 1rem;
-    }
+  .featuredparagraph {
+    font-size: 1rem;
+  }
 
-    .footer {
-        font-size: 0.75rem;
-    }
+  .footer {
+    font-size: 0.75rem;
+  }
 
-    .about {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        width: 100%;
-    }
+  .about {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+  }
 
-    .aboutchild {
-        width: 80%;
-        height: auto;
-    }
+  .aboutchild {
+    width: 80%;
+    height: auto;
+  }
 
-    .aboutheader, .abouttopical {
-        font-size: 1.5rem;
-    }
+  .aboutheader,
+  .abouttopical {
+    font-size: 1.5rem;
+  }
 
-    .aboutparagraphs {
-        font-size: 0.9rem;
-        width: 100%;
-    }
+  .aboutparagraphs {
+    font-size: 0.9rem;
+    width: 100%;
+  }
 
-    .aboutpicture {
-        width: 100px;
-        height: 100px;
-        margin: 2px;
-    }
+  .aboutpicture {
+    width: 100px;
+    height: 100px;
+    margin: 2px;
+  }
 
-    .aboutheadercontainer {
-        margin: 10px;
-    }
+  .aboutheadercontainer {
+    margin: 10px;
+  }
 
-    .contactintrocontainer {
-        font-size: 1rem;
-    }
+  .contactintrocontainer {
+    font-size: 1rem;
+  }
 
-    #advise {
-        width: 80%;
-    }
+  #advise {
+    width: 80%;
+  }
 
-    form, textarea {
-        width: 300px;
-    }
+  form,
+  textarea {
+    width: 300px;
+  }
 
-    textarea {
-        height: 200px;
-        padding: 0px;
-    }
+  textarea {
+    height: 200px;
+    padding: 0px;
+  }
 
-    input, label, textarea {
-        font-size: 1rem;
-    }
+  input,
+  label,
+  textarea {
+    font-size: 1rem;
+  }
 
-    button {
-        font-size: 1.25rem;
-        padding: 0px;
-    }
+  button {
+    font-size: 1.25rem;
+    padding: 0px;
+  }
 }
 
 @media screen and (min-width: 0px) and (max-width: 400px) {
-    .navbar {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: auto;
-        width: 100%;
-    }
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 100%;
+  }
 
-    .logoandname {
-        padding: 10px;
-        width: 80%;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-content: center;
-    }
+  .logoandname {
+    padding: 10px;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+  }
 
-    .logo {
-        width: 20vw;
-        height: 20vw;
-    }
+  .logo {
+    width: 20vw;
+    height: 20vw;
+  }
 
-    .businessname {
-        font-size: 1rem;
-    }
+  .businessname {
+    font-size: 1rem;
+  }
 
-    .links {
-        background-color: #38393b;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 7.5vh;
-    }
+  .links {
+    background-color: #38393b;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 7.5vh;
+  }
 
-    .navbarlinks {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: stretch;
-        padding: 20px;
-    }
+  .navbarlinks {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    padding: 20px;
+  }
 
-    .navbarlink {
-        color: white;
-        width: 33%;
-        height: 100%;
-        margin: 0px;
-        padding: 0px;
-        border: none;
-        font-size: 1rem;
-    }
+  .navbarlink {
+    color: white;
+    width: 33%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    font-size: 1rem;
+  }
 
-    .servicesheader, .service {
-        font-size: 0.75rem;
-    }
+  .servicesheader,
+  .service {
+    font-size: 0.75rem;
+  }
 
-    .indexheadercontainer {
-        height: 40vh;
-    }
+  .indexheadercontainer {
+    height: 40vh;
+  }
 
-    .indexheadercontainerchild {
-        width: 80%;
-    }
+  .indexheadercontainerchild {
+    width: 80%;
+  }
 
-    .indexheader {
-        font-size: 1rem;
-    }
+  .indexheader {
+    font-size: 1rem;
+  }
 
-    .servicescontainer, .servicestypecontainer, .servicetype, .featuredprojectcontainer {
-        height: 10vh;
-    }
+  .servicescontainer,
+  .servicestypecontainer,
+  .servicetype,
+  .featuredprojectcontainer {
+    height: 10vh;
+  }
 
-    .featuredprojectheader {
-        font-size: 1.5rem;
-    }
+  .featuredprojectheader {
+    font-size: 1.5rem;
+  }
 
-    .featuredphoto {
-        width: 275px;
-        height: 200px;
-    }
+  .featuredphoto {
+    width: 275px;
+    height: 200px;
+  }
 
-    .featuredparagraph {
-        font-size: 0.75rem;
-    }
+  .featuredparagraph {
+    font-size: 0.75rem;
+  }
 
-    .footer {
-        font-size: 0.75rem;
-    }
+  .footer {
+    font-size: 0.75rem;
+  }
 
-    .about {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        width: 100%;
-        height: 70vh;
-    }
+  .about {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 70vh;
+  }
 
-    .aboutchild {
-        width: 80%;
-        height: auto;
-    }
+  .aboutchild {
+    width: 80%;
+    height: auto;
+  }
 
-    .aboutheader, .abouttopical {
-        font-size: 1rem;
-    }
+  .aboutheader,
+  .abouttopical {
+    font-size: 1rem;
+  }
 
-    .aboutparagraphs {
-        font-size: 0.7rem;
-        width: 100%;
-    }
+  .aboutparagraphs {
+    font-size: 0.7rem;
+    width: 100%;
+  }
 
-    .aboutpicture {
-        width: 100px;
-        height: 100px;
-        margin: 2px;
-    }
+  .aboutpicture {
+    width: 100px;
+    height: 100px;
+    margin: 2px;
+  }
 
-    .aboutheadercontainer {
-        margin: 10px;
-    }
+  .aboutheadercontainer {
+    margin: 10px;
+  }
 
-    .contactintrocontainer {
-        font-size: 1rem;
-    }
+  .contactintrocontainer {
+    font-size: 1rem;
+  }
 
-    #advise {
-        width: 80%;
-    }
+  #advise {
+    width: 80%;
+  }
 
-    form, textarea {
-        width: 275px;
-    }
+  form,
+  textarea {
+    width: 275px;
+  }
 
-    textarea {
-        height: 200px;
-        padding: 0px;
-    }
+  textarea {
+    height: 200px;
+    padding: 0px;
+  }
 
-    input, label, textarea {
-        font-size: 1rem;
-    }
+  input,
+  label,
+  textarea {
+    font-size: 1rem;
+  }
 
-    button {
-        font-size: 1.25rem;
-        padding: 0px;
-    }
+  button {
+    font-size: 1.25rem;
+    padding: 0px;
+  }
 }
