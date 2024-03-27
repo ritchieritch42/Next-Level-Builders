@@ -1,34 +1,82 @@
-import os
-from email.message import EmailMessage
-import ssl
-import smtplib
+# For send_email
+import smtplib, os
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 
-#Define the send mail function to use in our app routes in app.py
+# For create_assessment
+from google.cloud import recaptchaenterprise_v1
+from google.cloud.recaptchaenterprise_v1 import Assessment
+
 def send_email(subject, body):
+    # Define server variables
+    smtp_server = "smtp.gmail.com"
+    smtp_port = 587
 
-    #Use the operating system function getenv to get the email and password for the contactnextlevelbuilders gmail account
-    sender_email = os.getenv("EMAIL")
-    receiver_email = os.getenv("EMAIL")
-    sender_email_password = os.getenv("EMAIL_PASSWORD")
+    # Define emails and passwords
+    sender_email = os.getenv("SENDER_EMAIL")
+    receiver_email = os.getenv("RECEIVER_EMAIL")
+    password = os.getenv("PASSWORD")
 
-    #From the email.message module, use the emailmessage class to specify a sender, receiver, subject, and body
-    em = EmailMessage()
-    em["From"] = sender_email
-    em["To"] = receiver_email
-    em["Subject"] = subject
+    # Define message contents
+    message = MIMEMultipart()
+    message["From"] = sender_email
+    message["To"] = receiver_email
+    message["Subject"] = subject
 
-    #Use the set_content function of the emailmessage class to set the body of the email
-    em.set_content(body)
+    # Attach the body of the email to the message
+    message.attach(MIMEText(body, 'plain'))
 
-    #Create a secure, networking context variable to use in our email transfer
-    context = ssl.create_default_context()
+    # Start the SMTP session
+    server = smtplib.SMTP(smtp_server, smtp_port)
+    server.starttls()
+    server.login(sender_email, password)
 
-    #Use the simple mail transfer protocol (smtp) library from Python
-    #Smtp secure sockets layer (ssl) requires three things
-        # An email domain/host name
-        # A port number, which defines the unique end point and service for the computer attempting to network
-        # An ssl context
-    #SSL is actually Transport Layer Security, the successor of SSL, in Python's SMTP Library
-    with smtplib.SMTP_SSL('smtp.gmail.com', 465, context=context) as smtp:
-        smtp.login(sender_email, sender_email_password)
-        smtp.sendmail(sender_email, receiver_email, em.as_string())
+    # Send the email
+    server.sendmail(sender_email, receiver_email, message.as_string())
+
+    # Close the SMTP session
+    server.quit()
+
+def verify_human(project_id: str, recaptcha_key: str, token: str, recaptcha_action: str) -> bool:
+    client = recaptchaenterprise_v1.RecaptchaEnterpriseServiceClient()
+
+    # Set the properties of the event to be tracked.
+    event = recaptchaenterprise_v1.Event()
+    event.site_key = recaptcha_key
+    event.token = token
+
+    assessment = recaptchaenterprise_v1.Assessment()
+    assessment.event = event
+
+    project_name = f"projects/{project_id}"
+
+    # Build the assessment request.
+    request = recaptchaenterprise_v1.CreateAssessmentRequest()
+    request.assessment = assessment
+    request.parent = project_name
+
+    response = client.create_assessment(request)
+
+    # Check if the token is valid.
+    if not response.token_properties.valid:
+        print(
+            "The CreateAssessment call failed because the token was "
+            + "invalid for the following reasons: "
+            + str(response.token_properties.invalid_reason)
+        )
+        return False
+
+    # Check if the expected action was executed.
+    if response.token_properties.action != recaptcha_action:
+        print(
+            "The action attribute in your reCAPTCHA tag does"
+            + "not match the action you are expecting to score"
+        )
+        return False
+
+    # Get the risk score and check if it indicates a human.
+    # You can adjust the threshold based on your requirements.
+    if response.risk_analysis.score >= 0.5:
+        return True
+    else:
+        return False

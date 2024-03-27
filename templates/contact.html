@@ -1,15 +1,9 @@
 {% extends "layout.html" %} {% block title %} Contact Us {% endblock %} {% block
 main %}
-
 <head>
-  <head>
-    <script
-      src="https://www.google.com/recaptcha/enterprise.js"
-      async
-      defer
-    ></script>
-  </head>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
+
 <div class="contactintrocontainer">
   <p id="contactintro">Contact Next Level Builders, LLC</p>
   <p id="advise">
@@ -18,6 +12,13 @@ main %}
   </p>
 </div>
 <div class="contactformcontainer">
+  {% with messages = get_flashed_messages() %} {% if messages %}
+  <ul>
+    {% for message in messages %}
+    <li class="error">{{ message }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %} {% endwith %}
   <form action="contact" method="POST">
     <label>First Name</label>
     <input
@@ -74,27 +75,48 @@ main %}
     ></textarea>
     <div
       class="g-recaptcha"
-      data-sitekey="6Le3A4opAAAAANi1AFZzkcsUPzkdiWpSwh4Ig2w1"
-      data-action="LOGIN"
+      data-sitekey="6LdD2qYpAAAAAL_n_D6r2cqqyuMni1IKbObe_yxA"
+      data-action="contact"
     ></div>
-    <br />
     <div class="buttoncontainer">
       <button id="submitcontactform" type="submit">Send</button>
     </div>
   </form>
 </div>
-<!-- JavaScript code to handle the click event and reCAPTCHA challenge -->
 <script>
-  // Function to handle the click event and trigger reCAPTCHA challenge
-  function onClickVerify() {
-    grecaptcha.execute();
-  }
+  document
+    .getElementById("contact-form")
+    .addEventListener("submit", function (event) {
+      event.preventDefault(); // Prevent the form from submitting normally
 
-  // Function to handle reCAPTCHA challenge completion
-  function onSubmit(token) {
-    // Handle token submission or form submission here
-    // For example, you can submit a form via AJAX with the token
-    console.log("reCAPTCHA token:", token);
-  }
+      // Execute reCAPTCHA verification
+      grecaptcha.ready(function () {
+        grecaptcha
+          .execute("6LdD2qYpAAAAAL_n_D6r2cqqyuMni1IKbObe_yxA", {
+            action: "contact",
+          })
+          .then(function (token) {
+            // Add the token to the form data
+            var formData = new FormData(
+              document.getElementById("contact-form")
+            );
+            formData.append("recaptcha_token", token); // Add the reCAPTCHA token to form data
+
+            // Submit the form with reCAPTCHA token
+            fetch("/contact", {
+              method: "POST",
+              body: formData,
+            })
+              .then((response) => {
+                // Handle the response (e.g., display success message, redirect)
+                console.log("Form submitted successfully:", response);
+              })
+              .catch((error) => {
+                // Handle any errors
+                console.error("Error submitting form:", error);
+              });
+          });
+      });
+    });
 </script>
 {% endblock %}
