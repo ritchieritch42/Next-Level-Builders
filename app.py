@@ -1,5 +1,5 @@
 from flask import Flask, flash, render_template, request
-from helpers import send_email, is_recaptcha_valid
+from helpers import send_email, verify_human
 from dotenv import load_dotenv
 import os
 
@@ -27,15 +27,20 @@ def contact():
     # If the user is submitting a contact form, then do the following...
     if request.method == "POST":
 
-    # Get the reCAPTCHA response from the form
-        recaptcha_response = request.form.get("g-recaptcha-response")
-        
-        # Check if the reCAPTCHA response is valid
-        if not is_recaptcha_valid(recaptcha_response):
-            flash("Please ensure that you are human via reCAPTCHA")
-            return render_template("contact.html")
+        # Define variables to use in verify human reCAPTCHA test
+        project_id = os.getenv("PROJECT_ID")
+        recaptcha_key = os.getenv("RECAPTCHA_PUBLIC_KEY")
+        token = request.form.get("g-recaptcha-response")
+        recaptcha_action = "contact"
+        GOOGLE_APPLICATION_CREDENTIALS = os.environ.get("GOOGLE_APPLICATION_CREDENTIALS")
 
-        else:
+        # Check if reCAPTCHA token is empty
+        if not token:
+            flash("Please complete the reCAPTCHA")
+            return render_template("contact.html")
+        
+        # Check to see if reCAPTCHA was valid
+        if verify_human(project_id, recaptcha_key, token, recaptcha_action):
             # Define the users receiving email, subject, and body
             subject = request.form.get("subject")
             firstname = request.form.get("firstname")
@@ -51,10 +56,12 @@ def contact():
             # Body is firstname, lastname, phonenumber, email, and the content
             try:
                 send_email(subject, body)
-                flash("Your message was sent successfully")
                 return render_template("index.html")
             except:
                 return render_template("sendemailfailure.html")
+                                       
+        else:
+            flash("Invalid reCAPTCHA entry, please try again")
 
     # If the user hasn't submitted a contact form yet, then load the contact page
     else:
