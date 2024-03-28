@@ -1,5 +1,5 @@
 # Use an official Python runtime as the base image
-FROM python:3.9-slim
+FROM python:3.12.2
 
 # Set the working directory in the container
 WORKDIR /app
@@ -14,7 +14,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 EXPOSE 80
 
 # Define environment variable
-ENV NAME World
+COPY .env /app.env
 
-# Run app.py when the container launches
-CMD ["python", "app.py"]
+# Load environment variables from the .env file
+CMD ["bash", "-c", "source /app/.env && python app.py"]
