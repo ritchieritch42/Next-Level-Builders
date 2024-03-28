@@ -90,7 +90,7 @@ body {
 /* index.html */
 .indexheadercontainer {
   display: flex;
-  height: 75vh;
+  height: 90vh;
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
@@ -254,8 +254,8 @@ body {
 }
 
 .featuredphoto {
-  width: 600px;
-  height: 450px;
+  width: 500px;
+  height: 375px;
   object-fit: flex;
   object-position: top;
   padding: 1vw;
@@ -320,6 +320,10 @@ body {
   font-size: 2rem;
 }
 
+#aboutperson {
+  width: 33vw;
+}
+
 .aboutparagraphscontainer {
   display: flex;
   flex-wrap: wrap;
@@ -333,7 +337,7 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 300;
   background-color: white;
   width: 80%;
@@ -397,7 +401,7 @@ label {
 
 textarea {
   width: 700px;
-  height: 600px;
+  height: 200px;
   font-family: "Carrois Gothic SC", sans-serif;
   font-weight: 200;
   font-style: normal;
@@ -430,6 +434,11 @@ button:hover {
   color: white;
 }
 
+.g-recaptcha {
+  display: flex;
+  justify-content: center;
+}
+
 /*Media query to adjust for square sized screens from 1000px to 1300px*/
 @media screen and (min-width: 1001px) and (max-width: 1300px) {
   .businessname,
@@ -440,10 +449,14 @@ button:hover {
     font-size: 1.5rem;
   }
 
+  .indexheadercontainer {
+    height: 100vh;
+  }
+
   .servicescontainer,
   .servicestypecontainer,
   .servicetype {
-    height: 35vh;
+    height: 50vh;
   }
 
   .aboutheader,
@@ -451,16 +464,51 @@ button:hover {
     font-size: 1.5rem;
   }
 
+  .aboutpicture {
+    width: 250px;
+    height: 250px;
+  }
+
+  .abouttopical,
+  .aboutheader,
+  .aboutpicture {
+    margin: 10px;
+  }
+
+  #aboutperson {
+    width: 33vw;
+  }
+
   .aboutparagraphs {
     font-size: 1.18rem;
   }
 
   .aboutheadercontainer {
-    margin: 10px;
+    margin-left: 20px;
   }
 
   .featuredprojectheader {
     font-size: 2rem;
+  }
+
+  .featuredparagraph {
+    font-size: 1.42rem;
+  }
+
+  .featuredphoto {
+    width: 500px;
+    height: 350px;
+  }
+
+  label,
+  input,
+  textarea,
+  button {
+    font-size: 1.5rem;
+  }
+
+  textarea {
+    height: 200px;
   }
 }
 
@@ -821,6 +869,11 @@ button:hover {
   .aboutchild {
     width: 80%;
     height: auto;
+    text-align: center;
+  }
+
+  #aboutperson {
+    width: 100vw;
   }
 
   .aboutheader,

@@ -1,33 +1,37 @@
-{% extends "layout.html" %}
-
-{% block title %}
-    About
-{% endblock %}
-
-{% block main %}
+{% extends "layout.html" %} {% block title %} About {% endblock %} {% block main
+%}
 <div class="about">
-    <div class="aboutchild">
-        <div class="aboutheadercontainer">
-            <p class="aboutheader">Craig Ritchie, Owner</p>
-            <img class="aboutpicture" src="{{ url_for('static', filename='craig.jpg') }}" alt="about">
-            <p class="abouttopical">30+ Years in The Industry</p>
-        </div>
+  <div class="aboutchild" id="aboutperson">
+    <div class="aboutheadercontainer">
+      <p class="aboutheader">Craig Ritchie, Owner</p>
+      <img
+        class="aboutpicture"
+        src="{{ url_for('static', filename='craig.jpg') }}"
+        alt="about"
+      />
+      <p class="abouttopical">30+ Years in The Industry</p>
     </div>
-    <div class="aboutchild">
-        <div class="aboutparagraphscontainer">
-            <p class="aboutparagraphs">Craig has worked in the construction industry since graduating with a Construction Management
-            degree from the University of Louisiana in Monroe.  Craig has managed projects in all types
-            of delivery systems including hard bid, negotiated and design build.  He has extensive
-            experience in a wide variety of construction markets including multi-family, light industrial,
-            healthcare, educational, senior living, religious, tenant finish, warehouse construction and
-            commercial building space.
-            <br>
-            <br>
-            Craig is proud to have grown up in northeast Louisiana but is glad to call Kansas City home
-            since relocating in 1998. Craig enjoys home renovations, fixing things that break, going to
-            car shows and meeting friends for a cup of coffee.  He and his wife Jill enjoy living in Lee’s
-            Summit and serve locally at Thrive Church.
-            </p>
+  </div>
+  <div class="aboutchild">
+    <div class="aboutparagraphscontainer">
+      <p class="aboutparagraphs">
+        Craig has worked in the construction industry since graduating with a
+        Construction Management degree from the University of Louisiana in
+        Monroe. Craig has managed projects in all types of delivery systems
+        including hard bid, negotiated and design build. He has extensive
+        experience in a wide variety of construction markets including
+        multi-family, light industrial, healthcare, educational, senior living,
+        religious, tenant finish, warehouse construction and commercial building
+        space.
+        <br />
+        <br />
+        Craig is proud to have grown up in northeast Louisiana but is glad to
+        call Kansas City home since relocating in 1998. Craig enjoys home
+        renovations, fixing things that break, going to car shows and meeting
+        friends for a cup of coffee. He and his wife Jill enjoy living in Lee’s
+        Summit and serve locally at Thrive Church.
+      </p>
     </div>
+  </div>
+  {% endblock %}
 </div>
-{% endblock %}
