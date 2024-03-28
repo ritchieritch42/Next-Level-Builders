@@ -1,5 +1,5 @@
 # Next Level Builders, LLC Static Website
-#### Video Demo:  (Click Here|https://youtu.be/s8veNXkMZSE)a
+#### Video Demo:  (Click Here|https://youtu.be/s8veNXkMZSE )
 # Introduction
 #### This project was inspired by my desire to go into Web Development in the future as well as give something free of expense to someone in my community. After pondering on what sort of a web application to build I decided that a well-designed small business website was within my scope of skills at the time. My father recently started his own contracting business and is starting the marketing process. The beginning of this process being an online presence, starting with a website.
 
