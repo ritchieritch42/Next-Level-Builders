@@ -1,15 +1,27 @@
 {% extends "layout.html" %} {% block title %} About {% endblock %} {% block main
 %}
 <div class="about">
-  <div class="aboutchild" id="aboutperson">
+  <div class="aboutchild">
     <div class="aboutheadercontainer">
-      <p class="aboutheader">Craig Ritchie, Owner</p>
       <img
         class="aboutpicture"
         src="{{ url_for('static', filename='craig.jpg') }}"
         alt="about"
       />
-      <p class="abouttopical">30+ Years in The Industry</p>
+    </div>
+    <div class="aboutuniversitycontainer">
+      <img
+        class="aboutpicture"
+        src="{{ url_for('static', filename='ulm-academic-logo-circle.png') }}"
+        alt="ulm"
+      />
+    </div>
+  </div>
+  <div class="aboutchild">
+    <div class="abouttopicalcontainer">
+      <p class="abouttopical">
+        Craig Ritchie, Owner || 30+ Years in The Industry
+      </p>
     </div>
   </div>
   <div class="aboutchild">
@@ -23,8 +35,9 @@
         multi-family, light industrial, healthcare, educational, senior living,
         religious, tenant finish, warehouse construction and commercial building
         space.
-        <br />
-        <br />
+        </p>
+      </p>
+      <p class="aboutparagraphs">
         Craig is proud to have grown up in northeast Louisiana but is glad to
         call Kansas City home since relocating in 1998. Craig enjoys home
         renovations, fixing things that break, going to car shows and meeting
