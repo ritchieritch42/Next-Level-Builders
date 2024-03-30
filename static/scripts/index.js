@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   scroll(".featuredparagraph");
   scroll(".featuredprojectheader");
   navColorChange(".navbar");
+  scroll(".aboutparagraphs");
 });
 
 function navColorChange(elementClass) {
@@ -32,17 +33,24 @@ function navColorChange(elementClass) {
 
 function scroll(elementClass) {
   window.addEventListener("scroll", () => {
+    let texts = document.querySelectorAll(elementClass);
     let text = document.querySelector(elementClass);
     let textLocation = text.getBoundingClientRect();
-    let yFeaturedParagraph = textLocation.y;
+    let yText = textLocation.y;
 
-    if (yFeaturedParagraph > 1000) {
-      text.style.opacity = "0.25";
-    } else if (yFeaturedParagraph < 1000 && yFeaturedParagraph > 400) {
-      newOpacity = (1000 - yFeaturedParagraph) / 1000;
-      text.style.opacity = newOpacity;
+    if (yText > 1000) {
+      for (let i = 0; i < texts.length; i++) {
+        texts[i].style.opacity = "0.25";
+      }
+    } else if (yText < 1000 && yText > 400) {
+      for (let i = 0; i < texts.length; i++) {
+        let newOpacity = (1000 - yText) / 1000;
+        texts[i].style.opacity = newOpacity - 0.15;
+      }
     } else {
-      text.style.opacity = "1";
+      for (let i = 0; i < texts.length; i++) {
+        texts[i].style.opacity = "1";
+      }
     }
   });
 }
