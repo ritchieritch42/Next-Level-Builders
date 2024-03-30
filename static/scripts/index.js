@@ -1,22 +1,18 @@
 document.addEventListener("DOMContentLoaded", function () {
-  scroll(".featuredparagraph");
-  scroll(".featuredprojectheader");
+  // scroll(".featuredparagraph");
+  // scroll(".featuredprojectheader");
+  navColorChange(".navbar");
 });
 
-function scroll(elementClass) {
+function navColorChange(elementClass) {
   window.addEventListener("scroll", () => {
-    // In this line, you don't need to use `this`, simply use `document.querySelector`
-    let text = document.querySelector(elementClass);
-    let textLocation = text.getBoundingClientRect();
-    let y = textLocation.y;
+    y = window.scrollY;
+    let navbar = document.querySelector(elementClass);
 
-    if (y > 1000) {
-      text.style.opacity = "0.25";
-    } else if (y < 1000 && y > 400) {
-      newOpacity = (1000 - y) / 1000;
-      text.style.opacity = newOpacity;
+    if (y > 100) {
+      navbar.style.backgroundColor = "#38393b";
     } else {
-      text.style.opacity = "1";
+      navbar.style.backgroundColor = "white";
     }
   });
 }
