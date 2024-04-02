@@ -1,8 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
   scroll(".featuredparagraph");
   scroll(".featuredprojectheader");
+  scroll(".service");
+  mobileTextScroll(".service");
+  mobileTextScroll(".about");
   navColorChange(".navbar");
-  scroll(".aboutparagraphs");
+  mobileNavSizeChange(".businessname");
 });
 
 function navColorChange(elementClass) {
@@ -53,4 +56,61 @@ function scroll(elementClass) {
       }
     }
   });
+}
+
+function mobileTextScroll(elementClass) {
+  window.addEventListener("scroll", () => {
+    let viewportWidth = window.innerWidth;
+
+    if (viewportWidth < 800) {
+      let mobileTexts = document.querySelectorAll(elementClass);
+      let mobileText = document.querySelector(elementClass);
+      let mobileTextLocation = mobileText.getBoundingClientRect();
+      let yMobileText = mobileTextLocation.y;
+      console.log(yMobileText);
+
+      if (yMobileText > 1000) {
+        for (let i = 0; i < mobileTexts.length; i++) {
+          mobileTexts[i].style.opacity = "0.25";
+        }
+      } else if (yMobileText < 1000 && yMobileText > 400) {
+        for (let i = 0; i < mobileTexts.length; i++) {
+          let newOpacity = (1000 - yMobileText) / 1000;
+          mobileTexts[i].style.opacity = newOpacity - 0.15;
+        }
+      } else {
+        for (let i = 0; i < mobileTexts.length; i++) {
+          mobileTexts[i].style.opacity = "1";
+        }
+      }
+    }
+  });
+}
+
+function mobileNavSizeChange(elementClass) {
+  let viewportWidth = window.innerWidth;
+
+  if (viewportWidth < 800) {
+    // Store original font sizes in an object
+    const originalFontSizes = {};
+    let mobileTitles = document.querySelectorAll(elementClass);
+    mobileTitles.forEach(function (title) {
+      originalFontSizes[title] = window.getComputedStyle(title).fontSize;
+    });
+
+    window.addEventListener("scroll", () => {
+      let y = window.scrollY;
+
+      if (y > 100) {
+        mobileTitles.forEach(function (title) {
+          title.style.fontSize = "26px";
+        });
+      } else {
+        // Reset font size to original value
+        mobileTitles.forEach(function (title) {
+          title.style.fontSize = originalFontSizes[title];
+        });
+      }
+    });
+  }
 }
