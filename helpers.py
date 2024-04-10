@@ -46,6 +46,13 @@ def verify_human(project_id: str, recaptcha_key: str, token: str, recaptcha_acti
     PROJECT_ID = parameters['/contactnextlevelbuilders_google-project-id']
     RECAPTCHA_PRIVATE_KEY = parameters['/contactnextlevelbuilders_recaptcha-private-key']
     RECAPTCHA_PUBLIC_KEY = parameters['/contactnextlevelbuilders_recaptcha-public-key']
+
+    # Load JSON data from S3 bucket
+    s3 = boto3.client('s3')
+    bucket_name = 'contactnextlevelbuilders-recaptcha-json'
+    object_key = 'example.json'  # Replace with the actual object key
+    response = s3.get_object(Bucket=bucket_name, Key=object_key)
+    json_data = json.loads(response['Body'].read().decode('utf-8'))
     
     client = recaptchaenterprise_v1.RecaptchaEnterpriseServiceClient()
 
