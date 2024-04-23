@@ -1,5 +1,5 @@
 # For send_email
-import smtplib, os, boto3
+import smtplib, boto3, json
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
@@ -17,9 +17,9 @@ def send_email(subject, body, parameters):
     smtp_server = "smtp.gmail.com"
     smtp_port = 587
 
-    sender_email = parameters['/contactnextlevelbuilders_email']
-    receiver_email = parameters['/contactnextlevelbuilders_receiver-email']
-    password = parameters['/contactnextlevelbuilders_password']
+    sender_email = parameters['email']
+    receiver_email = parameters['receiver-email']
+    password = parameters['password']
 
     # Define message contents
     message = MIMEMultipart()
@@ -42,10 +42,10 @@ def send_email(subject, body, parameters):
     server.quit()
 
 def verify_human(project_id: str, recaptcha_key: str, token: str, recaptcha_action: str, parameters) -> bool:    
-    GOOGLE_APPLICATION_CREDENTIALS = parameters['/contactnextlevelbuilders_google-application-credentials']
-    PROJECT_ID = parameters['/contactnextlevelbuilders_google-project-id']
-    RECAPTCHA_PRIVATE_KEY = parameters['/contactnextlevelbuilders_recaptcha-private-key']
-    RECAPTCHA_PUBLIC_KEY = parameters['/contactnextlevelbuilders_recaptcha-public-key']
+    GOOGLE_APPLICATION_CREDENTIALS = parameters['google-application-credentials']
+    PROJECT_ID = parameters['google-project-id']
+    RECAPTCHA_PRIVATE_KEY = parameters['recaptcha-private-key']
+    RECAPTCHA_PUBLIC_KEY = parameters['recaptcha-public-key']
 
     # Load JSON data from S3 bucket
     s3 = boto3.client('s3')
