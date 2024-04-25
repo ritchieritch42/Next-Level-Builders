@@ -1,5 +1,5 @@
 from flask import Flask, flash, render_template, request
-from helpers import send_email, verify_human
+from helpers import send_email, verify_human, fetch_parameters
 from dotenv import load_dotenv
 import os
 
@@ -11,6 +11,10 @@ app = Flask(__name__)
 
 # Set a secret key for Flask sessions
 app.secret_key = os.urandom(24).hex()
+
+# Run parameters function in helpers.py
+prefix = "/contactnextlevelbuilders_"
+parameters = fetch_parameters(prefix)
 
 # Define a get route for the home page of the website
 @app.route("/")
