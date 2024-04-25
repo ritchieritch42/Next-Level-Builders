@@ -51,6 +51,7 @@ def verify_human(project_id: str, recaptcha_key: str, token: str, recaptcha_acti
     # TODO verify that loaded the json data inside of this function from s3 satisfies google recaptcha api requirements
     s3 = boto3.client('s3')
     bucket_name = 'contactnextlevelbuilders-recaptcha-json'
+    object_key = 'nextlevelbuilder-1711565908511-5387e3f09914.json'
     response = s3.get_object(Bucket=bucket_name, Key=object_key)
     json_data = json.loads(response['Body'].read().decode('utf-8'))
     
