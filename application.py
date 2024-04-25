@@ -33,7 +33,7 @@ def contact():
 
         # Define variables from parameter variable to use in verify human reCAPTCHA test
         project_id = parameters['PROJECT_ID']
-        recaptcha_key = ["recaptcha-public-key"]
+        recaptcha_key = parameters["recaptcha-public-key"]
         token = request.form.get("g-recaptcha-response")
         recaptcha_action = "contact"
 
