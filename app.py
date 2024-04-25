@@ -12,8 +12,8 @@ app = Flask(__name__)
 # Set a secret key for Flask sessions
 app.secret_key = os.urandom(24).hex()
 
-# Define project & parameters
-prefix = 'contactnextlevelbuilders_'
+# Run parameters function in helpers.py
+prefix = "/contactnextlevelbuilders_"
 parameters = fetch_parameters(prefix)
 
 # Define a get route for the home page of the website
@@ -36,6 +36,7 @@ def contact():
         recaptcha_key = parameters["recaptcha-public-key"]
         token = request.form.get("g-recaptcha-response")
         recaptcha_action = "contact"
+
 
         # Check if reCAPTCHA token is empty
         if not token:
