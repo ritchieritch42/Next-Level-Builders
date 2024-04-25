@@ -1,6 +1,6 @@
 from flask import Flask, flash, render_template, request
 from helpers import send_email, verify_human, fetch_parameters
-import os, boto3
+import os
 
 # Configure application
 app = Flask(__name__)
