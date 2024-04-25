@@ -1,10 +1,6 @@
 from flask import Flask, flash, render_template, request
 from helpers import send_email, verify_human, fetch_parameters
-from dotenv import load_dotenv
 import os, boto3
-
-#Function loads key value pairs from the .env (non-syndicated environment file)
-load_dotenv()
 
 # Configure application
 app = Flask(__name__)
