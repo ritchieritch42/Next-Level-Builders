@@ -1,5 +1,5 @@
 from flask import Flask, flash, render_template, request
-from helpers import send_email, verify_human
+from helpers import send_email, verify_human, fetch_parameters
 from dotenv import load_dotenv
 import os
 
@@ -11,6 +11,10 @@ app = Flask(__name__)
 
 # Set a secret key for Flask sessions
 app.secret_key = os.urandom(24).hex()
+
+# Define project & parameters
+prefix = '/contactnextlevelbuilders_'
+parameters = fetch_parameters(prefix)
 
 # Define a get route for the home page of the website
 @app.route("/")
@@ -27,12 +31,11 @@ def contact():
     # If the user is submitting a contact form, then do the following...
     if request.method == "POST":
 
-        # Define variables to use in verify human reCAPTCHA test
-        project_id = os.getenv("PROJECT_ID")
-        recaptcha_key = os.getenv("RECAPTCHA_PUBLIC_KEY")
+        # Define variables from parameter variable to use in verify human reCAPTCHA test
+        project_id = parameters['PROJECT_ID']
+        recaptcha_key = parameters["recaptcha-public-key"]
         token = request.form.get("g-recaptcha-response")
         recaptcha_action = "contact"
-        GOOGLE_APPLICATION_CREDENTIALS = os.environ.get("GOOGLE_APPLICATION_CREDENTIALS")
 
         # Check if reCAPTCHA token is empty
         if not token:
@@ -40,7 +43,7 @@ def contact():
             return render_template("contact.html")
         
         # Check to see if reCAPTCHA was valid
-        if verify_human(project_id, recaptcha_key, token, recaptcha_action):
+        if verify_human(project_id, recaptcha_key, token, recaptcha_action, parameters):
             # Define the users receiving email, subject, and body
             subject = request.form.get("subject")
             firstname = request.form.get("firstname")
