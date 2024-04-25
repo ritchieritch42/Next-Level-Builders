@@ -3,11 +3,9 @@ from helpers import send_email, verify_human, fetch_parameters
 from dotenv import load_dotenv
 import os
 
-#Function loads key value pairs from the .env (non-syndicated environment file)
-load_dotenv()
-
 # Configure application
 app = Flask(__name__)
+os.environ['FLASK_APP'] = 'application'
 
 # Set a secret key for Flask sessions
 app.secret_key = os.urandom(24).hex()
@@ -70,3 +68,4 @@ def contact():
     # If the user hasn't submitted a contact form yet, then load the contact page
     else:
         return render_template("contact.html")
+    
