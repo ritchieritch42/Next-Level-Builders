@@ -3,10 +3,10 @@ from helpers import send_email, verify_human, fetch_parameters
 import os
 
 # Configure application
-application = Flask(__name__)
+app = Flask(__name__)
 
 # Set a secret key for Flask sessions
-application.secret_key = os.urandom(24).hex()
+app.secret_key = os.urandom(24).hex()
 
 # Run parameters function in helpers.py
 prefix = "/contactnextlevelbuilders_"
