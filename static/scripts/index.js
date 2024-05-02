@@ -1,12 +1,40 @@
 document.addEventListener("DOMContentLoaded", function () {
-  scroll(".featuredparagraph");
-  scroll(".featuredprojectheader");
-  scroll(".service");
-  mobileTextScroll(".service");
-  mobileTextScroll(".about");
-  navColorChange(".navbar");
-  mobileNavSizeChange(".businessname");
+  let viewportWidth = window.innerWidth;
+  if (viewportWidth > 800) {
+    scroll(".featuredparagraph");
+    scroll(".featuredprojectheader");
+    scroll(".service");
+    navColorChange(".navbar");
+  } else {
+    mobileTextScroll(".featuredparagraph");
+    mobileTextScroll(".featuredprojectheader");
+    mobileTextScroll(".service");
+    mobileTextScroll(".aboutparagraphscontainer");
+    mobileNavSizeChange(".businessname");
+    mobileNavColorChange(".navbar");
+  }
 });
+
+function mobileNavColorChange(elementClass) {
+  window.addEventListener("scroll", () => {
+    y = window.scrollY;
+    let navbar = document.querySelector(elementClass);
+    let businessName = document.querySelector(".businessname");
+    let logo = document.querySelector(".logo");
+
+    if (y > 100) {
+      navbar.style.backgroundColor = "#38393b";
+      businessName.style.color = "white";
+      logo.style.opacity = "0";
+      logo.style.width = "25px";
+    } else {
+      navbar.style.backgroundColor = "white";
+      businessName.style.color = "#38393b";
+      logo.style.opacity = "1";
+      logo.style.width = "80px";
+    }
+  });
+}
 
 function navColorChange(elementClass) {
   window.addEventListener("scroll", () => {
@@ -60,30 +88,21 @@ function scroll(elementClass) {
 
 function mobileTextScroll(elementClass) {
   window.addEventListener("scroll", () => {
-    let viewportWidth = window.innerWidth;
+    let mobileTexts = document.querySelectorAll(elementClass);
 
-    if (viewportWidth < 800) {
-      let mobileTexts = document.querySelectorAll(elementClass);
-      let mobileText = document.querySelector(elementClass);
+    mobileTexts.forEach((mobileText) => {
       let mobileTextLocation = mobileText.getBoundingClientRect();
       let yMobileText = mobileTextLocation.y;
-      console.log(yMobileText);
 
       if (yMobileText > 1000) {
-        for (let i = 0; i < mobileTexts.length; i++) {
-          mobileTexts[i].style.opacity = "0.25";
-        }
+        mobileText.style.opacity = "0.25";
       } else if (yMobileText < 1000 && yMobileText > 400) {
-        for (let i = 0; i < mobileTexts.length; i++) {
-          let newOpacity = (1000 - yMobileText) / 1000;
-          mobileTexts[i].style.opacity = newOpacity - 0.15;
-        }
+        let newOpacity = (1000 - yMobileText) / 1000;
+        mobileText.style.opacity = newOpacity - 0.15;
       } else {
-        for (let i = 0; i < mobileTexts.length; i++) {
-          mobileTexts[i].style.opacity = "1";
-        }
+        mobileText.style.opacity = "1";
       }
-    }
+    });
   });
 }
 
