@@ -8,7 +8,7 @@ from google.cloud import recaptchaenterprise_v1
 from google.cloud.recaptchaenterprise_v1 import Assessment
 
 def fetch_parameters(prefix):
-    ssm = boto3.client('ssm')
+    ssm = boto3.client('ssm', region_name='us-east-1')
     response = ssm.get_parameters_by_path(Path=prefix, Recursive=True, WithDecryption=True)
     return {param['Name']: param['Value'] for param in response['Parameters']}
 

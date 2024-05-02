@@ -3,26 +3,26 @@ from helpers import send_email, verify_human, fetch_parameters
 import os
 
 # Configure application
-app = Flask(__name__)
+application = Flask(__name__)
 
 # Set a secret key for Flask sessions
-app.secret_key = os.urandom(24).hex()
+application.secret_key = os.urandom(24).hex()
 
 # Run parameters function in helpers.py
 prefix = "/contactnextlevelbuilders_"
 parameters = fetch_parameters(prefix)
 
 # Define a get route for the home page of the website
-@app.route("/")
+@application.route("/")
 def index():
     return render_template("index.html")
 
 # Define a get route for the about page of the website
-@app.route("/about")
+@application.route("/about")
 def about():
     return render_template("about.html")
 
-@app.route("/contact", methods=["POST", "GET"])
+@application.route("/contact", methods=["POST", "GET"])
 def contact():
     # If the user is submitting a contact form, then do the following...
     if request.method == "POST":
@@ -66,3 +66,10 @@ def contact():
     # If the user hasn't submitted a contact form yet, then load the contact page
     else:
         return render_template("contact.html")
+
+
+if __name__ == "__main__":
+    # Setting debug to True enables debug output. This line should be
+    # removed before deploying a production app.
+    application.debug = True
+    application.run()
