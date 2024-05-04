@@ -9,3 +9,4 @@ sources.txt
 app.spec.py
 helpers.spec.py
 sources.txt
+.aws
