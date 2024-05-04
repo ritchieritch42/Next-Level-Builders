@@ -6,3 +6,6 @@ virt
 nextlevelbuilder-1711565908511-5387e3f09914.json
 README.md
 sources.txt
+app.spec.py
+helpers.spec.py
+sources.txt
