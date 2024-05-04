@@ -1,5 +1,5 @@
 # For send_email
-import smtplib, os
+import smtplib, boto3, json
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
@@ -7,15 +7,19 @@ from email.mime.text import MIMEText
 from google.cloud import recaptchaenterprise_v1
 from google.cloud.recaptchaenterprise_v1 import Assessment
 
-def send_email(subject, body):
+def fetch_parameters(prefix):
+    ssm = boto3.client('ssm', region_name='us-east-1')
+    response = ssm.get_parameters_by_path(Path=prefix, Recursive=True, WithDecryption=True)
+    return {param['Name']: param['Value'] for param in response['Parameters']}
+
+def send_email(subject, body, parameters):
     # Define server variables
     smtp_server = "smtp.gmail.com"
     smtp_port = 587
 
-    # Define emails and passwords
-    sender_email = os.getenv("SENDER_EMAIL")
-    receiver_email = os.getenv("RECEIVER_EMAIL")
-    password = os.getenv("PASSWORD")
+    sender_email = parameters['email']
+    receiver_email = parameters['receiver-email']
+    password = parameters['password']
 
     # Define message contents
     message = MIMEMultipart()
@@ -37,7 +41,20 @@ def send_email(subject, body):
     # Close the SMTP session
     server.quit()
 
-def verify_human(project_id: str, recaptcha_key: str, token: str, recaptcha_action: str) -> bool:
+def verify_human(project_id: str, recaptcha_key: str, token: str, recaptcha_action: str, parameters) -> bool:    
+    GOOGLE_APPLICATION_CREDENTIALS = parameters['google-application-credentials']
+    PROJECT_ID = parameters['google-project-id']
+    RECAPTCHA_PRIVATE_KEY = parameters['recaptcha-private-key']
+    RECAPTCHA_PUBLIC_KEY = parameters['recaptcha-public-key']
+
+    # Load JSON data from S3 bucket
+    # TODO verify that loaded the json data inside of this function from s3 satisfies google recaptcha api requirements
+    s3 = boto3.client('s3')
+    bucket_name = 'contactnextlevelbuilders-recaptcha-json'
+    object_key = 'nextlevelbuilder-1711565908511-5387e3f09914.json'
+    response = s3.get_object(Bucket=bucket_name, Key=object_key)
+    json_data = json.loads(response['Body'].read().decode('utf-8'))
+    
     client = recaptchaenterprise_v1.RecaptchaEnterpriseServiceClient()
 
     # Set the properties of the event to be tracked.

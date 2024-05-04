@@ -194,6 +194,7 @@ body {
   color: white;
   position: absolute;
   font-size: 2rem;
+  transition: 0.75s ease;
 }
 
 .servicetype:hover .service {
@@ -364,7 +365,6 @@ p.aboutparagraphs {
   max-width: 100%;
   width: 100%;
   height: auto;
-  padding: 20px;
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
@@ -372,6 +372,7 @@ p.aboutparagraphs {
   color: white;
   font-size: 1.5rem;
   background-color: #38393b;
+  padding-top: 10vh;
 }
 
 .contactformcontainer {
@@ -444,6 +445,7 @@ button:hover {
 .g-recaptcha {
   display: flex;
   justify-content: center;
+  padding-top: 20px;
 }
 
 /*Media query to adjust for square sized screens from 1000px to 1300px*/
@@ -611,6 +613,10 @@ button:hover {
     height: 12vw;
   }
 
+  .logoandname {
+    width: 50vw;
+  }
+
   .businessname {
     font-size: 1.5rem;
   }
@@ -626,23 +632,22 @@ button:hover {
   }
 
   .navbarlinks {
-    width: 100%;
-    height: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: stretch;
-    padding: 20px;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 0;
   }
 
   .navbarlink {
+    flex: 1;
+    text-align: center;
     color: white;
-    width: 33%;
-    height: 100%;
-    margin: 0px;
-    padding: 0px;
-    border: none;
     font-size: 1.25rem;
+    border: none;
+    padding-right: 25px;
   }
 
   .servicesheader,
@@ -651,7 +656,7 @@ button:hover {
   }
 
   .indexheadercontainer {
-    height: 40vh;
+    height: 70vh;
   }
 
   .indexheader {
@@ -677,7 +682,15 @@ button:hover {
   .servicestypecontainer,
   .servicetype,
   .featuredprojectcontainer {
-    height: 12.5vh;
+    height: 10vh;
+  }
+
+  .servicesheadercontainer {
+    width: 30vw;
+  }
+
+  .servicestypecontainer {
+    width: 72vw;
   }
 
   .featuredprojectheader {
@@ -685,8 +698,8 @@ button:hover {
   }
 
   .featuredphoto {
-    width: 150px;
-    height: 100px;
+    width: 300px;
+    height: 200px;
   }
 
   .featuredparagraph {
@@ -694,7 +707,8 @@ button:hover {
   }
 
   .footer {
-    font-size: 0.75rem;
+    height: 10vh;
+    font-size: 1rem;
   }
 
   .about {
@@ -728,10 +742,6 @@ button:hover {
 
   .aboutheadercontainer {
     margin: 10px;
-  }
-
-  .contactintrocontainer {
-    font-size: 1rem;
   }
 
   #advise {
