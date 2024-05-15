@@ -8,10 +8,6 @@ application = Flask(__name__)
 # Set a secret key for Flask sessions
 application.secret_key = os.urandom(24).hex()
 
-# Run parameters function in helpers.py
-prefix = "/contactnextlevelbuilders_"
-parameters = fetch_parameters(prefix)
-
 # Define a get route for the home page of the website
 @application.route("/")
 def index():
@@ -26,9 +22,12 @@ def about():
 def contact():
     # If the user is submitting a contact form, then do the following...
     if request.method == "POST":
+        # Run parameters function in helpers.py
+        prefix = "contactnextlevelbuilders_"
+        parameters = fetch_parameters(prefix)
 
         # Define variables from parameter variable to use in verify human reCAPTCHA test
-        project_id = parameters['PROJECT_ID']
+        project_id = parameters['google-project-id']
         recaptcha_key = parameters["recaptcha-public-key"]
         token = request.form.get("g-recaptcha-response")
         recaptcha_action = "contact"
