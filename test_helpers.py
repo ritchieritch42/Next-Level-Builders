@@ -1,23 +1,32 @@
-import unittest, boto3
-from moto import mock_ssm
+import unittest, boto3, os
+from moto import mock_aws
+from helpers import fetch_parameters
+from dotenv import dotenv_values
 
-class TestMyClass(unittest.TestCase):
-    client = None
+class TestParameterPut(unittest.TestCase):
 
-    def setUp(self) -> None:
-          self.mock_ssm = moto.mock_aws
-          self.mock_ssm.start()
+    @mock_aws
+    def test_parameter_get(self):
+        client = boto3.client('ssm')
+        parameters = {**dotenv_values(".env")}
+        keysList = list(parameters.keys())
+        valuesList = list(parameters.values())
+        
+        i = 0
 
-          self.client = boto3.client('ssm')
-          self.client.put_parameter(Name='test', Value='foo', Type='String')
+        while i < len(keysList):
+            client.put_parameter(
+                Name=keysList[i],
+                Value=valuesList[i],
+                Type='SecureString')
+            i += 1
+            
+        response = client.get_parameter(
+            Name='contactnextlevelbuilders_email',
+            WithDecryption=True
+        )
 
-    def tearDown(self) -> None:
-         self.mock_ssm.stop()
-          
-    def test_something(self):
-        response = self.client.get_parameter(Name='test')
-        value = response['Parameter']['Value']
-        self.assertEqual(value, 'foo')
+        print(response['Parameter']['Value'])
 
-if __name__ == "__main__":
-    unittest.main()
+    if __name__ == '__main__':
+        unittest.main()
