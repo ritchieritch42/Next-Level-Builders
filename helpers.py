@@ -59,11 +59,6 @@ def send_email(subject, body, parameters):
     server.quit()
 
 def verify_human(project_id: str, recaptcha_key: str, token: str, recaptcha_action: str, parameters) -> bool:    
-    GOOGLE_APPLICATION_CREDENTIALS = parameters['google-application-credentials']
-    PROJECT_ID = parameters['google-project-id']
-    RECAPTCHA_PRIVATE_KEY = parameters['recaptcha-private-key']
-    RECAPTCHA_PUBLIC_KEY = parameters['recaptcha-public-key']
-    
     client = recaptchaenterprise_v1.RecaptchaEnterpriseServiceClient()
 
     # Set the properties of the event to be tracked.
