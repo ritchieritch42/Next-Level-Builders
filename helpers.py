@@ -8,7 +8,7 @@ from google.cloud import recaptchaenterprise_v1
 from google.cloud.recaptchaenterprise_v1 import Assessment
 
 def fetch_parameters(prefix):
-    client = boto3.client('ssm')
+    client = boto3.client('ssm', region_name='us-east-2')
     response = client.get_parameters(
         Names=[
         prefix + 'email',
