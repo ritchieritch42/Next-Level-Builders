@@ -9,20 +9,25 @@ from google.cloud.recaptchaenterprise_v1 import Assessment
 
 def fetch_parameters(prefix):
     client = boto3.client('ssm')
-    prefix = 'contactnextlevelbuilders_'
     response = client.get_parameters(
-            Names=[
-                prefix + 'email',
-                prefix + 'receiver-email',
-                prefix + 'password',
-                prefix + 'recaptcha-public-key',
-                prefix + 'recaptcha-private-key',
-                prefix + 'google-application-credentials',
-                prefix + 'google-project-id'
-                ],
-            WithDecryption=True
-            )
-    return response
+        Names=[
+        prefix + 'email',
+        prefix + 'receiver-email',
+        prefix + 'password',
+        prefix + 'recaptcha-public-key',
+        prefix + 'recaptcha-private-key',
+        prefix + 'google-application-credentials',
+        prefix + 'google-project-id'
+        ],
+        WithDecryption=True
+    )
+
+    parameters = {}
+    length_params = len(response['Parameters'])
+
+    for i in range(length_params):
+        parameters[response['Parameters'][i]['Name']] = response['Parameters'][i]['Value']
+    return parameters
 
 def send_email(subject, body, parameters):
     # Define server variables

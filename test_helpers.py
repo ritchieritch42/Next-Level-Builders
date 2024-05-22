@@ -3,30 +3,31 @@ from moto import mock_aws
 from helpers import fetch_parameters
 from dotenv import dotenv_values
 
-class TestParameterPut(unittest.TestCase):
+class TestParameterGet(unittest.TestCase):
 
     @mock_aws
     def test_parameter_get(self):
         client = boto3.client('ssm')
-        parameters = {**dotenv_values(".env")}
-        keysList = list(parameters.keys())
-        valuesList = list(parameters.values())
+        env_parameters = {**dotenv_values(".env")}
+        keysList = list(env_parameters.keys())
+        valuesList = list(env_parameters.values())
         
         i = 0
+        length_env = len(keysList)
 
-        while i < len(keysList):
+        while i < length_env:
             client.put_parameter(
                 Name=keysList[i],
                 Value=valuesList[i],
                 Type='SecureString')
             i += 1
-            
-        response = client.get_parameter(
-            Name='contactnextlevelbuilders_email',
-            WithDecryption=True
-        )
+         
+        prefix = 'contactnextlevelbuilders_'
+        parameters = fetch_parameters(prefix)
 
-        print(response['Parameter']['Value'])
+        print(parameters)
+
+        self.assertEqual(env_parameters['contactnextlevelbuilders_email'], parameters['contactnextlevelbuilders_email'])
 
     if __name__ == '__main__':
         unittest.main()
