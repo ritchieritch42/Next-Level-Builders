@@ -24,9 +24,9 @@ class TestParameterGet(unittest.TestCase):
         prefix = 'contactnextlevelbuilders_'
         parameters = fetch_parameters(prefix)
 
-        print(parameters)
+        print('SUCCESS: ', parameters)
 
-        self.assertEqual(env_parameters['contactnextlevelbuilders_email'], parameters['contactnextlevelbuilders_email'])
+        self.assertEqual('contactnextlevelbuilders@gmail.com', parameters['contactnextlevelbuilders_email'])
 
     if __name__ == '__main__':
         unittest.main()

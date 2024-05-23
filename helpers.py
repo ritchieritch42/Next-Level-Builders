@@ -2,6 +2,7 @@
 import smtplib, boto3, json
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
+import logging
 
 # For create_assessment
 from google.cloud import recaptchaenterprise_v1
@@ -22,11 +23,19 @@ def fetch_parameters(prefix):
         WithDecryption=True
     )
 
+    # Create the logger object 
+    logger = logging.getLogger() 
+
+    # Log response from client('ssm')
+    logging.info('-------RESPONSE-------', response)
+
     parameters = {}
+
     length_params = len(response['Parameters'])
 
     for i in range(length_params):
         parameters[response['Parameters'][i]['Name']] = response['Parameters'][i]['Value']
+
     return parameters
 
 def send_email(subject, body, parameters):
