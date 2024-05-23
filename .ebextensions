@@ -22,3 +22,6 @@ commands:
   # Copy the JSON file to the root directory of the application
   01_fetch_file_from_s3:
     command: aws s3 cp s3://contactnextlevelbuilders-recaptcha-json/nextlevelbuilder-1711565908511-5387e3f09914.json /var/app/current
+  02_set_environment_variable:
+    command: echo "GOOGLE_APPLICATION_CREDENTIALS=/var/app/current/nextlevelbuilder-1711565908511-5387e3f09914.json" >> /etc/environment
+    leader_only: true

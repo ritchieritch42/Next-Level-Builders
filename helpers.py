@@ -1,12 +1,11 @@
 # For send_email
-import smtplib, boto3, json
+import smtplib, boto3, os
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import logging
 
 # For create_assessment
 from google.cloud import recaptchaenterprise_v1
-from google.cloud.recaptchaenterprise_v1 import Assessment
 
 def fetch_parameters(prefix):
     client = boto3.client('ssm', region_name='us-east-2')
@@ -68,6 +67,8 @@ def send_email(subject, body, parameters):
     server.quit()
 
 def verify_human(project_id: str, recaptcha_key: str, token: str, recaptcha_action: str) -> bool:    
+
+    # Establish a connection to the google recaptcha api
     client = recaptchaenterprise_v1.RecaptchaEnterpriseServiceClient()
 
     # Set the properties of the event to be tracked.
@@ -87,7 +88,7 @@ def verify_human(project_id: str, recaptcha_key: str, token: str, recaptcha_acti
 
     response = client.create_assessment(request)
 
-    # Check if the token is valid.
+    # Check if the user token is valid.
     if not response.token_properties.valid:
         print(
             "The CreateAssessment call failed because the token was "
