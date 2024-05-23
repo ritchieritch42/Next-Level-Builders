@@ -1,11 +1,7 @@
 # For send_email
-import smtplib, boto3, os
+import smtplib, boto3, logging, requests, os
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-import logging
-
-# For create_assessment
-from google.cloud import recaptchaenterprise_v1
 
 def fetch_parameters(prefix):
     client = boto3.client('ssm', region_name='us-east-2')
@@ -17,16 +13,11 @@ def fetch_parameters(prefix):
         prefix + 'recaptcha-public-key',
         prefix + 'recaptcha-private-key',
         prefix + 'google-application-credentials',
-        prefix + 'google-project-id'
+        prefix + 'google-project-id',
+        prefix + 'google-api-key'
         ],
         WithDecryption=True
     )
-
-    # Create the logger object 
-    logger = logging.getLogger()
-
-    # Log response from client('ssm')
-    logging.info('-------RESPONSE-------', response)
 
     parameters = {}
 
@@ -66,48 +57,20 @@ def send_email(subject, body, parameters):
     # Close the SMTP session
     server.quit()
 
-def verify_human(project_id: str, recaptcha_key: str, token: str, recaptcha_action: str) -> bool:    
+def verify_recaptcha(token, parameters):
+    # Perform reCAPTCHA verification using the provided token
+    verification_url = "https://www.google.com/recaptcha/api/siteverify"
+    siteKey = parameters['contactnextlevelbuilders_google-api-key']
+    response = requests.post(
+        verification_url, 
+        data={
+            'secret': siteKey,  # Your secret key
+            'response': token   # The token from the client
+        }
+    )
 
-    # Establish a connection to the google recaptcha api
-    client = recaptchaenterprise_v1.RecaptchaEnterpriseServiceClient()
-
-    # Set the properties of the event to be tracked.
-    event = recaptchaenterprise_v1.Event()
-    event.site_key = recaptcha_key
-    event.token = token
-
-    assessment = recaptchaenterprise_v1.Assessment()
-    assessment.event = event
-
-    project_name = f"projects/{project_id}"
-
-    # Build the assessment request.
-    request = recaptchaenterprise_v1.CreateAssessmentRequest()
-    request.assessment = assessment
-    request.parent = project_name
-
-    response = client.create_assessment(request)
-
-    # Check if the user token is valid.
-    if not response.token_properties.valid:
-        print(
-            "The CreateAssessment call failed because the token was "
-            + "invalid for the following reasons: "
-            + str(response.token_properties.invalid_reason)
-        )
-        return False
-
-    # Check if the expected action was executed.
-    if response.token_properties.action != recaptcha_action:
-        print(
-            "The action attribute in your reCAPTCHA tag does"
-            + "not match the action you are expecting to score"
-        )
-        return False
-
-    # Get the risk score and check if it indicates a human.
-    # You can adjust the threshold based on your requirements.
-    if response.risk_analysis.score >= 0.5:
+    # Check if the request was successful and if the reCAPTCHA verification succeeded
+    if response.status_code == 200 and response.json().get('success'):
         return True
     else:
         return False
