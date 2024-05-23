@@ -27,9 +27,9 @@ def contact():
         parameters = fetch_parameters(prefix)
 
         # Define variables from parameter variable to use in verify human reCAPTCHA test
-        project_id = parameters['google-project-id']
-        recaptcha_key = parameters["recaptcha-public-key"]
-        token = request.form.get("g-recaptcha-response")
+        project_id = parameters['contactnextlevelbuilders_google-project-id']
+        recaptcha_key = parameters['contactnextlevelbuilders_recaptcha-public-key']
+        token = request.form.get('g-recaptcha-response')
         recaptcha_action = "contact"
 
 
@@ -39,7 +39,7 @@ def contact():
             return render_template("contact.html")
         
         # Check to see if reCAPTCHA was valid
-        if verify_human(project_id, recaptcha_key, token, recaptcha_action, parameters):
+        if verify_human(project_id, recaptcha_key, token, recaptcha_action):
             # Define the users receiving email, subject, and body
             subject = request.form.get("subject")
             firstname = request.form.get("firstname")

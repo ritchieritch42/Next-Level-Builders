@@ -24,7 +24,7 @@ def fetch_parameters(prefix):
     )
 
     # Create the logger object 
-    logger = logging.getLogger() 
+    logger = logging.getLogger()
 
     # Log response from client('ssm')
     logging.info('-------RESPONSE-------', response)
@@ -43,9 +43,9 @@ def send_email(subject, body, parameters):
     smtp_server = "smtp.gmail.com"
     smtp_port = 587
 
-    sender_email = parameters['email']
-    receiver_email = parameters['receiver-email']
-    password = parameters['password']
+    sender_email = parameters['contactnextlevelbuilders_email']
+    receiver_email = parameters['contactnextlevelbuilders_receiver-email']
+    password = parameters['contactnextlevelbuilders_password']
 
     # Define message contents
     message = MIMEMultipart()
@@ -67,7 +67,7 @@ def send_email(subject, body, parameters):
     # Close the SMTP session
     server.quit()
 
-def verify_human(project_id: str, recaptcha_key: str, token: str, recaptcha_action: str, parameters) -> bool:    
+def verify_human(project_id: str, recaptcha_key: str, token: str, recaptcha_action: str) -> bool:    
     client = recaptchaenterprise_v1.RecaptchaEnterpriseServiceClient()
 
     # Set the properties of the event to be tracked.
