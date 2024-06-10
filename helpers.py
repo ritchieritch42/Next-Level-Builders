@@ -25,6 +25,7 @@ def fetch_parameters(prefix):
 
     for i in range(length_params):
         parameters[response['Parameters'][i]['Name']] = response['Parameters'][i]['Value']
+        print(parameters)
 
     return parameters
 
