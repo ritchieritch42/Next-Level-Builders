@@ -1,6 +1,6 @@
-from flask import Flask, flash, render_template, request
+from flask import Flask, flash, render_template, request, jsonify
 from helpers import send_email, verify_recaptcha, fetch_parameters
-import os, jsonify
+import os
 
 # Configure application
 application = Flask(__name__)
