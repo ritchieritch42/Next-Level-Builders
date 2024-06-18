@@ -1,5 +1,5 @@
 from flask import Flask, flash, render_template, request, jsonify
-from helpers import send_email, verify_recaptcha, fetch_parameters
+from helpers import send_email
 import os
 
 # Configure application
