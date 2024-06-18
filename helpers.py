@@ -1,25 +1,42 @@
 # For send_email
-import smtplib, boto3, json
+import smtplib, boto3, logging, requests, os
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
-# For create_assessment
-from google.cloud import recaptchaenterprise_v1
-from google.cloud.recaptchaenterprise_v1 import Assessment
-
 def fetch_parameters(prefix):
-    ssm = boto3.client('ssm', region_name='us-east-1')
-    response = ssm.get_parameters_by_path(Path=prefix, Recursive=True, WithDecryption=True)
-    return {param['Name']: param['Value'] for param in response['Parameters']}
+    client = boto3.client('ssm', region_name='us-east-2')
+    response = client.get_parameters(
+        Names=[
+        prefix + 'email',
+        prefix + 'receiver-email',
+        prefix + 'password',
+        prefix + 'recaptcha-public-key',
+        prefix + 'recaptcha-private-key',
+        prefix + 'google-application-credentials',
+        prefix + 'google-project-id',
+        prefix + 'google-api-key'
+        ],
+        WithDecryption=True
+    )
+
+    parameters = {}
+
+    length_params = len(response['Parameters'])
+
+    for i in range(length_params):
+        parameters[response['Parameters'][i]['Name']] = response['Parameters'][i]['Value']
+        print(parameters)
+
+    return parameters
 
 def send_email(subject, body, parameters):
     # Define server variables
     smtp_server = "smtp.gmail.com"
     smtp_port = 587
 
-    sender_email = parameters['email']
-    receiver_email = parameters['receiver-email']
-    password = parameters['password']
+    sender_email = parameters['contactnextlevelbuilders_email']
+    receiver_email = parameters['contactnextlevelbuilders_receiver-email']
+    password = parameters['contactnextlevelbuilders_password']
 
     # Define message contents
     message = MIMEMultipart()
@@ -41,59 +58,20 @@ def send_email(subject, body, parameters):
     # Close the SMTP session
     server.quit()
 
-def verify_human(project_id: str, recaptcha_key: str, token: str, recaptcha_action: str, parameters) -> bool:    
-    GOOGLE_APPLICATION_CREDENTIALS = parameters['google-application-credentials']
-    PROJECT_ID = parameters['google-project-id']
-    RECAPTCHA_PRIVATE_KEY = parameters['recaptcha-private-key']
-    RECAPTCHA_PUBLIC_KEY = parameters['recaptcha-public-key']
+def verify_recaptcha(token, parameters):
+    # Perform reCAPTCHA verification using the provided token
+    verification_url = "https://www.google.com/recaptcha/api/siteverify"
+    siteKey = parameters['contactnextlevelbuilders_google-api-key']
+    response = requests.post(
+        verification_url, 
+        data={
+            'secret': siteKey,  # Your secret key
+            'response': token   # The token from the client
+        }
+    )
 
-    # Load JSON data from S3 bucket
-    # TODO verify that loaded the json data inside of this function from s3 satisfies google recaptcha api requirements
-    s3 = boto3.client('s3')
-    bucket_name = 'contactnextlevelbuilders-recaptcha-json'
-    object_key = 'nextlevelbuilder-1711565908511-5387e3f09914.json'
-    response = s3.get_object(Bucket=bucket_name, Key=object_key)
-    json_data = json.loads(response['Body'].read().decode('utf-8'))
-    
-    client = recaptchaenterprise_v1.RecaptchaEnterpriseServiceClient()
-
-    # Set the properties of the event to be tracked.
-    event = recaptchaenterprise_v1.Event()
-    event.site_key = recaptcha_key
-    event.token = token
-
-    assessment = recaptchaenterprise_v1.Assessment()
-    assessment.event = event
-
-    project_name = f"projects/{project_id}"
-
-    # Build the assessment request.
-    request = recaptchaenterprise_v1.CreateAssessmentRequest()
-    request.assessment = assessment
-    request.parent = project_name
-
-    response = client.create_assessment(request)
-
-    # Check if the token is valid.
-    if not response.token_properties.valid:
-        print(
-            "The CreateAssessment call failed because the token was "
-            + "invalid for the following reasons: "
-            + str(response.token_properties.invalid_reason)
-        )
-        return False
-
-    # Check if the expected action was executed.
-    if response.token_properties.action != recaptcha_action:
-        print(
-            "The action attribute in your reCAPTCHA tag does"
-            + "not match the action you are expecting to score"
-        )
-        return False
-
-    # Get the risk score and check if it indicates a human.
-    # You can adjust the threshold based on your requirements.
-    if response.risk_analysis.score >= 0.5:
+    # Check if the request was successful and if the reCAPTCHA verification succeeded
+    if response.status_code == 200 and response.json().get('success'):
         return True
     else:
         return False
