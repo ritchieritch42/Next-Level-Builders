@@ -73,51 +73,9 @@ main %}
       placeholder="Hello! I am reaching out to..."
       required
     ></textarea>
-    <div
-      class="g-recaptcha"
-      data-sitekey="6LdD2qYpAAAAAL_n_D6r2cqqyuMni1IKbObe_yxA"
-      data-action="contact"
-      data-size="compact"
-    ></div>
     <div class="buttoncontainer">
       <button id="submitcontactform" type="submit">Send</button>
     </div>
   </form>
 </div>
-<script>
-  document
-    .getElementById("contact-form")
-    .addEventListener("submit", function (event) {
-      event.preventDefault(); // Prevent the form from submitting normally
-
-      // Execute reCAPTCHA verification
-      grecaptcha.ready(function () {
-        grecaptcha
-          .execute("6LdD2qYpAAAAAL_n_D6r2cqqyuMni1IKbObe_yxA", {
-            action: "contact",
-          })
-          .then(function (token) {
-            // Add the token to the form data
-            var formData = new FormData(
-              document.getElementById("contact-form")
-            );
-            formData.append("recaptcha_token", token); // Add the reCAPTCHA token to form data
-
-            // Submit the form with reCAPTCHA token
-            fetch("/contact", {
-              method: "POST",
-              body: formData,
-            })
-              .then((response) => {
-                // Handle the response (e.g., display success message, redirect)
-                console.log("Form submitted successfully:", response);
-              })
-              .catch((error) => {
-                // Handle any errors
-                console.error("Error submitting form:", error);
-              });
-          });
-      });
-    });
-</script>
 {% endblock %}

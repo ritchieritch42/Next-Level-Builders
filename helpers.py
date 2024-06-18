@@ -3,32 +3,6 @@ import smtplib, boto3, logging, requests, os
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
-def fetch_parameters(prefix):
-    client = boto3.client('ssm', region_name='us-east-2')
-    response = client.get_parameters(
-        Names=[
-        prefix + 'email',
-        prefix + 'receiver-email',
-        prefix + 'password',
-        prefix + 'recaptcha-public-key',
-        prefix + 'recaptcha-private-key',
-        prefix + 'google-application-credentials',
-        prefix + 'google-project-id',
-        prefix + 'google-api-key'
-        ],
-        WithDecryption=True
-    )
-
-    parameters = {}
-
-    length_params = len(response['Parameters'])
-
-    for i in range(length_params):
-        parameters[response['Parameters'][i]['Name']] = response['Parameters'][i]['Value']
-        print(parameters)
-
-    return parameters
-
 def send_email(subject, body, parameters):
     # Define server variables
     smtp_server = "smtp.gmail.com"
@@ -57,21 +31,3 @@ def send_email(subject, body, parameters):
 
     # Close the SMTP session
     server.quit()
-
-def verify_recaptcha(token, parameters):
-    # Perform reCAPTCHA verification using the provided token
-    verification_url = "https://www.google.com/recaptcha/api/siteverify"
-    siteKey = parameters['contactnextlevelbuilders_google-api-key']
-    response = requests.post(
-        verification_url, 
-        data={
-            'secret': siteKey,  # Your secret key
-            'response': token   # The token from the client
-        }
-    )
-
-    # Check if the request was successful and if the reCAPTCHA verification succeeded
-    if response.status_code == 200 and response.json().get('success'):
-        return True
-    else:
-        return False
