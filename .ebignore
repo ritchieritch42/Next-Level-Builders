@@ -3,7 +3,6 @@ __pychache__/
 virt/
 .env
 .gitignore
-nextlevelbuilder-1711565908511-5387e3f09914.json
 README.md
 sources.txt
 test_helpers.py
