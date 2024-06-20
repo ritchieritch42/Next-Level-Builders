@@ -1,5 +1,5 @@
 # For send_email
-import smtplib, boto3, logging, requests, os
+import smtplib, boto3
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
