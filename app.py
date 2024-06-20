@@ -1,5 +1,5 @@
 from flask import Flask, flash, render_template, request, jsonify
-from helpers import send_email
+from helpers import send_email, fetch_parameters
 import os
 
 # Configure application
@@ -22,6 +22,11 @@ def about():
 def contact():
     # If the user is submitting a contact form, then do the following...
     if request.method == "POST":
+
+        # Get parameters from helpers.py
+        prefix = 'contactnextlevelbuilders_'
+        parameters = fetch_parameters(prefix)
+        
         try: 
             # Proceed with sending form content
             subject = request.form.get("subject")
@@ -36,7 +41,7 @@ def contact():
             # Email will always be the contact email
             # Subject is subject
             # Body is firstname, lastname, phonenumber, email, and the content
-            send_email(subject, body)
+            send_email(subject, body, parameters)
             flash("Your contact form was submitted.")
             return render_template("index.html")
         except:
