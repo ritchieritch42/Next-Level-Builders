@@ -3,6 +3,32 @@ import smtplib, boto3, logging, requests, os
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
+def fetch_parameters(prefix):
+    client = boto3.client('ssm', region_name='us-east-2')
+    response = client.get_parameters(
+        Names=[
+        prefix + 'email',
+        prefix + 'receiver-email',
+        prefix + 'password',
+        prefix + 'recaptcha-public-key',
+        prefix + 'recaptcha-private-key',
+        prefix + 'google-application-credentials',
+        prefix + 'google-project-id',
+        prefix + 'google-api-key'
+        ],
+        WithDecryption=True
+    )
+
+    parameters = {}
+
+    length_params = len(response['Parameters'])
+
+    for i in range(length_params):
+        parameters[response['Parameters'][i]['Name']] = response['Parameters'][i]['Value']
+        print(parameters)
+
+    return parameters
+
 def send_email(subject, body, parameters):
     # Define server variables
     smtp_server = "smtp.gmail.com"
