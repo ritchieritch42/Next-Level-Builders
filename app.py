@@ -42,7 +42,6 @@ def contact():
             # Subject is subject
             # Body is firstname, lastname, phonenumber, email, and the content
             send_email(subject, body, parameters)
-            flash("Your contact form was submitted.")
             return render_template("emailsuccess.html")
         except:
             return render_template("sendemailfailure.html")
