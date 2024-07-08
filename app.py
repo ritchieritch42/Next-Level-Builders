@@ -43,13 +43,17 @@ def contact():
             # Body is firstname, lastname, phonenumber, email, and the content
             send_email(subject, body, parameters)
             flash("Your contact form was submitted.")
-            return render_template("index.html")
+            return render_template("emailsuccess.html")
         except:
             return render_template("sendemailfailure.html")
 
     # If the user hasn't submitted a contact form yet, then load the contact page
     else:
         return render_template("contact.html")
+
+@application.route("/emailsuccess")
+def emailsucess():
+    return render_template("emailsuccess.html")
 
 
 if __name__ == "__main__":
