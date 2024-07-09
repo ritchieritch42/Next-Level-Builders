@@ -1,8 +1,8 @@
 /* For all desktop templates */
-@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 body {
-  font-family: "Raleway", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-weight: 200;
   font-style: normal;
@@ -35,8 +35,8 @@ body {
 }
 
 .logo {
-  width: 15vw;
-  height: 5vw;
+  width: 22.5vw;
+  height: 7.5vw;
   padding: 1vh;
 }
 
@@ -154,7 +154,7 @@ body {
   height: 100%;
   justify-content: center;
   align-content: center;
-  background-color: rgba(205, 40, 14, 0.9);
+  background-color: rgba(128, 0, 32, 1);
 }
 
 .servicesheader {
@@ -397,7 +397,8 @@ form {
 }
 
 input {
-  font-family: "Carrois Gothic SC", sans-serif;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
   font-weight: 200;
   font-style: normal;
   font-size: 1.75rem;
@@ -411,7 +412,8 @@ label {
 textarea {
   width: 700px;
   height: 200px;
-  font-family: "Carrois Gothic SC", sans-serif;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
   font-weight: 200;
   font-style: normal;
   font-size: 1.75rem;
@@ -423,8 +425,9 @@ textarea {
 }
 
 button {
-  font-family: "Carrois Gothic SC", sans-serif;
-  font-weight: 400;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
   font-style: normal;
   font-size: 2rem;
   margin: 2vh;
@@ -435,7 +438,7 @@ button {
 }
 
 button:hover {
-  background-color: rgba(205, 40, 14, 0.5);
+  background-color: rgba(128, 0, 32, 1);
   transition: 0.5s;
 }
 
@@ -443,9 +446,20 @@ button:hover {
   color: white;
 }
 
-.g-recaptcha {
+/* Email Success Formatting */
+.email-success-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #38393b;
+  min-height: 100vh;
+}
+
+.email-success-container h3 {
+  color: white;
+  text-align: center;
+  width: 100%;
   padding-top: 20px;
 }
 
@@ -515,21 +529,6 @@ button:hover {
   textarea {
     height: 200px;
   }
-}
-
-/* Email Success Formatting */
-.email-success-container {
-  display: flex;
-  flex-direction: row;
-  text-align: center;
-  align-items: center;
-  align-content: center;
-  margin-top: 200px;
-  background-color: #38393b;
-}
-
-.email-success-header #text {
-  color: white;
 }
 
 /*Media query for tablet-sized devices*/
