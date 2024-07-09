@@ -133,3 +133,19 @@ function mobileNavSizeChange(elementClass) {
     });
   }
 }
+
+function adjustContainerMargin() {
+  const navbar = document.querySelector(".navbar");
+  const container = document.querySelector(".email-success-container");
+
+  if (navbar && container) {
+    const navbarHeight = navbar.offsetHeight;
+    container.style.marginTop = `${navbarHeight}px`;
+  }
+}
+
+// Adjust the margin on page load
+window.addEventListener("load", adjustContainerMargin);
+
+// Adjust the margin if the window is resized
+window.addEventListener("resize", adjustContainerMargin);

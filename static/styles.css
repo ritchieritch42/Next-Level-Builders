@@ -446,6 +446,23 @@ button:hover {
   color: white;
 }
 
+/* Email Success Formatting */
+.email-success-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #38393b;
+  min-height: 100vh;
+}
+
+.email-success-container h3 {
+  color: white;
+  text-align: center;
+  width: 100%;
+  padding-top: 20px;
+}
+
 /*Media query to adjust for square sized screens from 1000px to 1300px*/
 @media screen and (min-width: 1001px) and (max-width: 1300px) {
   .businessname,
@@ -511,6 +528,16 @@ button:hover {
 
   textarea {
     height: 200px;
+  }
+
+  .email-success-container {
+    margin-top: 60px;
+    padding: 10px;
+  }
+
+  .email-success-container h3 {
+    font-size: 1.5em;
+    padding-top: 10px;
   }
 }
 
@@ -584,6 +611,16 @@ button:hover {
 
   button {
     font-size: 1.25rem;
+  }
+
+  .email-success-container {
+    margin-top: 60px;
+    padding: 10px;
+  }
+
+  .email-success-container h3 {
+    font-size: 1.25em;
+    padding-top: 10px;
   }
 }
 
@@ -765,6 +802,16 @@ button:hover {
   button {
     font-size: 1.25rem;
     padding: 0px;
+  }
+
+  .email-success-container {
+    margin-top: 60px;
+    padding: 10px;
+  }
+
+  .email-success-container h3 {
+    font-size: 1.25em;
+    padding-top: 10px;
   }
 }
 
@@ -950,5 +997,15 @@ button:hover {
   button {
     font-size: 1.25rem;
     padding: 0px;
+  }
+
+  .email-success-container {
+    margin-top: 60px;
+    padding: 10px;
+  }
+
+  .email-success-container h3 {
+    font-size: 1.25em;
+    padding-top: 10px;
   }
 }
