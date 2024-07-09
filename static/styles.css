@@ -1,8 +1,8 @@
 /* For all desktop templates */
-@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 body {
-  font-family: "Raleway", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-weight: 200;
   font-style: normal;
@@ -35,8 +35,9 @@ body {
 }
 
 .logo {
-  width: 5vw;
+  width: 15vw;
   height: 5vw;
+  padding: 1vh;
 }
 
 .businessname {
@@ -396,7 +397,8 @@ form {
 }
 
 input {
-  font-family: "Carrois Gothic SC", sans-serif;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
   font-weight: 200;
   font-style: normal;
   font-size: 1.75rem;
@@ -410,7 +412,8 @@ label {
 textarea {
   width: 700px;
   height: 200px;
-  font-family: "Carrois Gothic SC", sans-serif;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
   font-weight: 200;
   font-style: normal;
   font-size: 1.75rem;
@@ -422,8 +425,9 @@ textarea {
 }
 
 button {
-  font-family: "Carrois Gothic SC", sans-serif;
-  font-weight: 400;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
   font-style: normal;
   font-size: 2rem;
   margin: 2vh;
@@ -440,12 +444,6 @@ button:hover {
 
 .error {
   color: white;
-}
-
-.g-recaptcha {
-  display: flex;
-  justify-content: center;
-  padding-top: 20px;
 }
 
 /*Media query to adjust for square sized screens from 1000px to 1300px*/

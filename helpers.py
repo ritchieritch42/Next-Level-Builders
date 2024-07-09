@@ -10,11 +10,6 @@ def fetch_parameters(prefix):
         prefix + 'email',
         prefix + 'receiver-email',
         prefix + 'password',
-        prefix + 'recaptcha-public-key',
-        prefix + 'recaptcha-private-key',
-        prefix + 'google-application-credentials',
-        prefix + 'google-project-id',
-        prefix + 'google-api-key'
         ],
         WithDecryption=True
     )
@@ -25,7 +20,6 @@ def fetch_parameters(prefix):
 
     for i in range(length_params):
         parameters[response['Parameters'][i]['Name']] = response['Parameters'][i]['Value']
-        print(parameters)
 
     return parameters
 
