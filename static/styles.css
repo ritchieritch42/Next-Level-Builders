@@ -517,6 +517,21 @@ button:hover {
   }
 }
 
+/* Email Success Formatting */
+.email-success-container {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+  margin-top: 200px;
+  background-color: #38393b;
+}
+
+.email-success-header #text {
+  color: white;
+}
+
 /*Media query for tablet-sized devices*/
 @media screen and (min-width: 701px) and (max-width: 1000px) {
   .logo {
