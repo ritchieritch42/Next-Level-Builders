@@ -544,7 +544,7 @@ button:hover {
 /*Media query for tablet-sized devices*/
 @media screen and (min-width: 701px) and (max-width: 1000px) {
   .logo {
-    width: 8vw;
+    width: auto;
     height: 8vw;
   }
 
@@ -644,7 +644,7 @@ button:hover {
   }
 
   .logo {
-    width: 12vw;
+    width: auto;
     height: 12vw;
   }
 
@@ -835,7 +835,7 @@ button:hover {
   }
 
   .logo {
-    width: 20vw;
+    width: auto;
     height: 20vw;
   }
 
