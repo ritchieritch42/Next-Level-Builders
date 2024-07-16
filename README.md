@@ -1,6 +1,4 @@
-# Next Level Builders, LLC Static Website
-
-#### Video Demo: (Click Here|https://youtu.be/s8veNXkMZSE )
+# Next Level Builders, LLC
 
 # Introduction
 
@@ -14,7 +12,7 @@
 
 # Files
 
-#### The files are broken up into a couple of directories, static and templates, as well as a several solo files. The static directory consists of images, css styling, and some javascript front end interaction scripts. The templates directory has all the pages for the website including home/index, about, contact, sendemailfailure, and emailsuccess, which all extend a layout.html file for the navbar at the top of each page.
+#### The files are broken up into a couple of directories, static and templates, as well as a several solo files. The static directory consists of images, css styling, and some javascript front end interaction scripts. The templates directory has all the pages for the website including home/index, about, contact, sendemailfailure, and emailsuccess, which all extend a layout.html file for the navbar at the top of each page and a footer at the bottom of each page.
 
 #### The solo files include the routes in app.py, the send_email and fetch_parameters function in helpers.py, sources I used to learn the materials needed in sources.txt, application.py for AWS Elastic Beanstalk to recognize app.py as the routes, .ebignore for Elastic Beanstalk to know which files to ignore, and last test_helpers to confirm that the fetch parameters/send_email functions work.
 
@@ -30,4 +28,4 @@
 
 # Closing/Summary
 
-#### This flask app provided me with at least 100 hours of practical learning. The send_email or fetch_parameters function can be used by anyone as long as I am quoted with my full name as a source with the date (yy/mm) used after. Thank you Andrew Thomas in Denver for the help in learning how to host this website on AWS!
+#### This flask app provided me with at least 100 hours of practical learning. The send_email or fetch_parameters function can be used by anyone as long as I am quoted with my full name as a source with the this project was last updated (yy/mm) after. Thank you Andrew Thomas in Denver for the help in learning how to host this website on AWS!
