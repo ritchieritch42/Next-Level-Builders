@@ -333,6 +333,7 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  margin-bottom: 20vh;
 }
 
 .aboutparagraphs {
@@ -394,6 +395,7 @@ form {
   justify-content: center;
   align-content: center;
   flex-direction: column;
+  margin-bottom: 20vh;
 }
 
 input {
@@ -463,7 +465,9 @@ button:hover {
   padding-top: 20px;
 }
 
-/*Media query to adjust for square sized screens from 1000px to 1300px*/
+/*
+Media query to adjust for square sized screens from 1000px to 1300px
+*/
 @media screen and (min-width: 1001px) and (max-width: 1300px) {
   .businessname,
   .navbarlink,
