@@ -1,4 +1,4 @@
-from flask import Flask, flash, render_template, request, jsonify
+from flask import Flask, render_template, request
 from helpers import send_email, fetch_parameters
 import os
 

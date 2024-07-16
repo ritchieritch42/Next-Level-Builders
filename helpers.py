@@ -4,7 +4,10 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
 def fetch_parameters(prefix):
+    # Establish a connection with AWS Parameter Store in the appropriate region
     client = boto3.client('ssm', region_name='us-east-2')
+
+    # After establish the connection, get the parameters needed
     response = client.get_parameters(
         Names=[
         prefix + 'email',
@@ -14,10 +17,13 @@ def fetch_parameters(prefix):
         WithDecryption=True
     )
 
+    # Create parameters object
     parameters = {}
 
+    # Define length ahead of time so that Python doesn't have to recalculate it for every iteration in for loop
     length_params = len(response['Parameters'])
 
+    # Iterate through response and assign parameters key/value pairs
     for i in range(length_params):
         parameters[response['Parameters'][i]['Name']] = response['Parameters'][i]['Value']
 
