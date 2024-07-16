@@ -1,11 +1,8 @@
 Python Libraries Used
-OS - https://docs.python.org/3/library/os.html
 Flask - https://flask.palletsprojects.com/en/3.0.x/
 Smtplib - https://docs.python.org/3/library/smtplib.html , The PyCoach https://www.youtube.com/watch?v=g_j6ILT-X0k (some modifications made to model)
-Ssl - https://docs.python.org/3/library/ssl.html
 Email.message - https://docs.python.org/3/library/email.message.html
-Dotenv - https://pypi.org/project/python-dotenv/
 
 Images
-Company Logo - Creator/Owner Carolina Yoo Ritchie
-All Other Images - Owner Caleb Ritchie
+Logo - Owner is Steven Craig Ritchie
+All Other Images - Owner is Caleb Ritchie
