@@ -14,7 +14,7 @@
 
 #### The files are broken up into a couple of directories, static and templates, as well as a several solo files. The static directory consists of images, css styling, and some javascript front end interaction scripts. The templates directory has all the pages for the website including home/index, about, contact, sendemailfailure, and emailsuccess, which all extend a layout.html file for the navbar at the top of each page and a footer at the bottom of each page.
 
-#### The solo files include the routes in app.py, the send_email and fetch_parameters function in helpers.py, sources I used to learn the materials needed in sources.txt, application.py for AWS Elastic Beanstalk to recognize app.py as the routes, .ebignore for Elastic Beanstalk to know which files to ignore, and last test_helpers to confirm that the fetch parameters/send_email functions work.
+#### The solo files include the routes in app.py, the send_email and fetch_parameters function in helpers.py, sources I used to learn the materials needed in sources.txt, requirements.txt for pip to install modules from, application.py for AWS Elastic Beanstalk to recognize app.py as the routes, .ebignore for Elastic Beanstalk to know which files to ignore, and last test_helpers to confirm that the fetch parameters/send_email functions work.
 
 # Send_email function
 
