@@ -596,10 +596,6 @@ Media query to adjust for square sized screens from 1000px to 1300px
     height: 250px;
   }
 
-  .aboutheadercontainer {
-    margin: 10px;
-  }
-
   .contactintrocontainer {
     font-size: 1rem;
   }
@@ -934,11 +930,6 @@ Media query to adjust for square sized screens from 1000px to 1300px
     width: 80%;
     height: auto;
     text-align: center;
-  }
-
-  .aboutuniversitycontainer,
-  .aboutheadercontainer {
-    margin: 10px;
   }
 
   #aboutperson {
