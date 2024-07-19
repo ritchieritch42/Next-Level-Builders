@@ -377,6 +377,7 @@ p.aboutparagraphs {
   font-size: 1.5rem;
   background-color: #38393b;
   padding-top: 10vh;
+  margin-top: 7%;
 }
 
 .contactformcontainer {
@@ -792,6 +793,12 @@ Media query to adjust for square sized screens from 1000px to 1300px
     padding: 0px;
   }
 
+  .contactintrocontainer {
+    display: flex;
+    flex-direction: row;
+    margin-top: 7vh;
+  }
+
   input,
   label,
   textarea {
@@ -970,6 +977,9 @@ Media query to adjust for square sized screens from 1000px to 1300px
     padding-top: 20vh;
     height: auto;
     width: auto;
+    display: flex;
+    flex-direction: row;
+    margin-top: 7vh;
   }
 
   form,
