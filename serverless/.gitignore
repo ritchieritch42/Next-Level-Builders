@@ -4,3 +4,4 @@ __pycache__/
 .aws/
 venv/
 ./node_modules
+node_modules
