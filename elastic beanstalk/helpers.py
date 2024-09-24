@@ -13,6 +13,7 @@ def fetch_parameters(prefix):
         prefix + 'email',
         prefix + 'receiver-email',
         prefix + 'password',
+        prefix + 'secret-key'
         ],
         WithDecryption=True
     )
