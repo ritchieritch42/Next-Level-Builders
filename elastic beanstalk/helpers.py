@@ -7,7 +7,7 @@ def fetch_parameters(prefix):
     # Establish a connection with AWS Parameter Store in the appropriate region
     client = boto3.client('ssm', region_name='us-east-2')
 
-    # After establish the connection, get the parameters needed
+    # After establishing the connection, get the parameters needed
     response = client.get_parameters(
         Names=[
         prefix + 'email',
