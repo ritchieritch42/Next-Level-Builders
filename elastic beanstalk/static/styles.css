@@ -10,6 +10,10 @@ body {
   margin: 0px;
 }
 
+.cf-turnstile {
+  height: 100px;
+}
+
 /* Layout.html */
 .navbar {
   background-color: white;

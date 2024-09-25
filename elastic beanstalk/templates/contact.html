@@ -1,8 +1,5 @@
 {% extends "layout.html" %} {% block title %} Contact Us {% endblock %} {% block
 main %}
-<head>
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-</head>
 
 <div class="contactintrocontainer">
   <p id="contactintro">Contact Next Level Builders, LLC</p>
@@ -73,9 +70,19 @@ main %}
       placeholder="Hello! I am reaching out to..."
       required
     ></textarea>
+    <div>
+      <div
+        class="cf-turnstile"
+        data-sitekey="0x4AAAAAAAkkBPN7ER44-_eD"
+        data-size="flexible"
+      ></div>
+    </div>
     <div class="buttoncontainer">
       <button id="submitcontactform" type="submit">Send</button>
     </div>
   </form>
 </div>
+
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"></script>
+
 {% endblock %}
