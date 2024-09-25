@@ -2,6 +2,7 @@
 import smtplib, boto3
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
+import requests
 
 def fetch_parameters(prefix):
     # Establish a connection with AWS Parameter Store in the appropriate region
@@ -29,6 +30,29 @@ def fetch_parameters(prefix):
         parameters[response['Parameters'][i]['Name']] = response['Parameters'][i]['Value']
 
     return parameters
+
+
+def validate_captcha(token, parameters):
+    secret_key = parameters["contactnextlevelbuilders_secret-key"]
+    url = "https://challenges.cloudflare.com/turnstile/v0/siteverify"
+
+    data = {
+        'secret': secret_key,
+        'response': token
+    }
+
+    try:
+        response = requests.post(url, data=data)
+        result = response.json()
+
+        if result.get("success"):
+            return True
+        else:
+            return False
+    
+    except requests.RequestException as e:
+        print(f"Error verifying CAPTCHA: {e}")
+        return False
 
 def send_email(subject, body, parameters):
     # Define server variables

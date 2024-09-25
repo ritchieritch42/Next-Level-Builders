@@ -26,6 +26,14 @@ def contact():
         # Get parameters from helpers.py
         prefix = 'contactnextlevelbuilders_'
         parameters = fetch_parameters(prefix)
+
+        # Get CAPTCHA token from the form data
+        token = request.form.get('cf-turnstile-response')
+
+        # Authorize CAPTCHA
+        if not validate_captcha(token, parameters):
+            flash("CAPTCHA validation failed. Please try again.")
+            return render_template("/contact.html")
         
         try: 
             # Proceed with sending form content
