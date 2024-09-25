@@ -10,8 +10,11 @@ body {
   margin: 0px;
 }
 
-.cf-turnstile {
-  height: 100px;
+#turnstile-container {
+  display: flex;
+  height: auto;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Layout.html */

@@ -1,6 +1,10 @@
 {% extends "layout.html" %} {% block title %} Contact Us {% endblock %} {% block
 main %}
 
+<head>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"></script>
+</head>
+
 <div class="contactintrocontainer">
   <p id="contactintro">Contact Next Level Builders, LLC</p>
   <p id="advise">
@@ -70,19 +74,26 @@ main %}
       placeholder="Hello! I am reaching out to..."
       required
     ></textarea>
-    <div>
-      <div
-        class="cf-turnstile"
-        data-sitekey="0x4AAAAAAAkkBPN7ER44-_eD"
-        data-size="flexible"
-      ></div>
-    </div>
+    <div id="turnstile-container"></div>
     <div class="buttoncontainer">
       <button id="submitcontactform" type="submit">Send</button>
     </div>
   </form>
 </div>
 
-<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"></script>
+  <!-- JavaScript for explicit rendering -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      turnstile.ready(function () {
+        turnstile.render('#turnstile-container', {
+          sitekey: '0x4AAAAAAAkkBPN7ER44-_eD', // Your site key here
+          size: 'normal', // You can also use 'compact' or 'invisible'
+          callback: function (token) {
+            console.log('Turnstile validation successful! Token: ' + token);
+          }
+        });
+      });
+    });
+  </script>
 
 {% endblock %}
