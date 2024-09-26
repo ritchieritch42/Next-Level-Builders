@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 from helpers import send_email, fetch_parameters
 import os
 
-# Configure application
+# Configure flask application
 application = Flask(__name__)
 
 # Set a secret key for Flask sessions
@@ -27,11 +27,8 @@ def contact():
         prefix = 'contactnextlevelbuilders_'
         parameters = fetch_parameters(prefix)
 
-        # Get CAPTCHA token from the form data
-        token = request.form.get('cf-turnstile-response')
-
         # Authorize CAPTCHA
-        if not validate_captcha(token, parameters):
+        if not validate_captcha(parameters):
             flash("CAPTCHA validation failed. Please try again.")
             return render_template("/contact.html")
         

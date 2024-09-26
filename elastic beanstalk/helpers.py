@@ -31,14 +31,21 @@ def fetch_parameters(prefix):
 
     return parameters
 
+def validate_captcha(parameters):
+    body = request.formData()
 
-def validate_captcha(token, parameters):
     secret_key = parameters["contactnextlevelbuilders_secret-key"]
     url = "https://challenges.cloudflare.com/turnstile/v0/siteverify"
 
+    if request.headers.getlist("X-Forwarded-For"):
+        ip = request.headers.getlist("X-Forwarded-For")[0]
+    else:
+        ip = request.remote_addr
+
     data = {
         'secret': secret_key,
-        'response': token
+        'response': token,
+        'remoteip': ip
     }
 
     try:
