@@ -1,10 +1,22 @@
 .navbar {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
 }
 
-.navbarLink {
+.links {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.link {
     padding: 30px;
     font-size: 1.15rem;
     text-decoration: none;
+}
+
+.logoImg {
+    width: 300px;
+    height: 100px;
+    padding: 10px;
 }
