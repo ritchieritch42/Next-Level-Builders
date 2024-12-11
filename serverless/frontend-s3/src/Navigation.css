@@ -1,0 +1,9 @@
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.navbarLink {
+    padding: 30px;
+    font-size: 1.15rem;
+}
