@@ -1,4 +1,6 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 import './App.css';
 import NavigationBar from './Navigation';
 import Home from './Home';
@@ -8,24 +10,13 @@ import Contact from './Contact';
 function App() {
   return (
     <div className="App">
-      <NavigationBar />
-      <Home />
-      <About />
-      <Contact />
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+            <NavigationBar /> {/* Navigation bar will appear on every page */}
+            <Routes>
+                {/* Define the component for each route */}
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/contact" element={<Contact />} />
+            </Routes>
     </div>
   );
 }
