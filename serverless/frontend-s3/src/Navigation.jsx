@@ -5,13 +5,13 @@ function NavigationBar() {
     return (
         <div>
             <nav className='navbar'>
-                    <a className='navbarLink'>
+                    <a href='./Home.jsx 'className='navbarLink'>
                         Home
                     </a>
-                    <a className='navbarLink'>
+                    <a href='./About.jsx' className='navbarLink'>
                         About
                     </a>
-                    <a className='navbarLink'>
+                    <a href='./Contact.jsx' className='navbarLink'>
                         Contact Us
                     </a>
             </nav>
