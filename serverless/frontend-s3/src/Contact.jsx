@@ -1,8 +1,11 @@
+import { Box, Typography } from '@mui/material';
+import './Contact.css';
+
 function Contact() {
     return (
-        <div>
-            <p>This is the contact page</p>
-        </div>
+        <Box className='contactpage'>
+            <Typography>This is the contact page</Typography>
+        </Box>
     );
 }
 

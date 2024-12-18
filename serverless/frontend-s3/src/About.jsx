@@ -1,8 +1,11 @@
+import { Box, Typography } from '@mui/material';
+import './About.css';
+
 function About() {
     return (
-        <div>
-            <p>This is the about page</p>
-        </div>
+        <Box className='aboutpage'>
+            <Typography>This is the about page</Typography>
+        </Box>
     );
 }
 

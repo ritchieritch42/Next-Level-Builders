@@ -1,12 +1,13 @@
-import React from 'react';
+import { Box, Typography } from '@mui/material';
+import './Footer.css';
 
 function Footer() {
     return (
-        <div>
-        <p className="footer">
-        Next Level Builders, LLC © | Founded in February, 2023.
-        </p>
-    </div>
+        <Box>
+            <Typography className="footer">
+                Next Level Builders, LLC © | Founded in February, 2023.
+            </Typography>
+    </Box>
     );
 }
 
