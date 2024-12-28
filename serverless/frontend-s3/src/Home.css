@@ -1,4 +1,17 @@
-.homepage {
-    display: flex;
-    justify-content: center;
+.homepage-introduction {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  height: 90vh;
+  justify-content: center;
+}
+
+.homepage-introduction-image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.homepage-introduction-header {
+  position: absolute;
 }
