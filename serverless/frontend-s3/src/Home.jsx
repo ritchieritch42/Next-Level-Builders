@@ -11,9 +11,16 @@ function Home() {
           component="img"
           src="/kc-andrew-peterson.jpg"
         />
-        <Typography className="homepage-introduction-header" variant="h4">
-          Providing cost-effective construction solutions with integrity
-        </Typography>
+        <Box className="homepage-introduction-header">
+          <Box className="homepage-introduction-header-spacer">
+            <Typography
+              className="homepage-introduction-header-text"
+              variant="h4"
+            >
+              Providing cost-effective construction solutions with integrity
+            </Typography>
+          </Box>
+        </Box>
       </Box>
     </Box>
   );

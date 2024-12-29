@@ -13,5 +13,13 @@
 }
 
 .homepage-introduction-header {
+  background-color: rgba(56, 57, 59, 0.75);
+  border-radius: 50px;
+  color: white;
+  opacity: 0.9;
   position: absolute;
+}
+
+.homepage-introduction-header-spacer {
+  margin: 20px;
 }
