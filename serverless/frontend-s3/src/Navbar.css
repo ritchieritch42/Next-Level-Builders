@@ -10,8 +10,9 @@
 }
 
 .link {
-  padding: 30px;
+  font-family: "Montserrat", sans-serif;
   font-size: 1.15rem;
+  padding: 30px;
   text-decoration: none;
 }
 

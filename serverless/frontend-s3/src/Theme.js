@@ -1,12 +1,5 @@
 import { createTheme } from "@mui/material";
 import "./Font.css";
-/*
-COLOR GUIDE
-Dark teal - #133236
-Not as dark teal - #1a4348
-Yellow - #996d1f
-Red - #b35090
-*/
 
 const theme = createTheme({
   palette: {
