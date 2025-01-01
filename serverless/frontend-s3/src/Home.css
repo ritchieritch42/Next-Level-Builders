@@ -23,3 +23,68 @@
 .homepage-introduction-header-spacer {
   margin: 20px;
 }
+
+.homepage-services {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  height: 45vh;
+}
+
+.homepage-services-header {
+  display: flex;
+  flex-wrap: wrap;
+  width: 30%;
+  height: 100%;
+  justify-content: center;
+  align-content: center;
+  background-color: rgba(128, 0, 32, 1);
+}
+
+.homepage-services-header-text {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+
+.homepage-services-types {
+  display: flex;
+  width: 70%;
+  justify-content: center;
+  text-align: center;
+  background-color: #38393b;
+  max-width: 100%;
+}
+
+.homepage-services-types-container {
+  width: 100%;
+  height: 45vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.homepage-services-types-image {
+  width: inherit;
+  height: inherit;
+  object-fit: fill;
+  opacity: 0.25;
+}
+
+.homepage-services-types-text {
+  color: white;
+  position: absolute;
+  transition: 0.75s ease;
+}
+
+.homepage-services-types-container:hover .homepage-services-types-text {
+  opacity: 0;
+  transition: 0.25s;
+}
+
+.homepage-services-types-container:hover .homepage-services-types-image {
+  opacity: 1;
+  transition: 0.5s;
+}

@@ -24,38 +24,38 @@ function Home() {
       </Box>
       <Box className="homepage-services">
         <Box className="homepage-services-header">
-          <Typography className="homepage-services-header-text" variant="h2">
+          <Typography className="homepage-services-header-text" variant="h4">
             Builds Include
           </Typography>
         </Box>
         <Box className="homepage-services-types">
-          <Box className="homepage-services-types-commercial">
+          <Box className="homepage-services-types-container">
             <Box
-              className="homepage-services-types-commercial-image"
+              className="homepage-services-types-image"
               component="img"
               src="/commercial1x1.png"
             />
-            <Typography className="homepage-services-type-commercial-text">
+            <Typography className="homepage-services-types-text" variant="h5">
               Commercial
             </Typography>
           </Box>
-          <Box className="homepage-services-types-industrial">
+          <Box className="homepage-services-types-container">
             <Box
-              className="homepage-services-types-industrial-image"
+              className="homepage-services-types-image"
               component="img"
               src="/industrial.jpg"
             />
-            <Typography className="homepage-services-types-industrial-text">
+            <Typography className="homepage-services-types-text" variant="h5">
               Light Industrial
             </Typography>
           </Box>
-          <Box className="homepage-services-types-tenantfinish">
+          <Box className="homepage-services-types-container">
             <Box
-              className="homepage-services-types-tenantfinish-image"
+              className="homepage-services-types-image"
               component="img"
               src="/tenantfinish.jpg"
             />
-            <Typography className="homepage-services-types-tenantfinish-text">
+            <Typography className="homepage-services-types-text" variant="h5">
               Tenant Finish
             </Typography>
           </Box>

@@ -2,6 +2,10 @@ import { createTheme } from "@mui/material";
 import "./Font.css";
 
 const theme = createTheme({
+  typography: {
+    // Apply Montserrat globally for all typography variants
+    fontFamily: "Montserrat, sans-serif",
+  },
   palette: {
     background: {
       default: "#ffffff",
@@ -15,16 +19,7 @@ const theme = createTheme({
       secondary: "#ffffff",
     },
   },
-  components: {
-    MuiTypography: {
-      variants: [
-        {
-          props: { variant: "h4" },
-          style: { fontFamily: "Montserrat" },
-        },
-      ],
-    },
-  },
+  // Remove specific variant overrides as they're no longer needed
 });
 
 export default theme;
