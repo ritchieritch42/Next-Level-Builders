@@ -8,8 +8,8 @@
 
 .homepage-introduction-image {
   object-fit: cover;
-  width: 100%;
   height: 100%;
+  width: 100%;
 }
 
 .homepage-introduction-header {
@@ -24,20 +24,20 @@
 }
 
 .homepage-services {
-  display: flex;
-  justify-content: space-between;
   align-content: center;
+  display: flex;
   height: 45vh;
+  justify-content: space-between;
 }
 
 .homepage-services-header {
-  display: flex;
-  flex-wrap: wrap;
-  width: 30%;
-  height: 100%;
-  justify-content: center;
   align-content: center;
   background-color: rgba(128, 0, 32, 1);
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  justify-content: center;
+  width: 30%;
 }
 
 .homepage-services-header-text {
@@ -48,28 +48,28 @@
 }
 
 .homepage-services-types {
-  display: flex;
-  width: 70%;
-  justify-content: center;
-  text-align: center;
   background-color: #38393b;
+  display: flex;
+  justify-content: center;
   max-width: 100%;
+  text-align: center;
+  width: 70%;
 }
 
 .homepage-services-types-container {
-  width: 100%;
-  height: 45vh;
-  position: relative;
-  display: flex;
-  justify-content: center;
   align-items: center;
+  display: flex;
+  height: 45vh;
+  justify-content: center;
+  position: relative;
+  width: 100%;
 }
 
 .homepage-services-types-image {
-  width: inherit;
   height: inherit;
   object-fit: fill;
   opacity: 0.25;
+  width: inherit;
 }
 
 .homepage-services-types-text {
@@ -85,4 +85,10 @@
 .homepage-services-types-container:hover .homepage-services-types-image {
   opacity: 1;
   transition: 0.5s;
+}
+
+.homepage-featuredproject {
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }

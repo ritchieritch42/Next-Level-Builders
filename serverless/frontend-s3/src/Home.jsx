@@ -61,6 +61,11 @@ function Home() {
           </Box>
         </Box>
       </Box>
+      <Box className="homepage-featuredproject">
+        <Typography className="homepage-featuredproject-text" variant="h3">
+          Featured Project
+        </Typography>
+      </Box>
     </Box>
   );
 }
