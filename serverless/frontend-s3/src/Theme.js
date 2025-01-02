@@ -8,8 +8,8 @@ const theme = createTheme({
   },
   palette: {
     background: {
-      default: "#ffffff",
-      paper: "#38393b",
+      default: "#38393b",
+      paper: "#ffffff",
     },
     primary: {
       main: "rgba(56, 57, 59, 0.75)",
@@ -19,7 +19,6 @@ const theme = createTheme({
       secondary: "#ffffff",
     },
   },
-  // Remove specific variant overrides as they're no longer needed
 });
 
 export default theme;
