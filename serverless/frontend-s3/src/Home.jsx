@@ -113,7 +113,7 @@ function Home() {
           and reception areas. The work included demolition, carpentry, finishes,
           casework, fire sprinkler, plumbing, HVAC, electrical and fire alarm.
         </Typography>
-        <ImageList sx={{ width: 500, height: 450 }} cols={3} rowHeight={164}>
+        <ImageList sx={{ width: 900, height: 600 }} cols={3} rowHeight={164}>
           {itemData.map((item) => (
             <ImageListItem key={item.img}>
               <img
