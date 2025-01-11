@@ -90,5 +90,11 @@
 .homepage-featuredproject {
   align-items: center;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  margin: 50px;
+}
+
+.homepage-featuredproject-header {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
