@@ -3,11 +3,11 @@ import './Footer.css';
 
 function Footer() {
     return (
-        <Box>
-            <Typography className="footer">
+        <Box className="footer">
+            <Typography className="footer-text">
                 Next Level Builders, LLC © | Founded in February, 2023.
             </Typography>
-    </Box>
+        </Box>
     );
 }
 
