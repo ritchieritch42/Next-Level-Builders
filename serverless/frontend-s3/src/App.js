@@ -13,9 +13,8 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Box className="App">
-        <Navbar /> {/* Navigation bar will appear on every page */}
+        <Navbar />
         <Routes>
-          {/* Define the component for each route */}
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
