@@ -1,7 +1,24 @@
+.aboutpage {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    margin: 20px;
+}
+
+.aboutpage-images {
+    align-items: center;
+    display: flex;
+    height: 30vh;
+    justify-content: center;
+}
+
+.aboutpage-image {
+    border-radius: 50%;
+}
+
 .aboutpage-text {
     align-items: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    margin: 30px;
+    justify-content: space-between;
 }
