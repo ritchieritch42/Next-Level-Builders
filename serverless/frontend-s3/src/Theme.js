@@ -1,4 +1,4 @@
-import { createTheme } from "@mui/material";
+import { colors, createTheme } from "@mui/material";
 import "./Font.css";
 
 const theme = createTheme({
@@ -16,9 +16,22 @@ const theme = createTheme({
     },
     text: {
       primary: "#ffffff",
-      secondary: "#ffffff",
+      secondary: "#000000",
     },
   },
+  components: {
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          backgroundColor: (theme) => theme.palette.background.paper
+        },
+        input: {
+          color: (theme) => theme.palette.text.secondary, // Set text color to secondary text (black)
+          backgroundColor: (theme) => theme.palette.background.paper,
+        }
+      }
+    }
+  }
 });
 
 export default theme;
