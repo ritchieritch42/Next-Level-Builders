@@ -7,7 +7,15 @@
 }
 
 .aboutpage-images {
+    display: flex;
+    align-items: center;
     flex: 0.25;
+    width: 100%;
+}
+
+.aboutpage-image-list {
+    height: 250;
+    width: 500;
 }
 
 .aboutpage-image {
