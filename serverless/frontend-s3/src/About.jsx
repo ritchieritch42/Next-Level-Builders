@@ -30,9 +30,10 @@ function About() {
                 ))}
                 </ImageList>
             </Box>
-            <Box className='aboutpage-text'>
-                <Typography variant='h4'>Craig Ritchie, Owner || 30+ Years in The Industry</Typography>
-                <Typography variant='body1'>Craig has worked in the construction industry since graduating with a
+            <Box className='aboutpage-description'>
+                <Typography className='aboutpage-description-header' variant='h4'>Craig Ritchie, Owner, 30+ Years in The Industry</Typography>
+                <Typography className='aboutpage-text-description-body-text' variant='body1'>
+                    Craig has worked in the construction industry since graduating with a
                     Construction Management degree from the University of Louisiana in
                     Monroe. Craig has managed projects in all types of delivery systems
                     including hard bid, negotiated and design build. He has extensive
