@@ -16,7 +16,7 @@ function About() {
     return (
         <Box className='aboutpage'>
             <Box className='aboutpage-images'>
-                <ImageList sx={{ width: 450, height: 250 }} cols={2} rowHeight={175}>
+                <ImageList sx={{ width: 500, height: 250 }} cols={2} rowHeight={175}>
                 {itemData.map((item) => (
                     <ImageListItem className='aboutpage-imagelistitem' key={item.img}>
                     <img
