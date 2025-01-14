@@ -2,7 +2,7 @@
   align-items: center;
   display: flex;
   flex-wrap: wrap;
-  height: 90vh;
+  height: 75vh;
   justify-content: center;
 }
 
@@ -14,7 +14,8 @@
 
 .homepage-introduction-header {
   background-color: rgba(56, 57, 59, 0.75);
-  border-radius: 50px;
+  border-radius: 70px;
+  margin: 20px;
   opacity: 0.9;
   position: absolute;
 }
