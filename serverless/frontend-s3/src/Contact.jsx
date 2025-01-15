@@ -10,7 +10,12 @@ function Contact() {
                 form below, click send, and we will get back with you shortly 
             </Typography>
             <Box className='contactpage-fields'>
-                <TextField id="filled-basic" label="Test" variant="filled" />
+                <TextField id="filled-basic" label="First Name" variant="filled" />
+                <TextField id="filled-basic" label="Last Name" variant="filled" />
+                <TextField id="filled-basic" label="Email" variant="filled" />
+                <TextField id="filled-basic" label="Phone Number" variant="filled" />
+                <TextField id="filled-basic" label="Subject" variant="filled" />
+                <TextField id="filled-basic" label="Email" variant="filled" />
             </Box>
         </Box>
     );

@@ -6,5 +6,10 @@
 }
 
 .contactpage-fields {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
     margin-top: 20px;
 }
