@@ -15,7 +15,7 @@ function Contact() {
                 <TextField id="filled-basic" label="Email" variant="filled" />
                 <TextField id="filled-basic" label="Phone Number" variant="filled" />
                 <TextField id="filled-basic" label="Subject" variant="filled" />
-                <TextField id="filled-basic" label="Email" variant="filled" />
+                <TextField id="filled-basic" label="Body" multiline variant="filled" rows={8}/>
             </Box>
         </Box>
     );
