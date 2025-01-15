@@ -10,11 +10,7 @@ function Contact() {
                 form below, click send, and we will get back with you shortly 
             </Typography>
             <Box className='contactpage-fields'>
-                <Typography>
-                    Test
-                </Typography>
-                <TextField>
-                </TextField>
+                <TextField id="filled-basic" label="Test" variant="filled" />
             </Box>
         </Box>
     );

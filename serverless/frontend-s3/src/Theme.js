@@ -1,37 +1,39 @@
-import { colors, createTheme } from "@mui/material";
+import { createTheme } from "@mui/material";
 import "./Font.css";
 
 const theme = createTheme({
   typography: {
-    // Apply Montserrat globally for all typography variants
-    fontFamily: "Montserrat, sans-serif",
+    fontFamily: "Montserrat, sans-serif", // Apply Montserrat globally for all typography variants
   },
   palette: {
+    primary: {
+      main: "#38393b",
+    },
+    mode: "light",
     background: {
       default: "#38393b",
       paper: "#ffffff",
     },
-    primary: {
-      main: "rgba(56, 57, 59, 0.75)",
-    },
     text: {
-      primary: "#ffffff",
-      secondary: "#000000",
+      primary: "#ffffff", // Primary text color
+      secondary: "#38393b", // Secondary text color
     },
   },
   components: {
-    MuiTextField: {
+    MuiInputLabel: {
       styleOverrides: {
-        root: {
-          backgroundColor: (theme) => theme.palette.background.paper
-        },
-        input: {
-          color: (theme) => theme.palette.text.secondary, // Set text color to secondary text (black)
-          backgroundColor: (theme) => theme.palette.background.paper,
-        }
-      }
-    }
-  }
+        root: ({ theme }) => ({
+          color: theme.palette.text.primary, // Use primary text color for the label
+          "&.Mui-focused": {
+            color: theme.palette.text.primary, // Ensure label remains primary text color when focused
+          },
+          "&.MuiInputLabel-shrink": {
+            color: theme.palette.text.primary, // Ensure label remains primary text color when shrunk
+          },
+        }),
+      },
+    },
+  },
 });
 
 export default theme;
