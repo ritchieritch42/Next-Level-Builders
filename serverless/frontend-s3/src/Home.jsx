@@ -3,40 +3,40 @@ import "./Home.css";
 
 const itemData = [
   {
-    img: 'BVD Phase 1 Reception Desk.jpg',
-    title: 'Blue Valley Dermatology Phase 1 Reception Desk',
+    img: "BVD Phase 1 Reception Desk.jpg",
+    title: "Blue Valley Dermatology Phase 1 Reception Desk",
   },
   {
-    img: 'admin1.JPG',
-    title: 'Administrative Desk',
+    img: "admin1.JPG",
+    title: "Administrative Desk",
   },
   {
-    img: 'admin2.JPG',
-    title: 'Administrative Desk',
+    img: "admin2.JPG",
+    title: "Administrative Desk",
   },
   {
-    img: 'rcptn1.JPG',
-    title: 'Reception Area',
+    img: "rcptn1.JPG",
+    title: "Reception Area",
   },
   {
-    img: 'rcptn2.JPG',
-    title: 'Reception Area',
+    img: "rcptn2.JPG",
+    title: "Reception Area",
   },
   {
-    img: 'ktchn3.JPG',
-    title: 'Kitchen',
+    img: "ktchn3.JPG",
+    title: "Kitchen",
   },
   {
-    img: 'ktchn2.JPG',
-    title: 'Kitchen',
+    img: "ktchn2.JPG",
+    title: "Kitchen",
   },
   {
-    img: 'br1.JPG',
-    title: 'Bathroom',
+    img: "br1.JPG",
+    title: "Bathroom",
   },
   {
-    img: 'office1.JPG',
-    title: 'Office',
+    img: "office1.JPG",
+    title: "Office",
   },
 ];
 
@@ -61,12 +61,12 @@ function Home() {
           </Box>
         </Box>
       </Box>
+      <Box className="homepage-services-header">
+        <Typography className="homepage-services-header-text" variant="h4">
+          Builds Include
+        </Typography>
+      </Box>
       <Box className="homepage-services">
-        <Box className="homepage-services-header">
-          <Typography className="homepage-services-header-text" variant="h4">
-            Builds Include
-          </Typography>
-        </Box>
         <Box className="homepage-services-types">
           <Box className="homepage-services-types-container">
             <Box
@@ -102,16 +102,20 @@ function Home() {
       </Box>
       <Box className="homepage-featuredproject">
         <Box className="homepage-featuredproject-header">
-          <Typography className="homepage-featuredproject-header-text" variant="h3">
+          <Typography
+            className="homepage-featuredproject-header-text"
+            variant="h3"
+          >
             Featured Project
           </Typography>
         </Box>
         <Typography className="homepage-featuredproject-description">
-          Renovation of existing office space, adding 5,000 square feet of medical
-          clinic to the Blue Valley Dermatology facility. The newly finished area
-          includes Moh's surgery suites, Moh's and Pathology Labs, offices, exam rooms
-          and reception areas. The work included demolition, carpentry, finishes,
-          casework, fire sprinkler, plumbing, HVAC, electrical and fire alarm.
+          Renovation of existing office space, adding 5,000 square feet of
+          medical clinic to the Blue Valley Dermatology facility. The newly
+          finished area includes Moh's surgery suites, Moh's and Pathology Labs,
+          offices, exam rooms and reception areas. The work included demolition,
+          carpentry, finishes, casework, fire sprinkler, plumbing, HVAC,
+          electrical and fire alarm.
         </Typography>
         <ImageList sx={{ width: 900, height: 600 }} cols={3} rowHeight={164}>
           {itemData.map((item) => (
