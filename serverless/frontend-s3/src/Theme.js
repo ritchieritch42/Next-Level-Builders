@@ -8,11 +8,12 @@ const theme = createTheme({
   palette: {
     primary: {
       main: "#38393b",
+      secondary: "#323335"
     },
     mode: "light",
     background: {
       default: "#38393b",
-      paper: "#ffffff",
+      paper: "#014a88",
     },
     text: {
       primary: "#ffffff", // Primary text color
@@ -33,6 +34,20 @@ const theme = createTheme({
         }),
       },
     },
+    MuiTextField: {
+      styleOverrides: {
+        root: ({theme}) => ({
+          backgroundColor: theme.palette.primary.secondary,
+        })
+      }
+    },
+    MuiButton: {
+      styleOverrides: {
+        root: ({theme}) => ({
+          backgroundColor: theme.palette.primary.secondary,
+        })
+      }
+    }
   },
 });
 

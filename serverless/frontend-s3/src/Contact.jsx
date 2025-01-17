@@ -1,5 +1,4 @@
 import { Box, Button, TextField, Typography } from "@mui/material";
-import SendOutlinedIcon from "@mui/icons-material/SendOutlined";
 import "./Contact.css";
 
 function Contact() {
@@ -23,8 +22,8 @@ function Contact() {
           variant="filled"
           rows={8}
         />
-        <Button variant="contained" endIcon={<SendOutlinedIcon />}>
-          Send
+        <Button variant="contained" size="large">
+          SEND
         </Button>
       </Box>
     </Box>
