@@ -1,8 +1,21 @@
-import { Box, Button, TextField, Typography } from "@mui/material";
-import SendOutlinedIcon from "@mui/icons-material/SendOutlined";
+import { Box, Button, FormControl, TextField, Typography } from "@mui/material";
+import { useState } from "react";
 import "./Contact.css";
 
 function Contact() {
+  const [formData, setFormData] = useState({});
+
+  const handleChange = (event) => {
+    const name = event.target.name;
+    const value = event.target.value;
+    setFormData((values) => ({ ...values, [name]: value }));
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(formData);
+  };
+
   return (
     <Box className="contactpage">
       <Typography variant="h5">Contact Next Level Builders, LLC</Typography>
@@ -10,23 +23,69 @@ function Contact() {
         Please fill out the contact form below, click send, and we will get back
         with you shortly
       </Typography>
-      <Box className="contactpage-fields">
-        <TextField id="filled-basic" label="First Name" variant="filled" />
-        <TextField id="filled-basic" label="Last Name" variant="filled" />
-        <TextField id="filled-basic" label="Email" variant="filled" />
-        <TextField id="filled-basic" label="Phone Number" variant="filled" />
-        <TextField id="filled-basic" label="Subject" variant="filled" />
-        <TextField
-          id="filled-basic"
-          label="Body"
-          multiline
-          variant="filled"
-          rows={8}
-        />
-        <Button variant="contained" endIcon={<SendOutlinedIcon />}>
+      <form className="contactpage-form" onSubmit={handleSubmit}>
+        <FormControl className="contactpage-fields">
+          <TextField
+            id="filled-basic"
+            label="First Name"
+            name="firstName"
+            onChange={handleChange}
+            required
+            variant="filled"
+            value={formData.firstName || ""}
+          />
+          <TextField
+            id="filled-basic"
+            label="Last Name"
+            name="lastName"
+            onChange={handleChange}
+            required
+            variant="filled"
+            value={formData.lastName || ""}
+          />
+          <TextField
+            id="filled-basic"
+            label="Email"
+            name="email"
+            onChange={handleChange}
+            required
+            variant="filled"
+            value={formData.email || ""}
+          />
+          <TextField
+            id="filled-basic"
+            label="Phone Number"
+            name="phoneNumber"
+            onChange={handleChange}
+            required
+            variant="filled"
+            value={formData.phoneNumber || ""}
+          />
+          <TextField
+            id="filled-basic"
+            label="Subject"
+            name="subject"
+            onChange={handleChange}
+            required
+            variant="filled"
+            value={formData.subject || ""}
+          />
+          <TextField
+            id="filled-basic"
+            label="Body"
+            multiline
+            name="body"
+            onChange={handleChange}
+            required
+            rows={8}
+            variant="filled"
+            value={formData.body || ""}
+          />
+        </FormControl>
+        <Button variant="contained" type="submit">
           Send
         </Button>
-      </Box>
+      </form>
     </Box>
   );
 }
