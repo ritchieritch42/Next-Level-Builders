@@ -332,6 +332,43 @@ body {
   padding: 20px;
 }
 
+.links {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center; /* Align links to the center */
+}
+
+.fa {
+  padding: 20px; 
+  width: 60px; 
+  height: 60px; 
+  text-align: center;
+  text-decoration: none;
+  margin: 15px;
+  border-radius: 50%;
+  display: inline-block;
+  transition: transform 0.2s, opacity 0.2s; /* Add smooth hover effects */
+}
+
+.fa::before {
+  font-size: 50px;
+}
+
+.fa:hover {
+  opacity: 0.8;
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
 .abouttopical {
   color: white;
   font-size: 2rem;
@@ -972,6 +1009,23 @@ Media query to adjust for square sized screens from 1000px to 1300px
   .about .contactintrocontainer {
     font-size: 0.7rem;
     margin: 5px;
+  }
+
+  .fa {
+    padding: 20px; 
+    width: 35px; 
+    height: 35px; 
+    line-height: 35px;
+    text-align: center;
+    text-decoration: none;
+    margin: 15px;
+    border-radius: 50%;
+    display: inline-block;
+    transition: transform 0.2s, opacity 0.2s; /* Add smooth hover effects */
+  }
+  
+  .fa::before {
+    font-size: 30px;
   }
 
   #advise,
