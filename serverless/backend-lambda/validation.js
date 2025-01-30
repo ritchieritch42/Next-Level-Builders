@@ -1,30 +1,34 @@
-const validateCaptcha(body, parameters) {
-    const secret_key = parameters["contactnextlevelbuilders_secret-key"]
-    const url = "https://challenges.cloudflare.com/turnstile/v0/siteverify"
+import axios from "axios";
+import querystring from "querystring"; //
 
-    if (body.headers.getlist("X-Forwarded-For")) {
-        let ip = body.headers.getlist("X-Forwarded-For")[0]
-    } else {
-        let ip = body.remote_addr
-    }
+const validateCaptcha = async (body, parameters) => {
+  const secretKey = parameters["contactnextlevelbuilders_secret-key"];
+  const url = "https://challenges.cloudflare.com/turnstile/v0/siteverify";
 
-    constdata = {
-        'secret': secret_key,
-        'response': token,
-        'remoteip': ip
-    }
+  // get the ip address and token from the request headers
+  let ip = body.headers?.["x-forwarded-for"]?.split(",")[0] || body.remote_addr;
+  const token = body.token;
 
-    try {
-        const response = requests.post(url, data=data)
-        const result = response.json()
+  if (!token) {
+    throw new Error("Missing CAPTCHA token");
+  }
 
-        if (result.get("success")) {
-            return true;
-        } else {
-            return false;
-        }
-    } catch (error) {
-        console.log("Error validating CAPTCHA: ", error);
-        throw error;
-    }
-}
+  // JS requires that you manually encode the response, unlike Python's request library
+  const data = querystring.stringify({
+    secret: secretKey,
+    response: token,
+    remoteip: ip,
+  });
+
+  try {
+    const response = await axios.post(url, data, {
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    });
+    return response.data.success === true;
+  } catch (error) {
+    console.error("Error validating CAPTCHA:", error);
+    return false;
+  }
+};
+
+export default validateCaptcha;
