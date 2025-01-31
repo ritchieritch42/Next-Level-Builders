@@ -6,7 +6,7 @@ const sendForm = async (requestBody, parameters) => {
   try {
     const { firstName, lastName, email, phoneNumber, subject, body } =
       requestBody;
-    const sourceEmail = "verified-sender@example.com";
+    const sourceEmail = "no-reply@nextlevelbuildersllc.com";
 
     // Create SES sendEmail parameters
     const params = {
@@ -23,6 +23,7 @@ const sendForm = async (requestBody, parameters) => {
               <p><strong>Email:</strong> ${email}</p>
               <p><strong>Phone Number:</strong> ${phoneNumber}</p>
               <p><strong>Message:</strong> ${body}</p>
+              <p style="color:gray; font-size:12px;">This is an automated email from Next Level Builders. Please do not reply.</p>
             `,
           },
         },
@@ -32,7 +33,7 @@ const sendForm = async (requestBody, parameters) => {
         },
       },
       Source: sourceEmail,
-      ReplyToAddresses: [parameters["contactnextlevelbuilders_email"]],
+      ReplyToAddresses: [],
     };
 
     // Send email using AWS SES
