@@ -1,44 +1,52 @@
-import * as AWS from "aws-sdk"; // Import AWS SDK
-const ses = new AWS.SES({ region: "us-east-1" }); // Specify SES region
+// https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/ses-examples-sending-email.html
+const AWS = require("aws-sdk");
+AWS.config.update({ region: "us-east-1" });
 
-export const sendForm = async (requestBody, parameters) => {
-  const { firstName, lastName, phoneNumber, email, subject, body } =
-    requestBody;
+const sendForm = async (requestBody, parameters) => {
+  try {
+    const { firstName, lastName, email, phoneNumber, subject, body } =
+      requestBody;
+    const sourceEmail = "verified-sender@example.com";
 
-  // Extract the sender and recipient emails from the parameters object
-  const { senderEmail, recipientEmail } = parameters;
-
-  // Build the email content
-  const emailParams = {
-    Source: senderEmail, // Set the sender's email (must be verified in SES)
-    Destination: {
-      ToAddresses: [recipientEmail], // Recipient's email from parameters
-    },
-    Message: {
-      Subject: {
-        Data: "New Form Submission",
-        Charset: "UTF-8",
+    // Create SES sendEmail parameters
+    const params = {
+      Destination: {
+        ToAddresses: [parameters["contactnextlevelbuilders_receiver-email"]],
       },
-      Body: {
-        Text: {
-          Data: `You have received a new form submission:
-
-Name: ${name}
-Email: ${email}
-Message: ${message}`,
+      Message: {
+        Body: {
+          Html: {
+            Charset: "UTF-8",
+            Data: `
+              <p><strong>First Name:</strong> ${firstName}</p>
+              <p><strong>Last Name:</strong> ${lastName}</p>
+              <p><strong>Email:</strong> ${email}</p>
+              <p><strong>Phone Number:</strong> ${phoneNumber}</p>
+              <p><strong>Message:</strong> ${body}</p>
+            `,
+          },
+        },
+        Subject: {
           Charset: "UTF-8",
+          Data: subject,
         },
       },
-    },
-  };
+      Source: sourceEmail,
+      ReplyToAddresses: [parameters["contactnextlevelbuilders_email"]],
+    };
 
-  try {
-    // Send email via SES
-    const result = await ses.sendEmail(emailParams).promise();
-    console.log("Email sent successfully:", result);
-    return { message: "Form submitted successfully!" };
-  } catch (err) {
-    console.error("Error sending email:", err);
-    return { error: "Failed to send email" };
+    // Send email using AWS SES
+    const ses = new AWS.SES({ apiVersion: "2010-12-01" });
+    const response = await ses.sendEmail(params).promise();
+
+    console.log("Email sent successfully:", response.MessageId);
+    alert("Email sent successfully!");
+    return response;
+  } catch (error) {
+    console.error("Error sending email:", error.message);
+    alert("Email not sent, error occured.");
+    throw error;
   }
 };
+
+export default sendForm;
