@@ -1,8 +1,11 @@
+import axios from "axios";
 import { Box, Button, FormControl, TextField, Typography } from "@mui/material";
+import Turnstile, { useTurnstile } from "react-turnstile";
 import { useState } from "react";
 import "./Contact.css";
 
 function Contact() {
+  const turnstile = useTurnstile();
   const [formData, setFormData] = useState({});
 
   const handleChange = (event) => {
@@ -82,6 +85,19 @@ function Contact() {
             value={formData.body || ""}
           />
         </FormControl>
+        <Turnstile
+          sitekey="0x4AAAAAAAkkBPN7ER44-_eD"
+          onVerify={async (token) => {
+            try {
+              const response = await axios.post("/login", { token });
+              if (response.status !== 200) {
+                turnstile.reset();
+              }
+            } catch (error) {
+              turnstile.reset();
+            }
+          }}
+        />
         <Button variant="contained" type="submit">
           Send
         </Button>
