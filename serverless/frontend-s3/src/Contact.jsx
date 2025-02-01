@@ -5,8 +5,8 @@ import { useState } from "react";
 import "./Contact.css";
 
 function Contact() {
-  const turnstile = useTurnstile();
   const [formData, setFormData] = useState({});
+  const turnstile = useTurnstile();
 
   const handleChange = (event) => {
     const name = event.target.name;
@@ -89,7 +89,7 @@ function Contact() {
           sitekey="0x4AAAAAAAkkBPN7ER44-_eD"
           onVerify={async (token) => {
             try {
-              const response = await axios.post("/login", { token });
+              const response = await axios.post("/contact", { token });
               if (response.status !== 200) {
                 turnstile.reset();
               }
