@@ -5,4 +5,7 @@ Email.message - https://docs.python.org/3/library/email.message.html
 
 Images
 Logo - Owner is Steven Craig Ritchie
-All Other Images - Owner is Caleb Ritchie
+Blue Valley Dermatology Images - Owner is Caleb Ritchie
+Kansas City photo - https://www.pexels.com/photo/grass-field-beside-building-structures-349506/
+Industrial photo - https://unsplash.com/photos/photography-of-black-metal-industrial-factory-wvagVtn3GGk
+Commercial photo - https://unsplash.com/photos/seven-construction-workers-standing-on-white-field-x-ghf9LjrVg
