@@ -1,12 +1,9 @@
-import axios from "axios";
 import { Box, Button, FormControl, TextField, Typography } from "@mui/material";
-import Turnstile, { useTurnstile } from "react-turnstile";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./Contact.css";
 
 function Contact() {
   const [formData, setFormData] = useState({});
-  const turnstile = useTurnstile();
 
   const handleChange = (event) => {
     const name = event.target.name;
@@ -18,6 +15,24 @@ function Contact() {
     event.preventDefault();
     console.log(formData);
   };
+
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js";
+    script.async = true;
+    script.onload = () => {
+      if (window.turnstile) {
+        window.turnstile.render(".cf-turnstile", {
+          sitekey: "0x4AAAAAAAkkBPN7ER44-_eD",
+        });
+      }
+    };
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
 
   return (
     <Box className="contactpage">
@@ -85,19 +100,7 @@ function Contact() {
             value={formData.body || ""}
           />
         </FormControl>
-        <Turnstile
-          sitekey="0x4AAAAAAAkkBPN7ER44-_eD"
-          onVerify={async (token) => {
-            try {
-              const response = await axios.post("/contact", { token });
-              if (response.status !== 200) {
-                turnstile.reset();
-              }
-            } catch (error) {
-              turnstile.reset();
-            }
-          }}
-        />
+        <Box class="cf-turnstile" data-sitekey="0x4AAAAAAAkkBPN7ER44-_eD" />
         <Button variant="contained" type="submit">
           Send
         </Button>
