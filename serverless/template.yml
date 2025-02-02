@@ -10,15 +10,6 @@ Globals:
     Timeout: 30
     MemorySize: 256
 
-Mappings:
-  StagesMap:
-    dev:
-      ConfigBucket: "dev-bucket-name"
-      ConfigKey: "source-data-key-path"
-    prod:
-      ConfigBucket: "prod-bucket-name"
-      ConfigKey: "source-data-key-path"
-
 Resources:
   BackendLambda:
     Type: AWS::Serverless::Function
@@ -41,7 +32,7 @@ Resources:
         info:
           title: "RestApi"
         paths:
-          /products:
+          /contact:
             post: &standardImplementation
               responses:
                 "200":
@@ -54,7 +45,7 @@ Resources:
                 uri: !Sub "arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${BackendLambda.Arn}/invocations"
                 httpMethod: "POST"
                 type: "aws_proxy"
-      StageName: dev
+      StageName: v1
 
   # The AWS S3 bucket into which our SPA build files will be deployed
   ReactApp:
