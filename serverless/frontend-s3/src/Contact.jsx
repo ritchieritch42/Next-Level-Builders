@@ -17,21 +17,23 @@ function Contact() {
   };
 
   useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js";
-    script.async = true;
-    script.onload = () => {
-      if (window.turnstile) {
-        window.turnstile.render(".cf-turnstile", {
-          sitekey: "0x4AAAAAAAkkBPN7ER44-_eD",
-        });
-      }
-    };
-    document.body.appendChild(script);
-
-    return () => {
-      document.body.removeChild(script);
-    };
+    if (
+      !document.querySelector(
+        'script[src="https://challenges.cloudflare.com/turnstile/v0/api.js"]'
+      )
+    ) {
+      const script = document.createElement("script");
+      script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js";
+      script.async = true;
+      script.onload = () => {
+        if (window.turnstile) {
+          window.turnstile.render(".cf-turnstile", {
+            sitekey: "0x4AAAAAAAkkBPN7ER44-_eD",
+          });
+        }
+      };
+      document.body.appendChild(script);
+    }
   }, []);
 
   return (
