@@ -1,3 +1,4 @@
+import axios from "axios";
 import { Box, Button, FormControl, TextField, Typography } from "@mui/material";
 import { useState, useEffect } from "react";
 import "./Contact.css";
@@ -13,7 +14,18 @@ function Contact() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(formData);
+    const token = window.turnstile.getResponse(turnstileRef.current);
+
+    // Add the token to the formData
+    setFormData((prevData) => ({ ...prevData, token }));
+    axios
+      .post("http://localhost:3000/contact", { formData })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   };
 
   useEffect(() => {
@@ -102,7 +114,12 @@ function Contact() {
             value={formData.body || ""}
           />
         </FormControl>
-        <Box class="cf-turnstile" data-sitekey="0x4AAAAAAAkkBPN7ER44-_eD" />
+        <Box
+          class="cf-turnstile"
+          data-sitekey="0x4AAAAAAAkkBPN7ER44-_eD"
+          onChange={handleChange}
+          value={formData.token || ""}
+        />
         <Button variant="contained" type="submit">
           Send
         </Button>
