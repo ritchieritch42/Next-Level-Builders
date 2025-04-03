@@ -339,9 +339,9 @@ body {
 }
 
 .fa {
-  padding: 20px; 
-  width: 60px; 
-  height: 60px; 
+  padding: 20px;
+  width: 60px;
+  height: 60px;
   text-align: center;
   text-decoration: none;
   margin: 15px;
@@ -360,7 +360,7 @@ body {
 }
 
 .fa-facebook {
-  background: #3B5998;
+  background: #3b5998;
   color: white;
 }
 
@@ -404,112 +404,6 @@ p.aboutparagraphs {
   justify-content: center;
   align-content: center;
   padding: 1vw;
-}
-
-/* contact.html */
-.contactintrocontainer {
-  display: flex;
-  flex-direction: column;
-  max-width: 100%;
-  width: 100%;
-  height: auto;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-content: center;
-  text-align: center;
-  color: white;
-  font-size: 1.5rem;
-  background-color: #38393b;
-  padding-top: 10vh;
-  margin-top: 7%;
-}
-
-.contactformcontainer {
-  display: flex;
-  flex-direction: column;
-  max-width: 100%;
-  width: 100%;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  background-color: #38393b;
-}
-
-form {
-  width: 700px;
-  margin: 20px;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  flex-direction: column;
-  margin-bottom: 20vh;
-}
-
-input {
-  font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 200;
-  font-style: normal;
-  font-size: 1.75rem;
-}
-
-label {
-  color: white;
-  font-size: 1.75rem;
-}
-
-textarea {
-  width: 700px;
-  height: 200px;
-  font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 200;
-  font-style: normal;
-  font-size: 1.75rem;
-}
-
-.buttoncontainer {
-  display: flex;
-  justify-content: center;
-}
-
-button {
-  font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 200;
-  font-style: normal;
-  font-size: 2rem;
-  margin: 2vh;
-  color: white;
-  background-color: rgba(205, 40, 14, 1);
-  border-radius: 1vw;
-  width: 25%;
-}
-
-button:hover {
-  background-color: rgba(128, 0, 32, 1);
-  transition: 0.5s;
-}
-
-.error {
-  color: white;
-}
-
-/* Email Success Formatting */
-.email-success-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  background-color: #38393b;
-  min-height: 100vh;
-}
-
-.email-success-container h3 {
-  color: white;
-  text-align: center;
-  width: 100%;
-  padding-top: 20px;
 }
 
 /*
@@ -565,31 +459,6 @@ Media query to adjust for square sized screens from 1000px to 1300px
     width: 500px;
     height: 350px;
   }
-
-  #contactintro {
-    padding-top: 70px;
-  }
-
-  label,
-  input,
-  textarea,
-  button {
-    font-size: 1.5rem;
-  }
-
-  textarea {
-    height: 200px;
-  }
-
-  .email-success-container {
-    margin-top: 60px;
-    padding: 10px;
-  }
-
-  .email-success-container h3 {
-    font-size: 1.5em;
-    padding-top: 10px;
-  }
 }
 
 /*Media query for tablet-sized devices*/
@@ -639,35 +508,6 @@ Media query to adjust for square sized screens from 1000px to 1300px
   .aboutpicture {
     width: 250px;
     height: 250px;
-  }
-
-  .contactintrocontainer {
-    font-size: 1rem;
-  }
-
-  form,
-  textarea {
-    width: 575px;
-  }
-
-  input,
-  label,
-  textarea {
-    font-size: 1rem;
-  }
-
-  button {
-    font-size: 1.25rem;
-  }
-
-  .email-success-container {
-    margin-top: 60px;
-    padding: 10px;
-  }
-
-  .email-success-container h3 {
-    font-size: 1.25em;
-    padding-top: 10px;
   }
 }
 
@@ -822,47 +662,6 @@ Media query to adjust for square sized screens from 1000px to 1300px
     height: 100px;
     margin: 2px;
   }
-
-  #advise {
-    width: 80%;
-  }
-
-  form,
-  textarea {
-    width: 300px;
-  }
-
-  textarea {
-    height: 200px;
-    padding: 0px;
-  }
-
-  .contactintrocontainer {
-    display: flex;
-    flex-direction: row;
-    margin-top: 7vh;
-  }
-
-  input,
-  label,
-  textarea {
-    font-size: 1rem;
-  }
-
-  button {
-    font-size: 1.25rem;
-    padding: 0px;
-  }
-
-  .email-success-container {
-    margin-top: 60px;
-    padding: 10px;
-  }
-
-  .email-success-container h3 {
-    font-size: 1.25em;
-    padding-top: 10px;
-  }
 }
 
 @media screen and (min-width: 0px) and (max-width: 400px) {
@@ -1006,15 +805,15 @@ Media query to adjust for square sized screens from 1000px to 1300px
     margin: 2px;
   }
 
-  .about .contactintrocontainer {
+  .about {
     font-size: 0.7rem;
     margin: 5px;
   }
 
   .fa {
-    padding: 20px; 
-    width: 35px; 
-    height: 35px; 
+    padding: 20px;
+    width: 35px;
+    height: 35px;
     line-height: 35px;
     text-align: center;
     text-decoration: none;
@@ -1023,54 +822,8 @@ Media query to adjust for square sized screens from 1000px to 1300px
     display: inline-block;
     transition: transform 0.2s, opacity 0.2s; /* Add smooth hover effects */
   }
-  
+
   .fa::before {
     font-size: 30px;
-  }
-
-  #advise,
-  #contactintro {
-    width: 80%;
-    font-size: 1rem;
-  }
-
-  .contactintrocontainer {
-    padding-top: 20vh;
-    height: auto;
-    width: auto;
-    display: flex;
-    flex-direction: row;
-    margin-top: 7vh;
-  }
-
-  form,
-  textarea {
-    width: 300px;
-  }
-
-  textarea {
-    height: 200px;
-    padding: 0px;
-  }
-
-  input,
-  label,
-  textarea {
-    font-size: 1rem;
-  }
-
-  button {
-    font-size: 1.25rem;
-    padding: 0px;
-  }
-
-  .email-success-container {
-    margin-top: 60px;
-    padding: 10px;
-  }
-
-  .email-success-container h3 {
-    font-size: 1.25em;
-    padding-top: 10px;
   }
 }
