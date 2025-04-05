@@ -9,6 +9,11 @@ Globals:
   Function:
     Timeout: 30
     MemorySize: 256
+  Api:
+    Cors:
+      AllowMethods: "'*'"
+      AllowHeaders: "'*'"
+      AllowOrigin: "'*'"
 
 Resources:
   BackendLambda:
@@ -45,6 +50,27 @@ Resources:
                 uri: !Sub "arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${BackendLambda.Arn}/invocations"
                 httpMethod: "POST"
                 type: "aws_proxy"
+          options: &optionsImplementation
+            responses:
+              "200":
+                description: "Successful response"
+            x-amazon-apigateway-integration:
+              type: mock
+              requestTemplates:
+                application/json: |
+                  {
+                    "statusCode" : 200
+                  }
+              responses:
+                default:
+                  statusCode: "200"
+                  responseParameters:
+                    method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,x-datadog-trace-id,x-datadog-parent-id,x-datadog-origin,x-datadog-sampling-priority'"
+                    method.response.header.Access-Control-Allow-Methods: "'*'"
+                    method.response.header.Access-Control-Allow-Origin: "'*'"
+                  responseTemplates:
+                    application/json: |
+                      {}
       StageName: v1
 
   # The AWS S3 bucket into which our SPA build files will be deployed

@@ -1,4 +1,5 @@
-import { SSM } from "aws-sdk";
+import pkg from "aws-sdk"; // Import the entire aws-sdk package as the default export
+const { SSM } = pkg; // Destructure the SSM class from the package
 
 const fetchParameters = async (prefix) => {
   // Establish a connection with AWS Parameter Store in the appropriate region

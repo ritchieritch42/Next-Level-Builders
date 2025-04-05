@@ -1,12 +1,13 @@
 // https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/ses-examples-sending-email.html
-const AWS = require("aws-sdk");
+import AWS from "aws-sdk";
 AWS.config.update({ region: "us-east-1" });
 
 const sendForm = async (requestBody, parameters) => {
   try {
     const { firstName, lastName, email, phoneNumber, subject, body } =
       requestBody;
-    const sourceEmail = "no-reply@nextlevelbuildersllc.com";
+    const sourceEmail = `critchiedla@gmail.com`;
+    // "no-reply@nextlevelbuildersllc.com";
 
     // Create SES sendEmail parameters
     const params = {

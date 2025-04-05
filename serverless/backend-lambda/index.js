@@ -1,5 +1,6 @@
-import fetchParameters from "./parameterService";
-import validation from "./validation";
+import fetchParameters from "./parameterService.js";
+import validation from "./validation.js";
+import sendForm from "./formService.js";
 
 const headers = {
   "Access-Control-Allow-Origin": "*",
@@ -7,7 +8,8 @@ const headers = {
 };
 
 export const handler = async (event) => {
-  const parameters = await fetchParameters;
+  console.log("EVENT:", event);
+  const parameters = await fetchParameters();
   const body =
     typeof event.body === "string" ? JSON.parse(event.body) : event.body;
   const validate = await validation(body, parameters);
@@ -24,7 +26,7 @@ export const handler = async (event) => {
   if (path === "/Contact") {
     // Attempt to send form contents
     if (httpMethod === "POST") {
-      response = await formService.sendForm(body, parameters);
+      response = await sendForm(body, parameters);
     }
   }
 
