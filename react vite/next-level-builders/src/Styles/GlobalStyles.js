@@ -3,8 +3,8 @@ const GlobalStyles = createGlobalStyle`
 :root {
     --color-blue-100: #749db7;
     --color-blue-200: #5b8baa;
-    --color-blue-400: #41799c;
-    --color-blue-500: #0a527f;
+    --color-blue-300: #41799c;
+    --color-blue-400: #0a527f;
     
     --color-red-100: #edd7d6;
     --color-red-200: #e5c5bf;
@@ -16,7 +16,7 @@ const GlobalStyles = createGlobalStyle`
     --color-grey-200: #d0cfd0;
     --color-grey-300: #c2c1c2;
     --color-grey-400: #838182;
-    --color-grey-400: #636061;
+    --color-grey-500: #636061;
 
     --color-tan-100: #fefdfc;
     --color-tan-200: #fbf2e6;
