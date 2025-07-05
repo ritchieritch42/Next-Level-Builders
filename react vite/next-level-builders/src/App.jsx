@@ -1,5 +1,15 @@
+import About from "./pages/About";
+import Homepage from "./pages/Homepage";
+import Projects from "./pages/Projects";
+
 function App() {
-  return <div>Next Level Builders, LLC</div>;
+  return (
+    <>
+      <Homepage />
+      <About />
+      <Projects />
+    </>
+  );
 }
 
 export default App;
