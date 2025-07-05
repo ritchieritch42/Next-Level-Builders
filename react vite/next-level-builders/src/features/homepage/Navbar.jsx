@@ -1,4 +1,9 @@
+import styled from "styled-components";
 import Link from "../../ui/Link";
+
+const StyledNavbar = styled.div`
+  background-color: var(--color-red-400);
+`;
 
 function Navbar() {
   const routes = {
@@ -14,11 +19,11 @@ function Navbar() {
   };
 
   return (
-    <div>
+    <StyledNavbar>
       <Link route={routes.homepage} title={titles.homepage} />
       <Link route={routes.about} title={titles.about} />
       <Link route={routes.projects} title={titles.projects} />
-    </div>
+    </StyledNavbar>
   );
 }
 
