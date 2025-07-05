@@ -1,7 +1,5 @@
-import Navbar from "../features/homepage/Navbar";
-
 function Homepage() {
-  return <Navbar />;
+  return <div>Homepage</div>;
 }
 
 export default Homepage;
