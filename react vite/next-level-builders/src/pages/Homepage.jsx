@@ -1,5 +1,7 @@
+import IntroHeader from "../features/Home/IntroHeader";
+
 function Homepage() {
-  return <div>Homepage</div>;
+  return <IntroHeader />;
 }
 
 export default Homepage;

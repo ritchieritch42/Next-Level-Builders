@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import HorizontalLogo from "../../ui/HorizontalLogo";
-import Box from "../../ui/Box";
+import HorizontalLogo from "./HorizontalLogo";
+import Box from "./Box";
 import { HiOutlineBars3 } from "react-icons/hi2";
 
 const StyledNavbar = styled.div`

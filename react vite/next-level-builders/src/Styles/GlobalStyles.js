@@ -27,7 +27,7 @@ const GlobalStyles = createGlobalStyle`
     margin: 0;
     min-height: 100vh;
     font-family: "Montserrat", sans-serif;
-    background-color: var(--color-red-500)
+    background-color: var(--color-red-500);
   }
 `;
 

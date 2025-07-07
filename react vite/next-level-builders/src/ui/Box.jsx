@@ -9,10 +9,11 @@ const justifyMap = {
 const StyledBox = styled.div`
   display: flex;
   justify-content: ${({ placement }) => justifyMap[placement] || "flex-start"};
+  padding: ${(props) => props.padding};
 `;
 
-function Box({ children, placement }) {
-  return <StyledBox placement={placement}>{children}</StyledBox>;
+function Box({ children, ...rest }) {
+  return <StyledBox {...rest}>{children}</StyledBox>;
 }
 
 export default Box;
