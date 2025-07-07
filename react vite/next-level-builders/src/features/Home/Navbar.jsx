@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import HorizontalLogo from "../../ui/Logo";
+import HorizontalLogo from "../../ui/HorizontalLogo";
 import Box from "../../ui/Box";
 import { HiOutlineBars3 } from "react-icons/hi2";
 
@@ -22,7 +22,7 @@ function Navbar() {
         </Box>
         <Box placement="end">
           <Box>
-            <HiOutlineBars3 />
+            <HiOutlineBars3 size={25} style={{ fill: "black" }} />
           </Box>
         </Box>
       </StyledNavbar>
