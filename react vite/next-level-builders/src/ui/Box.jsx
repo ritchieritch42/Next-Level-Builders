@@ -4,6 +4,7 @@ const justifyMap = {
   start: "flex-start",
   center: "center",
   end: "flex-end",
+  evenly: "space-evenly",
 };
 
 const stackMap = {
