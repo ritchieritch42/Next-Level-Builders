@@ -6,10 +6,17 @@ const justifyMap = {
   end: "flex-end",
 };
 
+const stackMap = {
+  horizontal: "row",
+  vertical: "column",
+};
+
 const StyledBox = styled.div`
   display: flex;
+  flex-direction: ${({ stack }) => stackMap[stack] || "column"};
   justify-content: ${({ placement }) => justifyMap[placement] || "flex-start"};
-  padding: ${(props) => props.padding};
+  align-items: ${({ placement }) => justifyMap[placement] || "flex-start"};
+  padding: 5px;
 `;
 
 function Box({ children, ...rest }) {
