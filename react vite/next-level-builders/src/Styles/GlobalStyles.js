@@ -21,13 +21,16 @@ const GlobalStyles = createGlobalStyle`
     --color-tan-100: #fefdfc;
     --color-tan-200: #fbf2e6;
     --color-tan-300: #f9ebd8;
+
+    --color-socials-li: #0a66c2;
+    --color-socials-fb: #0866ff;
   }
 
   body {
     margin: 0;
     min-height: 100vh;
     font-family: "Montserrat", sans-serif;
-    background-color: var(--color-red-500)
+    background-color: var(--color-red-500);
   }
 `;
 
