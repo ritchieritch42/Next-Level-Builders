@@ -5,7 +5,7 @@ import Text from "../../ui/Text";
 
 function CommitmentHeader() {
   return (
-    <Card bgColor="var(--color-tan-100)">
+    <Card bgcolor="var(--color-tan-100)">
       <Box>
         <Header color="var(--color-blue-400)" as="h3">
           We are committed to delivering quality construction on time and within

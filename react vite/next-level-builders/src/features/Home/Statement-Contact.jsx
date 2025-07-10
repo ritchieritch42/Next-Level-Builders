@@ -7,7 +7,7 @@ import { BiLogoLinkedinSquare } from "react-icons/bi";
 
 function ContactStatement() {
   return (
-    <Card bgColor="var(--color-tan-300)">
+    <Card bgcolor="var(--color-tan-300)">
       <Box>
         <Header color="var(--color-blue-400)" as="h3">
           Ready to build the future of your business

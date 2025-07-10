@@ -5,25 +5,25 @@ import Text from "../../ui/Text";
 
 function TypeStatement() {
   return (
-    <Card bgColor="var(--color-tan-100)">
-      <Card bgColor="var(--color-blue-200)">
+    <Card bgcolor="var(--color-tan-100)">
+      <Card bgcolor="var(--color-blue-200)">
         <Box placement="center">
-          <Header color="var(--color-tan-100)" as="h3" textCase="upper">
+          <Header color="var(--color-tan-100)" as="h3" textcase="upper">
             Industrial & Warehousing
           </Header>
-          <Header color="var(--color-tan-100)" as="h3" textCase="upper">
+          <Header color="var(--color-tan-100)" as="h3" textcase="upper">
             Office Spaces
           </Header>
-          <Header color="var(--color-tan-100)" as="h3" textCase="upper">
+          <Header color="var(--color-tan-100)" as="h3" textcase="upper">
             Religious Facilities
           </Header>
-          <Header color="var(--color-tan-100)" as="h3" textCase="upper">
+          <Header color="var(--color-tan-100)" as="h3" textcase="upper">
             Financial Institutions
           </Header>
-          <Header color="var(--color-tan-100)" as="h3" textCase="upper">
+          <Header color="var(--color-tan-100)" as="h3" textcase="upper">
             Sitework & Improvements
           </Header>
-          <Header color="var(--color-tan-100)" as="h3" textCase="upper">
+          <Header color="var(--color-tan-100)" as="h3" textcase="upper">
             Commercial Properties
           </Header>
         </Box>

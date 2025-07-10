@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const StyledDiv = styled.div`
-  background-color: ${(props) => props.bgColor};
+  background-color: ${(props) => props.bgcolor};
   margin: 8px;
   padding: 5px;
 `;

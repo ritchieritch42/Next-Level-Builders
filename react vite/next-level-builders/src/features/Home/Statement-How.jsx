@@ -5,7 +5,7 @@ import Text from "../../ui/Text";
 
 function HowStatement() {
   return (
-    <Card bgColor="var(--color-tan-100)">
+    <Card bgcolor="var(--color-tan-100)">
       <Header color="var(--color-blue-400)" as="h3">
         How we get it done:
       </Header>
@@ -15,19 +15,19 @@ function HowStatement() {
       </Text>
       <ul>
         <li>
-          <Text color="var(--color-blue-400)" fontWeight="700" textCase="upper">
+          <Text color="var(--color-blue-400)" fontWeight="700" textcase="upper">
             General Contracting:
           </Text>
           <Text>Reliable project execution from start to finish</Text>
         </li>
         <li>
-          <Text color="var(--color-blue-400)" fontWeight="700" textCase="upper">
+          <Text color="var(--color-blue-400)" fontWeight="700" textcase="upper">
             Negotiated:
           </Text>
           <Text>Collaborative solutions tailored to your goals</Text>
         </li>
         <li>
-          <Text color="var(--color-blue-400)" fontWeight="700" textCase="upper">
+          <Text color="var(--color-blue-400)" fontWeight="700" textcase="upper">
             Design-Build
           </Text>
           <Text>Efficiency and flexibility with a streamlined process</Text>
