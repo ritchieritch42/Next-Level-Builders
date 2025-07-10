@@ -17,6 +17,7 @@ const StyledBox = styled.div`
   flex-direction: ${({ stack }) => stackMap[stack] || "column"};
   justify-content: ${({ placement }) => justifyMap[placement] || "flex-start"};
   align-items: ${({ placement }) => justifyMap[placement] || "flex-start"};
+  gap: ${(props) => props.gap};
   padding: 5px;
 `;
 

@@ -15,16 +15,22 @@ function HowStatement() {
       </Text>
       <ul>
         <li>
-          <Box placement="evenly" stack="horizontal">
-            <Text
-              color="var(--color-blue-400)"
-              fontWeight="700"
-              textCase="upper"
-            >
-              General Contracting:
-            </Text>
-            <Text>Reliable project execution from start to finish.</Text>
-          </Box>
+          <Text color="var(--color-blue-400)" fontWeight="700" textCase="upper">
+            General Contracting:
+          </Text>
+          <Text>Reliable project execution from start to finish</Text>
+        </li>
+        <li>
+          <Text color="var(--color-blue-400)" fontWeight="700" textCase="upper">
+            Negotiated:
+          </Text>
+          <Text>Collaborative solutions tailored to your goals</Text>
+        </li>
+        <li>
+          <Text color="var(--color-blue-400)" fontWeight="700" textCase="upper">
+            Design-Build
+          </Text>
+          <Text>Efficiency and flexibility with a streamlined process</Text>
         </li>
       </ul>
     </Card>

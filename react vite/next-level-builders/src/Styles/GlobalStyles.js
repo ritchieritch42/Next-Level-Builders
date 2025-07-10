@@ -21,6 +21,9 @@ const GlobalStyles = createGlobalStyle`
     --color-tan-100: #fefdfc;
     --color-tan-200: #fbf2e6;
     --color-tan-300: #f9ebd8;
+
+    --color-socials-li: #0a66c2;
+    --color-socials-fb: #0866ff;
   }
 
   body {
