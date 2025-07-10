@@ -1,5 +1,7 @@
+import OwnerStatement from "../features/About/Statement-Owner";
+
 function About() {
-  return <div>About</div>;
+  return <OwnerStatement />;
 }
 
 export default About;
