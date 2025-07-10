@@ -22,11 +22,21 @@ function ContactStatement() {
           Contact Craig Ritchie
         </Header>
         <Box stack="horizontal" placement="center" gap="60px">
-          <FaFacebook size={50} style={{ fill: "var(--color-socials-fb)" }} />
-          <BiLogoLinkedinSquare
-            size={60}
-            style={{ fill: "var(--color-socials-li)" }}
-          />
+          <a
+            href="https://www.facebook.com/profile.php?id=61572441690192"
+            target="_blank"
+          >
+            <FaFacebook size={50} style={{ fill: "var(--color-socials-fb)" }} />
+          </a>
+          <a
+            href="https://www.linkedin.com/company/next-level-bldrs-llc/"
+            target="_blank"
+          >
+            <BiLogoLinkedinSquare
+              size={60}
+              style={{ fill: "var(--color-socials-li)" }}
+            />
+          </a>
         </Box>
       </Box>
     </Card>
