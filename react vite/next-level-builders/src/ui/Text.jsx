@@ -12,6 +12,7 @@ const StyledText = styled.p`
   color: ${(props) => props.color};
   font-weight: ${(props) => props.fontWeight};
   text-transform: ${({ textcase }) => caseMap[textcase]};
+  font-style: ${(props) => props.fontstyle};
 `;
 
 function Text({ children, ...rest }) {

@@ -2,15 +2,17 @@ import Card from "../../ui/Card";
 import Box from "../../ui/Box";
 import Header from "../../ui/Header";
 import Text from "../../ui/Text";
+import Image from "../../ui/Image";
 
 function OwnerStatement() {
   return (
     <Card bgcolor="var(--color-tan-100)">
       <Box placement="center" stack="horizontal" gap="10px">
-        <img
+        <Image
           alt="Craig Ritchie Profile Picture"
           src="/profilepicture.png"
-        ></img>
+          borderradius="25px"
+        />
         <Header color="var(--color-blue-400)" as="h3">
           Craig Ritchie, Owner, Next Level Builders LLC
         </Header>
