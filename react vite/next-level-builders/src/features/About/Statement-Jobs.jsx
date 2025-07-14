@@ -3,6 +3,10 @@ import Box from "../../ui/Box";
 import Header from "../../ui/Header";
 import Text from "../../ui/Text";
 import Line from "../../ui/Line";
+import TenantFinishExperience from "../../data/TenantFinishExperience";
+import GroundUpExperience from "../../data/GroundUpExperience";
+import AdditionsRenovationsExperience from "../../data/AdditionsRenovationsExperience";
+import Job from "./Job";
 
 function JobsStatement() {
   return (
@@ -17,60 +21,42 @@ function JobsStatement() {
           Tenant Finish
         </Text>
         <Line />
-        <Text fontWeight="700" color="var(--color-grey-500)">
-          Blue Valley Dermatology, Phase 1
+        {TenantFinishExperience.map((job) => (
+          <Job
+            jobTitle={job.jobTitle}
+            jobLocation={job.jobLocation}
+            jobDescription={job.jobDescription}
+            key={job.jobTitle}
+          />
+        ))}
+      </Box>
+      <Box>
+        <Text color="var(--color-red-500)" textcase="upper" as="h3">
+          Ground Up Construction
         </Text>
-        <Text color="var(--color-grey-500)">Overland Park</Text>
-        <Text color="var(--color-grey-500)">
-          Kansas 5,000 SF Tenant Remodel
+        <Line />
+        {GroundUpExperience.map((job) => (
+          <Job
+            jobTitle={job.jobTitle}
+            jobLocation={job.jobLocation}
+            jobDescription={job.jobDescription}
+            key={job.jobTitle}
+          />
+        ))}
+      </Box>
+      <Box>
+        <Text color="var(--color-red-500)" textcase="upper" as="h3">
+          Additions & Renovations
         </Text>
-        <Text fontWeight="700" color="var(--color-grey-500)">
-          Boise Cascade
-        </Text>
-        <Text color="var(--color-grey-500)">Kansas City, Missouri</Text>
-        <Text color="var(--color-grey-500)">
-          Interior Upgrades for New Door Manufacturing Shop
-        </Text>
-        <Text fontWeight="700" color="var(--color-grey-500)">
-          Owens & Minor
-        </Text>
-        <Text color="var(--color-grey-500)">Kansas City, Missouri</Text>
-        <Text color="var(--color-grey-500)">
-          Tenant Finish in Spec Warehouse
-        </Text>
-        <Text fontWeight="700" color="var(--color-grey-500)">
-          TricorBraun
-        </Text>
-        <Text color="var(--color-grey-500)">Kansas City, Missouri</Text>
-        <Text color="var(--color-grey-500)">
-          Tenant Finish in Spec Warehouse
-        </Text>
-        <Text fontWeight="700" color="var(--color-grey-500)">
-          Char Bar
-        </Text>
-        <Text color="var(--color-grey-500)">Kansas City, Missouri</Text>
-        <Text color="var(--color-grey-500)">
-          New Restaurant in Existing Space
-        </Text>
-        <Text fontWeight="700" color="var(--color-grey-500)">
-          Marketplace Shopping Center
-        </Text>
-        <Text color="var(--color-grey-500)">Independence, Missouri</Text>
-        <Text color="var(--color-grey-500)">Various Tenant Renovations</Text>
-        <Text fontWeight="700" color="var(--color-grey-500)">
-          Integrity Gymnastics
-        </Text>
-        <Text color="var(--color-grey-500)">Overland Park, Kansas</Text>
-        <Text color="var(--color-grey-500)">
-          Renovation for a New Gymnasium
-        </Text>
-        <Text fontWeight="700" color="var(--color-grey-500)">
-          ExamOne
-        </Text>
-        <Text color="var(--color-grey-500)">Lee's Summit, Missouri</Text>
-        <Text color="var(--color-grey-500)">
-          Renovations to Summit Tech Call Center
-        </Text>
+        <Line />
+        {AdditionsRenovationsExperience.map((job) => (
+          <Job
+            jobTitle={job.jobTitle}
+            jobLocation={job.jobLocation}
+            jobDescription={job.jobDescription}
+            key={job.jobTitle}
+          />
+        ))}
       </Box>
     </Card>
   );
