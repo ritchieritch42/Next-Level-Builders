@@ -26,7 +26,7 @@ const StyledHeader = styled.header`
       font-weight: 600;
     `}
 
-  text-transform: ${({ textCase }) => caseMap[textCase]};
+  text-transform: ${({ textcase }) => caseMap[textcase]};
   color: ${(props) => props.color};
   margin: 0;
   padding: 5px 0px 0px 0px;
