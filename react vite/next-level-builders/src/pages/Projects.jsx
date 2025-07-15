@@ -1,5 +1,13 @@
+import FeaturedProjectReel from "../features/Projects/FeaturedProjectReel";
+import FeaturedProjectHeader from "../features/Projects/Header-FeaturedProject";
+
 function Projects() {
-  return <div>Projects</div>;
+  return (
+    <>
+      <FeaturedProjectHeader />
+      <FeaturedProjectReel />
+    </>
+  );
 }
 
 export default Projects;
