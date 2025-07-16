@@ -22,6 +22,21 @@ const StyledDropDown = styled.div`
   height: 15vh;
 `;
 
+const linkRoutes = [
+  {
+    route: "/",
+    title: "Home",
+  },
+  {
+    route: "/about",
+    title: "About",
+  },
+  {
+    route: "/projects",
+    title: "Projects",
+  },
+];
+
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -39,9 +54,11 @@ function Navbar() {
       {isOpen && (
         <StyledDropDown>
           <Box placement="center" stack="vertical">
-            <Link route="/">Home</Link>
-            <Link route="/about">About</Link>
-            <Link route="/projects">Projects</Link>
+            {linkRoutes.map((link) => (
+              <Link route={link.route} setIsOpen={setIsOpen}>
+                {link.title}
+              </Link>
+            ))}
           </Box>
         </StyledDropDown>
       )}

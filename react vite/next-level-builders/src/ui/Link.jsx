@@ -17,7 +17,7 @@ const StyledLink = styled(NavLink)`
     `}
 `;
 
-function Link({ route, children }) {
+function Link({ route, children, setIsOpen }) {
   const location = useLocation();
   const isActive = location.pathname === route;
 
@@ -25,7 +25,10 @@ function Link({ route, children }) {
     <StyledLink
       to={isActive ? "#" : route}
       $disabled={isActive}
-      onClick={(e) => isActive && e.preventDefault()}
+      onClick={(e) => {
+        if (isActive) e.preventDefault();
+        setIsOpen(false);
+      }}
     >
       {children}
     </StyledLink>
