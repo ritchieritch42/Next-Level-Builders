@@ -1,7 +1,10 @@
 import styled from "styled-components";
 import HorizontalLogo from "./HorizontalLogo";
 import Box from "./Box";
-import { HiOutlineBars3 } from "react-icons/hi2";
+import Logo from "./Logo";
+import { HiOutlineBars3, HiOutlineXMark } from "react-icons/hi2";
+
+import { useState } from "react";
 
 const StyledNavbar = styled.div`
   background-color: var(--color-tan-100);
@@ -14,6 +17,8 @@ const StyledNavbar = styled.div`
 `;
 
 function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <>
       <StyledNavbar>
@@ -22,7 +27,10 @@ function Navbar() {
         </Box>
         <Box placement="end">
           <Box>
-            <HiOutlineBars3 size={25} style={{ fill: "black" }} />
+            <Logo onClick={() => setIsOpen(!isOpen)}>
+              {isOpen && <HiOutlineXMark />}
+              {!isOpen && <HiOutlineBars3 />}
+            </Logo>
           </Box>
         </Box>
       </StyledNavbar>
