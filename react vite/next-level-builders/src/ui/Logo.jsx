@@ -7,8 +7,8 @@ const StyledLogoWrapper = styled.div`
   cursor: pointer;
 
   svg {
-    width: 25px;
-    height: 25px;
+    width: 10vw;
+    height: 10vw;
     fill: black;
   }
 `;

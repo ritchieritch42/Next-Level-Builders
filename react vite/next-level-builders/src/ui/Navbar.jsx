@@ -9,7 +9,7 @@ import Link from "./Link";
 
 const StyledNavbar = styled.div`
   background-color: var(--color-tan-100);
-  height: 5vh;
+  height: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -19,7 +19,11 @@ const StyledNavbar = styled.div`
 
 const StyledDropDown = styled.div`
   background-color: var(--color-tan-100);
-  height: 15vh;
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 1s;
+
+  grid-template-rows: ${(props) => props.isOpen && "1fr"};
 `;
 
 const linkRoutes = [
@@ -52,10 +56,10 @@ function Navbar() {
         </Box>
       </StyledNavbar>
       {isOpen && (
-        <StyledDropDown>
+        <StyledDropDown id="menuOptions" isOpen={isOpen}>
           <Box placement="center" stack="vertical">
             {linkRoutes.map((link) => (
-              <Link route={link.route} setIsOpen={setIsOpen}>
+              <Link key={link.route} route={link.route} setIsOpen={setIsOpen}>
                 {link.title}
               </Link>
             ))}
