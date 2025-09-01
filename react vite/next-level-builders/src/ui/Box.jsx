@@ -4,7 +4,7 @@ const justifyMap = {
   start: "flex-start",
   center: "center",
   end: "flex-end",
-  evenly: "space-evenly",
+  evenly: "space-between",
 };
 
 const stackMap = {
@@ -20,6 +20,7 @@ const StyledBox = styled.div`
   align-items: ${({ placement }) => justifyMap[placement] || "flex-start"};
   gap: ${(props) => props.gap};
   padding: 5px;
+  width: 100%;
 `;
 
 function Box({ children, ...rest }) {

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const StyledHorizontalLogo = styled.img`
-  width: 150px;
+  width: 65vw;
   height: auto;
   padding: 5px;
   background-color: var(--color-tan-100);
