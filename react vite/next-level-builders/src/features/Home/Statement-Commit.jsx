@@ -6,8 +6,8 @@ import Text from "../../ui/Text";
 function CommitmentHeader() {
   return (
     <Card bgcolor="var(--color-tan-100)">
-      <Box placement="start">
-        <Header color="var(--color-blue-400)" as="h3">
+      <Box placement="center" gap="10px">
+        <Header color="var(--color-blue-400)" as="h3" align="center">
           We are committed to delivering quality construction on time and within
           budget.
         </Header>

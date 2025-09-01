@@ -11,8 +11,8 @@ import Job from "./Job";
 function JobsStatement() {
   return (
     <Card bgcolor="var(--color-tan-100)">
-      <Box>
-        <Header color="var(--color-blue-400)" as="h2">
+      <Box placement="center">
+        <Header color="var(--color-blue-400)" as="h2" align="center">
           Craig Ritchie Experience
         </Header>
       </Box>

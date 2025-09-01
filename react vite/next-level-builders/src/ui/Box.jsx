@@ -14,7 +14,8 @@ const stackMap = {
 
 const StyledBox = styled.div`
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
+  flex-wrap: ${({ wrap }) => wrap || "wrap"};
   flex-direction: ${({ stack }) => stackMap[stack] || "column"};
   justify-content: ${({ placement }) => justifyMap[placement] || "flex-start"};
   align-items: ${({ placement }) => justifyMap[placement] || "flex-start"};

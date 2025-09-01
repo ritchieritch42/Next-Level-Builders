@@ -9,10 +9,10 @@ function ContactStatement() {
   return (
     <Card bgcolor="var(--color-tan-300)">
       <Box>
-        <Header color="var(--color-blue-400)" as="h3">
-          Ready to build the future of your business
+        <Header color="var(--color-blue-400)" as="h3" align="center">
+          Ready to build the future of your business?
         </Header>
-        <Text>
+        <Text align="center">
           Let's talk about how Next Level Builders can help you bring your
           vision to life.
         </Text>

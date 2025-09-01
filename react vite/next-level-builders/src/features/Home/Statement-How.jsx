@@ -6,10 +6,10 @@ import Text from "../../ui/Text";
 function HowStatement() {
   return (
     <Card bgcolor="var(--color-tan-100)">
-      <Header color="var(--color-blue-400)" as="h3">
-        How we get it done:
+      <Header color="var(--color-blue-400)" as="h3" align="center">
+        How we get it done
       </Header>
-      <Text>
+      <Text align="center">
         Our approach ensures smooth, efficient projects with no
         surprises&mdash;just results.
       </Text>
