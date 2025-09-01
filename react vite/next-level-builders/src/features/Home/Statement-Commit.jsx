@@ -6,7 +6,7 @@ import Text from "../../ui/Text";
 function CommitmentHeader() {
   return (
     <Card bgcolor="var(--color-tan-100)">
-      <Box>
+      <Box placement="start">
         <Header color="var(--color-blue-400)" as="h3">
           We are committed to delivering quality construction on time and within
           budget.
@@ -20,7 +20,7 @@ function CommitmentHeader() {
           hands-on approach that sets us apart.
         </Text>
         <Header color="var(--color-blue-400)" as="h3">
-          Who we work with:
+          Who do we work with?
         </Header>
         <Text>
           From industrial facilities to office spaces and beyond, we build for
