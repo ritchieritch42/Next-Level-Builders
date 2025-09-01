@@ -8,7 +8,7 @@ function ExperienceStatement() {
   return (
     <Card bgcolor="var(--color-tan-100)">
       <Box placement="center">
-        <Header as="h2" color="var(--color-blue-400)">
+        <Header as="h2" color="var(--color-blue-400)" align="center">
           Next Level Builders Experience
         </Header>
         <Image

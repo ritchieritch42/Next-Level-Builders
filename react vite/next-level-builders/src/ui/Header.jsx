@@ -6,6 +6,12 @@ const caseMap = {
   cap: "capitalize",
 };
 
+const alignMap = {
+  left: "left",
+  right: "right",
+  center: "center",
+};
+
 const StyledHeader = styled.header`
   ${(props) =>
     props.as === "h1" &&
@@ -33,7 +39,8 @@ const StyledHeader = styled.header`
   text-transform: ${({ textcase }) => caseMap[textcase]};
   color: ${(props) => props.color};
   margin: 0;
-  padding: 5px 0px 0px 0px;
+  padding: 5px 5px 5px 5px;
+  text-align: ${(align) => alignMap[align]};
 `;
 
 function Header({ children, ...rest }) {
