@@ -19,11 +19,9 @@ const StyledNavbar = styled.div`
 
 const StyledDropDown = styled.div`
   background-color: var(--color-tan-100);
-  display: grid;
-  grid-template-rows: 0fr;
-  transition: grid-template-rows 1s;
-
-  grid-template-rows: ${(props) => props.isOpen && "1fr"};
+  height: ${(props) => (props.isOpen ? "17vh" : "0")};
+  transition: height 0.5s ease;
+  overflow: hidden;
 `;
 
 const linkRoutes = [
@@ -55,17 +53,15 @@ function Navbar() {
           </Logo>
         </Box>
       </StyledNavbar>
-      {isOpen && (
-        <StyledDropDown id="menuOptions" isOpen={isOpen}>
-          <Box placement="center" stack="vertical">
-            {linkRoutes.map((link) => (
-              <Link key={link.route} route={link.route} setIsOpen={setIsOpen}>
-                {link.title}
-              </Link>
-            ))}
-          </Box>
-        </StyledDropDown>
-      )}
+      <StyledDropDown isOpen={isOpen}>
+        <Box placement="center" stack="vertical">
+          {linkRoutes.map((link) => (
+            <Link key={link.route} route={link.route} setIsOpen={setIsOpen}>
+              {link.title}
+            </Link>
+          ))}
+        </Box>
+      </StyledDropDown>
     </>
   );
 }
