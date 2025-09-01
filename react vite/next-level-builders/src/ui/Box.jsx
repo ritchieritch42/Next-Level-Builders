@@ -19,7 +19,6 @@ const StyledBox = styled.div`
   justify-content: ${({ placement }) => justifyMap[placement] || "flex-start"};
   align-items: ${({ placement }) => justifyMap[placement] || "flex-start"};
   gap: ${(props) => props.gap};
-  padding: 5px;
   width: 100%;
 `;
 

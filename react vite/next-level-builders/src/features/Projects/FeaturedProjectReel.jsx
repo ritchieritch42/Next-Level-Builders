@@ -19,7 +19,13 @@ function FeaturedProjectReel() {
     <Card bgcolor="var(--color-tan-300)">
       <Box stack="horizontal" placement="evenly">
         {imageFileNameList.map((file) => (
-          <Image width="95%" alt={file} src={file} borderradius="20px" />
+          <Image
+            width="95%"
+            alt={file}
+            src={file}
+            borderradius="20px"
+            padding="10px"
+          />
         ))}
       </Box>
     </Card>

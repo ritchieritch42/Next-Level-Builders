@@ -6,24 +6,23 @@ const caseMap = {
   cap: "capitalize",
 };
 
-const alignMap = {
-  center: "center",
-  left: "left",
-  right: "right",
-};
-
-const StyledText = styled.p`
+const StyledTextOverlay = styled.p`
   margin: 0px;
   padding: 5px 0px 0px 0px;
   color: ${(props) => props.color};
   font-weight: ${(props) => props.fontWeight};
   text-transform: ${({ textcase }) => caseMap[textcase]};
   font-style: ${(props) => props.fontstyle};
-  text-align: ${({ alignment }) => alignMap[alignment] || "flex-start"};
+
+  /* Centered */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;
 
-function Text({ children, ...rest }) {
-  return <StyledText {...rest}>{children}</StyledText>;
+function TextOverlay({ children, ...rest }) {
+  return <StyledTextOverlay {...rest}>{children}</StyledTextOverlay>;
 }
 
-export default Text;
+export default TextOverlay;
