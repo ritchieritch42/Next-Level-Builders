@@ -39,8 +39,8 @@ const StyledHeader = styled.header`
   text-transform: ${({ textcase }) => caseMap[textcase]};
   color: ${(props) => props.color};
   margin: 0;
-  padding: 5px 5px 5px 5px;
-  text-align: ${(align) => alignMap[align]};
+  padding: 0px 10px;
+  text-align: ${(align) => alignMap[align] || "center"};
 `;
 
 function Header({ children, ...rest }) {

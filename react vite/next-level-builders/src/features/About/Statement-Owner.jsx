@@ -10,17 +10,21 @@ function OwnerStatement() {
       <Header color="var(--color-blue-400)" as="h3" align="center">
         Craig Ritchie, Owner, Next Level Builders LLC
       </Header>
-      <Box placement="center" stack="horizontal" wrap="nowrap" gap="5px">
-        <Image
-          alt="Craig Ritchie Profile Picture"
-          src="/profilepicture.png"
-          borderradius="0px"
-        />
-        <Text>
-          Backed by a Bachelor of Science in Construction and 33 years of
-          industry experience, Craig Ritchie has served the Kansas City Metro
-          for 26 years.
-        </Text>
+      <Box stack="horizontal" wrap="nowrap" gap="5px">
+        <Box>
+          <Image
+            alt="Craig Ritchie Profile Picture"
+            src="/profilepicture.png"
+            borderradius="0px"
+          />
+        </Box>
+        <Box>
+          <Text>
+            Backed by a Bachelor of Science in Construction and 33 years of
+            industry experience, Craig Ritchie has served the Kansas City Metro
+            for 26 years.
+          </Text>
+        </Box>
       </Box>
       <Box>
         <Text>

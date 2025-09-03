@@ -5,6 +5,7 @@ const StyledLine = styled.hr`
   height: 0.5px;
   color: ${(props) => props.color || "var(--color-red-500)"};
   background-color: ${(props) => props.color || "var(--color-red-500)"};
+  margin: 3px;
 `;
 
 function Line({ ...rest }) {

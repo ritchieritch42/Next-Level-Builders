@@ -54,7 +54,7 @@ function Navbar() {
         </Box>
       </StyledNavbar>
       <StyledDropDown isOpen={isOpen}>
-        <Box placement="center" stack="vertical">
+        <Box stack="vertical" gap="2px">
           {linkRoutes.map((link) => (
             <Link key={link.route} route={link.route} setIsOpen={setIsOpen}>
               {link.title}

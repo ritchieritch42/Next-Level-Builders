@@ -6,7 +6,7 @@ function Job({ jobTitle, jobLocation, jobDescription }) {
       <Text fontWeight="700" color="var(--color-grey-500)">
         {jobTitle}
       </Text>
-      <Text color="var(--color-grey-500)">{jobLocation}</Text>
+      {jobLocation && <Text color="var(--color-grey-500)">{jobLocation}</Text>}
       <Text color="var(--color-grey-500)">{jobDescription}</Text>
     </>
   );
