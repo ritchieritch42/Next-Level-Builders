@@ -7,34 +7,44 @@ import Image from "../../ui/Image";
 function OwnerStatement() {
   return (
     <Card bgcolor="var(--color-tan-100)">
-      <Header color="var(--color-blue-400)" as="h3" align="center">
-        Craig Ritchie, Owner, Next Level Builders LLC
-      </Header>
-      <Box stack="horizontal" wrap="nowrap" gap="5px">
+      <Box>
         <Box>
-          <Image
-            alt="Craig Ritchie Profile Picture"
-            src="/profilepicture.png"
-            borderradius="0px"
-          />
+          <Header
+            padding="0px"
+            color="var(--color-blue-400)"
+            as="h3"
+            align="right"
+          >
+            Craig Ritchie, Owner, Next Level Builders LLC
+          </Header>
+          <Box>
+            <Image
+              alt="Craig Ritchie Profile Picture"
+              src="/profilepicture.png"
+              borderradius="20px 10px 10px 10px"
+              width="100px"
+            />
+          </Box>
+        </Box>
+        <Box stack="horizontal" wrap="nowrap" gap="5px">
+          <Box placement="start">
+            <Text>
+              Backed by a Bachelor of Science in Construction and 33 years of
+              industry experience, Craig Ritchie has served the Kansas City
+              Metro for 26 years.
+            </Text>
+          </Box>
         </Box>
         <Box>
           <Text>
-            Backed by a Bachelor of Science in Construction and 33 years of
-            industry experience, Craig Ritchie has served the Kansas City Metro
-            for 26 years.
+            He specializes in educational, healthcare, industrial, multi-family,
+            and tenant improvement projects.{" "}
+          </Text>
+          <Text>
+            Known for his hands-on approach and attention to detail, Craig
+            consistently delivers on-time, on-budget results that clients trust.
           </Text>
         </Box>
-      </Box>
-      <Box>
-        <Text>
-          He specializes in educational, healthcare, industrial, multi-family,
-          and tenant improvement projects.{" "}
-        </Text>
-        <Text>
-          Known for his hands-on approach and attention to detail, Craig
-          consistently delivers on-time, on-budget results that clients trust.
-        </Text>
       </Box>
     </Card>
   );
