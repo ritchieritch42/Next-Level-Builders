@@ -23,6 +23,7 @@ function TypeStatement() {
               as="h3"
               textcase="upper"
               align="center"
+              key={type}
             >
               {type}
             </Header>

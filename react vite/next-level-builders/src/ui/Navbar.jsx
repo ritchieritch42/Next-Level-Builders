@@ -47,7 +47,6 @@ function Navbar() {
   useEffect(() => {
     if (ref.current) {
       setHeight(isOpen ? ref.current.scrollHeight : 0);
-      console.log(ref.current.scrollHeight);
     }
   }, [isOpen]);
 
