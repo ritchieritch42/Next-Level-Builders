@@ -4,7 +4,7 @@ import Box from "./Box";
 import Logo from "./Logo";
 import { HiOutlineBars3, HiOutlineXMark } from "react-icons/hi2";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "./Link";
 
 const StyledNavbar = styled.div`
@@ -19,8 +19,8 @@ const StyledNavbar = styled.div`
 
 const StyledDropDown = styled.div`
   background-color: var(--color-tan-100);
-  height: ${(props) => (props.isOpen ? "17vh" : "0")};
-  transition: height 0.5s ease;
+  height: ${(props) => props.height + 5}px;
+  transition: height 0.55s ease;
   overflow: hidden;
 `;
 
@@ -41,6 +41,14 @@ const linkRoutes = [
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [height, setHeight] = useState(0);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    if (ref.current) {
+      setHeight(isOpen ? ref.current.scrollHeight : 0);
+    }
+  }, [isOpen]);
 
   return (
     <>
@@ -53,8 +61,8 @@ function Navbar() {
           </Logo>
         </Box>
       </StyledNavbar>
-      <StyledDropDown isOpen={isOpen}>
-        <Box placement="center" stack="vertical">
+      <StyledDropDown isOpen={isOpen} ref={ref} height={height}>
+        <Box stack="vertical" gap="2px">
           {linkRoutes.map((link) => (
             <Link key={link.route} route={link.route} setIsOpen={setIsOpen}>
               {link.title}

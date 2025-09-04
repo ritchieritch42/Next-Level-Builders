@@ -6,7 +6,7 @@ import Card from "./Card";
 function Footer() {
   return (
     <Card>
-      <Box placement="center">
+      <Box gap="2px">
         <Text color="var(--color-tan-100)">
           &copy; 2025 Next Level Builders, LLC
         </Text>

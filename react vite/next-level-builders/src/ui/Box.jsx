@@ -14,12 +14,11 @@ const stackMap = {
 
 const StyledBox = styled.div`
   display: flex;
-  /* flex-wrap: wrap; */
   flex-wrap: ${({ wrap }) => wrap || "wrap"};
   flex-direction: ${({ stack }) => stackMap[stack] || "column"};
-  justify-content: ${({ placement }) => justifyMap[placement] || "flex-start"};
-  align-items: ${({ placement }) => justifyMap[placement] || "flex-start"};
-  gap: ${(props) => props.gap};
+  justify-content: ${({ placement }) => justifyMap[placement] || "center"};
+  align-items: ${({ placement }) => justifyMap[placement] || "center"};
+  gap: ${(props) => props.gap || "10px"};
   width: 100%;
 `;
 
