@@ -6,20 +6,25 @@ import Projects from "./pages/Projects";
 import { BrowserRouter, Routes, Route } from "react-router";
 import GlobalStyles from "./Styles/GlobalStyles";
 
+import { StyleSheetManager } from "styled-components";
+import isPropValid from "@emotion/is-prop-valid";
+
 function App() {
   return (
     <>
-      <BrowserRouter>
-        <GlobalStyles />
-        <Routes>
-          <Route element={<AppLayout />}>
-            <Route path="/" element={<Homepage />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="*" element={<PageNotFound />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
+      <StyleSheetManager shouldForwardProp={(prop) => isPropValid(prop)}>
+        <BrowserRouter>
+          <GlobalStyles />
+          <Routes>
+            <Route element={<AppLayout />}>
+              <Route path="/" element={<Homepage />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="*" element={<PageNotFound />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </StyleSheetManager>
     </>
   );
 }
