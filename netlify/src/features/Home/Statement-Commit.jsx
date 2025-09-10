@@ -2,6 +2,10 @@ import Box from "../../ui/Box";
 import Header from "../../ui/Header";
 import Card from "../../ui/Card";
 import Text from "../../ui/Text";
+import { HiClipboardDocumentCheck } from "react-icons/hi2";
+import { HiClock } from "react-icons/hi2";
+import { HiCurrencyDollar } from "react-icons/hi2";
+import Logo from "../../ui/Logo";
 
 function CommitmentHeader() {
   return (
@@ -12,6 +16,18 @@ function CommitmentHeader() {
             We are committed to delivering quality construction on time and
             within budget.
           </Header>
+          <Box stack="horizontal" gap="50px">
+            <Logo color="var(--color-red-500)">
+              <HiClipboardDocumentCheck />
+            </Logo>
+            <Logo color="var(--color-red-500)">
+              <HiClock />
+            </Logo>
+            <Logo color="var(--color-red-500)">
+              <HiCurrencyDollar />
+            </Logo>
+          </Box>
+          {/* 
           <Text>
             At Next Level Builders, we focus on delivering high-quality projects
             with precision and care. Our clients trust us to handle every
@@ -29,6 +45,7 @@ function CommitmentHeader() {
             From industrial facilities to office spaces and beyond, we build for
             businesses that demand quality and reliability.
           </Text>
+        </Box> */}
         </Box>
       </Box>
     </Card>

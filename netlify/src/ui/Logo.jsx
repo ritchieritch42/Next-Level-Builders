@@ -9,13 +9,13 @@ const StyledLogoWrapper = styled.div`
   svg {
     width: 10vw;
     height: 10vw;
-    fill: black;
+    fill: ${(props) => props.color || "black"};
   }
 `;
 
-function Logo({ children, onClick }) {
+function Logo({ children, onClick, color }) {
   return (
-    <StyledLogoWrapper role="button" onClick={onClick}>
+    <StyledLogoWrapper role="button" onClick={onClick} color={color}>
       {children}
     </StyledLogoWrapper>
   );
