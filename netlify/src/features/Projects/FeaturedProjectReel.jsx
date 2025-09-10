@@ -16,7 +16,7 @@ const imageFileNameList = [
 
 function FeaturedProjectReel() {
   return (
-    <Card bgcolor="var(--color-tan-300)">
+    <Card bgcolor="var(--color-grey-500)">
       <Box stack="horizontal" placement="evenly">
         {imageFileNameList.map((file) => (
           <Image
