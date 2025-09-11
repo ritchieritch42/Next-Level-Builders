@@ -14,8 +14,8 @@ const typesOfWork = [
 
 function TypeStatement() {
   return (
-    <Box>
-      <Card bgcolor="var(--color-red-400)">
+    <Card bgcolor="var(--color-tan-100)" gap="10px">
+      <Card bgcolor="var(--color-blue-200)">
         <Box placement="center" gap="5px">
           {typesOfWork.map((type) => (
             <Header
@@ -32,15 +32,24 @@ function TypeStatement() {
       </Card>
       <Box placement="center" gap="5px">
         <Box>
-          <Header color="var(--color-tan-100)" as="h3">
+          <Header color="var(--color-blue-400)" as="h3">
             What we do best
           </Header>
-          <Text align="center" color="var(--color-tan-100)">
-            We take a focus on renovations and tenant improvements.
+          <Text align="center">
+            We take on projects of all sizes, from ground-up builds to
+            renovations and tenant improvements.
           </Text>
         </Box>
+        <Box placement="start">
+          <ul>
+            <li>Ground-Up Construction</li>
+            <li>Renovation & Tenant Finish</li>
+            <li>Sitework</li>
+            <li>Speciality</li>
+          </ul>
+        </Box>
       </Box>
-    </Box>
+    </Card>
   );
 }
 
