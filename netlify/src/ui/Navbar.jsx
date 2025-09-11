@@ -18,8 +18,8 @@ const StyledNavbar = styled.div`
 `;
 
 const StyledDropDown = styled.div`
-  background-color: var(--color-tan-100);
-  height: ${(props) => props.height + 5}px;
+  background-color: var(--color-base);
+  height: ${(props) => props.height}px;
   transition: height 0.55s ease;
   overflow: hidden;
 `;
@@ -62,7 +62,7 @@ function Navbar() {
         </Box>
       </StyledNavbar>
       <StyledDropDown isOpen={isOpen} ref={ref} height={height}>
-        <Box stack="vertical" gap="2px">
+        <Box stack="vertical" margin="5px">
           {linkRoutes.map((link) => (
             <Link key={link.route} route={link.route} setIsOpen={setIsOpen}>
               {link.title}
