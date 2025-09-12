@@ -4,7 +4,7 @@ const StyledLogoWrapper = styled.div`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
+  cursor: ${(props) => props.cursor};
 
   svg {
     width: 10vw;
@@ -13,9 +13,14 @@ const StyledLogoWrapper = styled.div`
   }
 `;
 
-function Logo({ children, onClick, color }) {
+function Logo({ children, onClick, color, cursor }) {
   return (
-    <StyledLogoWrapper role="button" onClick={onClick} color={color}>
+    <StyledLogoWrapper
+      role="button"
+      onClick={onClick}
+      color={color}
+      cursor={cursor}
+    >
       {children}
     </StyledLogoWrapper>
   );

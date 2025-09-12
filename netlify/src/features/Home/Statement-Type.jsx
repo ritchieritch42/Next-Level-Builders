@@ -1,46 +1,39 @@
+import ImageBackgroundBox from "../../ui/Box-ImageBackground";
+import PhotoCarousel from "../../ui/PhotoCarousel";
+import Image from "../../ui/Image";
 import Box from "../../ui/Box";
-import Card from "../../ui/Card";
-import Header from "../../ui/Header";
 import Text from "../../ui/Text";
 
 const typesOfWork = [
-  "Industrial & Warehousing",
-  "Office Spaces",
-  "Religious Facilities",
-  "Financial Institutions",
-  "Sitework & Improvements",
-  "Commercial Properties",
+  {
+    type: "Office Spaces",
+    image: "oproom2.JPG",
+  },
+  {
+    type: "Tenant Finish",
+    image: "hlwy1.JPG",
+  },
+  {
+    type: "Improvements",
+    image: "admin2.JPG",
+  },
 ];
 
 function TypeStatement() {
   return (
-    <Box>
-      <Card bgcolor="var(--color-red-400)">
-        <Box placement="center" gap="5px">
-          {typesOfWork.map((type) => (
-            <Header
-              color="var(--color-tan-100)"
-              as="h3"
-              textcase="upper"
-              align="center"
-              key={type}
-            >
-              {type}
-            </Header>
-          ))}
-        </Box>
-      </Card>
-      <Box placement="center" gap="5px">
+    <PhotoCarousel>
+      {typesOfWork.map((type) => (
         <Box>
-          <Header color="var(--color-tan-100)" as="h3">
-            What we do best
-          </Header>
-          <Text align="center" color="var(--color-tan-100)">
-            We take a focus on renovations and tenant improvements.
-          </Text>
+          <Image
+            src={type.image}
+            width="100%"
+            height="auto"
+            backgroundsize="contain"
+          />
+          <Text>{type.type}</Text>
         </Box>
-      </Box>
-    </Box>
+      ))}
+    </PhotoCarousel>
   );
 }
 

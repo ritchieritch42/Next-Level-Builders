@@ -2,28 +2,28 @@ import Box from "../../ui/Box";
 import Card from "../../ui/Card";
 import Text from "../../ui/Text";
 import Logo from "../../ui/Logo";
-import { FaPersonShelter } from "react-icons/fa6";
+import { FaBookOpen } from "react-icons/fa";
 import { FaRegHandshake } from "react-icons/fa";
 import { FaHammer } from "react-icons/fa";
 import { FaPen } from "react-icons/fa";
 
 const steps = [
   {
-    step: "General Contracting",
+    step: "Traditional General Contracting",
     description:
-      "Already have an architect’s design? We bring it to life with expert building and dependable results.",
-    logo: <FaPersonShelter />,
+      "We use the plans drawn by your design team to bid and build your project. This approach is preferred by some Owners as they have a direct line of Communication with their design team",
+    logo: <FaBookOpen />,
   },
   {
     step: "Negotiated",
     description:
-      "Want a more collaborative process? We work with you early to plan, budget, and build smoothly.",
+      "We work with your design team to provide the most efficient and cost effective design. This approach allows your design team to work directly with you but allows us to constantly review the drawings to keep buildability and budget in mind",
     logo: <FaRegHandshake />,
   },
   {
-    step: "Design-Build",
+    step: "Design Build",
     description:
-      "Prefer one team from start to finish? We handle both design and construction for a faster, simpler project.",
+      "We start with your concept and provide complete design and construction services. Providing both design and construction allows us to customize your building to give you the best structure at the best price in the shortest time frame.",
     logo: (
       <>
         <FaPen />
