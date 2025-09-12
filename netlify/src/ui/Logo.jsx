@@ -7,20 +7,15 @@ const StyledLogoWrapper = styled.div`
   cursor: ${(props) => props.cursor};
 
   svg {
-    width: 10vw;
-    height: 10vw;
+    width: ${(props) => props.width || "10vw"};
+    height: ${(props) => props.height || "10vw"};
     fill: ${(props) => props.color || "black"};
   }
 `;
 
-function Logo({ children, onClick, color, cursor }) {
+function Logo({ children, ...rest }) {
   return (
-    <StyledLogoWrapper
-      role="button"
-      onClick={onClick}
-      color={color}
-      cursor={cursor}
-    >
+    <StyledLogoWrapper role="button" {...rest}>
       {children}
     </StyledLogoWrapper>
   );

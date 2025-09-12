@@ -26,10 +26,12 @@ const steps = [
       "We start with your concept and provide complete design and construction services. Providing both design and construction allows us to customize your building to give you the best structure at the best price in the shortest time frame.",
     logo: (
       <>
-        <FaPen />
-        <FaHammer />
+        <FaPen key="pen" />
+        <FaHammer key="hammer" />
       </>
     ),
+    height: "8vw",
+    width: "8vw",
   },
 ];
 
@@ -40,19 +42,20 @@ function HowStatement() {
         <Card
           bgcolor="var(--color-accent)"
           margin="20px 10px 20px 10px"
-          padding="40px"
+          padding="30px"
           borderradius="40px 25px 25px 25px"
+          key={step.step}
         >
-          <Box key={step.step}>
-            <Box stack="horizontal" wrap="nowrap" placement="evenly">
-              <Box>
-                <Text fontWeight="700" textcase="upper" align="left">
-                  {step.step}
-                </Text>
-                <Text align="left">{step.description}</Text>
-              </Box>
-              <Logo color="#ffffff">{step.logo}</Logo>
+          <Box stack="horizontal" wrap="nowrap" placement="evenly">
+            <Box placement="start">
+              <Text fontWeight="700" textcase="upper" align="left">
+                {step.step}
+              </Text>
+              <Text align="left">{step.description}</Text>
             </Box>
+            <Logo color="#ffffff" width={step.width} height={step.height}>
+              {step.logo}
+            </Logo>
           </Box>
         </Card>
       ))}

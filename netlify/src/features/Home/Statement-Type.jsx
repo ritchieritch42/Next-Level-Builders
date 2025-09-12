@@ -23,7 +23,7 @@ function TypeStatement() {
   return (
     <PhotoCarousel>
       {typesOfWork.map((type) => (
-        <Box>
+        <Box key={type.type}>
           <Image
             src={type.image}
             width="100%"

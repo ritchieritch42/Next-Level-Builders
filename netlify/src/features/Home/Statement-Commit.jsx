@@ -14,7 +14,7 @@ function CommitmentHeader() {
         We are committed to delivering quality construction on time and within
         budget.
       </Header>
-      <Box stack="horizontal" gap="20vw">
+      {/* <Box stack="horizontal" gap="20vw">
         <Logo color="var(--color-red-400)">
           <HiClipboardDocumentCheck />
         </Logo>
@@ -24,7 +24,7 @@ function CommitmentHeader() {
         <Logo color="var(--color-red-400)">
           <HiCurrencyDollar />
         </Logo>
-      </Box>
+      </Box> */}
     </Box>
   );
 }
