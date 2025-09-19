@@ -38,9 +38,12 @@ const StyledHeader = styled.header`
 
   text-transform: ${({ textcase }) => caseMap[textcase]};
   color: ${(props) => props.color};
-  margin: 0;
+  margin: ${(props) => props.margin || 0};
   padding: ${(props) => props.padding || "0px 10px"};
   text-align: ${(align) => alignMap[align] || "center"};
+  background-color: ${(props) => props.bgColor};
+  opacity: ${(props) => props.transparency};
+  border-radius: ${(props) => props.borderRadius};
 `;
 
 function Header({ children, ...rest }) {

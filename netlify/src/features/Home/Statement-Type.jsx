@@ -1,4 +1,5 @@
 import Text from "../../ui/Text";
+import Header from "../../ui/Header";
 import styled from "styled-components";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -27,11 +28,9 @@ const StyledCustomSlide = styled.div`
   background-repeat: no-repeat;
   background-size: 100vw;
   height: 40vh;
-
-  image {
-    width: 100%;
-    height: auto;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 `;
 
 function CustomSlide(typeObject) {
@@ -39,7 +38,17 @@ function CustomSlide(typeObject) {
 
   return (
     <StyledCustomSlide key={type} image={image}>
-      <Text>{type}</Text>
+      <Header
+        as="h3"
+        color="var(--color-tan-100)"
+        padding="15px 15px 15px 15px"
+        bgColor="var(--color-grey-700)"
+        transparency="0.85"
+        margin="0px 0px 20px 0px"
+        borderRadius="50px"
+      >
+        {type}
+      </Header>
     </StyledCustomSlide>
   );
 }
