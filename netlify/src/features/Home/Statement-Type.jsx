@@ -1,4 +1,3 @@
-import Text from "../../ui/Text";
 import Header from "../../ui/Header";
 import styled from "styled-components";
 import "slick-carousel/slick/slick.css";
@@ -22,6 +21,16 @@ const typesOfWork = [
     image: "admin2.JPG",
   },
 ];
+
+const StyledContainer = styled.div`
+  .slick-dots li button:before {
+    font-size: 0.75rem;
+  }
+
+  .slick-dots {
+    margin: 5px 0px 5px 0px;
+  }
+`;
 
 const StyledCustomSlide = styled.div`
   background-image: url(${(props) => props.image});
@@ -64,13 +73,13 @@ const settings = {
 
 function TypeStatement() {
   return (
-    <div>
+    <StyledContainer>
       <Slider {...settings}>
         {typesOfWork.map((type) => (
           <CustomSlide index={type.id} type={type.type} image={type.image} />
         ))}
       </Slider>
-    </div>
+    </StyledContainer>
   );
 }
 

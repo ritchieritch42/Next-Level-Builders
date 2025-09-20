@@ -9,7 +9,7 @@ import Logo from "../../ui/Logo";
 
 function CommitmentHeader() {
   return (
-    <Box>
+    <Box margin="20px 0px 20px 0px">
       <Header color="var(--color-tan-100)" as="h3">
         We are committed to delivering quality construction on time and within
         budget.
