@@ -35,6 +35,10 @@ const GlobalStyles = createGlobalStyle`
     --color-socials-fb: #0866ff;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     margin: 0;
     min-height: 100vh;

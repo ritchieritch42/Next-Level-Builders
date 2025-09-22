@@ -9,7 +9,7 @@ import { BiLogoLinkedinSquare } from "react-icons/bi";
 function ContactStatement() {
   return (
     <>
-      <Card gap="20px">
+      <Card gap="20px" id="contact">
         <Box gap="20px">
           <Header color="var(--color-tan-100)" as="h3" align="center">
             Ready to build the future of your business?

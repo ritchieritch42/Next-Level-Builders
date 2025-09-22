@@ -18,7 +18,7 @@ const StyledNavbar = styled.div`
 `;
 
 const StyledDropDown = styled.div`
-  background-color: var(--color-base);
+  background-color: var(--color-tan-100);
   height: ${(props) => props.height}px;
   transition: height 0.55s ease;
   overflow: hidden;

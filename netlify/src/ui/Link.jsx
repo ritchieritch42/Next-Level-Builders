@@ -2,7 +2,7 @@ import { NavLink, useLocation } from "react-router";
 import styled, { css } from "styled-components";
 
 const StyledLink = styled(NavLink)`
-  color: var(--color-tan-100);
+  color: rgb(0, 0, 0);
   font-size: 1.3rem;
   font-weight: 400;
   text-decoration: none;

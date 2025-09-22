@@ -33,7 +33,7 @@ const StyledHeader = styled.header`
     props.as === "h3" &&
     css`
       font-size: 1.25rem;
-      font-weight: 600;
+      font-weight: 400;
     `}
 
   text-transform: ${({ textcase }) => caseMap[textcase]};
