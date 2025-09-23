@@ -2,7 +2,6 @@ import Box from "../../ui/Box";
 import Header from "../../ui/Header";
 import Card from "../../ui/Card";
 import Text from "../../ui/Text";
-import Line from "../../ui/Line";
 import { FaFacebook } from "react-icons/fa";
 import { BiLogoLinkedinSquare } from "react-icons/bi";
 

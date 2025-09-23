@@ -6,6 +6,7 @@ import { FaBookOpen } from "react-icons/fa";
 import { FaRegHandshake } from "react-icons/fa";
 import { FaHammer } from "react-icons/fa";
 import { FaPen } from "react-icons/fa";
+import Header from "../../ui/Header";
 
 const steps = [
   {
@@ -37,28 +38,33 @@ const steps = [
 
 function HowStatement() {
   return (
-    <Box margin="10px 0px 0px 0px">
-      {steps.map((step) => (
-        <Card
-          bgcolor="var(--color-accent)"
-          margin="20px 10px 20px 10px"
-          padding="30px"
-          borderradius="40px 25px 25px 25px"
-          key={step.step}
-        >
-          <Box stack="horizontal" wrap="nowrap" placement="evenly">
-            <Box placement="start">
-              <Text fontWeight="700" textcase="upper" align="left">
-                {step.step}
-              </Text>
-              <Text align="left">{step.description}</Text>
+    <Box margin="40px 0px 30px 0px" gap="0px">
+      <Header as="h2" color="var(--color-tan-100)">
+        Our Contracting Methods
+      </Header>
+      <Box>
+        {steps.map((step) => (
+          <Card
+            bgcolor="var(--color-accent)"
+            margin="10px 10px 10px 10px"
+            padding="30px"
+            borderradius="40px 25px 25px 25px"
+            key={step.step}
+          >
+            <Box stack="horizontal" wrap="nowrap" placement="evenly">
+              <Box placement="start">
+                <Text fontWeight="700" textcase="upper" align="left">
+                  {step.step}
+                </Text>
+                <Text align="left">{step.description}</Text>
+              </Box>
+              <Logo color="#ffffff" width={step.width} height={step.height}>
+                {step.logo}
+              </Logo>
             </Box>
-            <Logo color="#ffffff" width={step.width} height={step.height}>
-              {step.logo}
-            </Logo>
-          </Box>
-        </Card>
-      ))}
+          </Card>
+        ))}
+      </Box>
     </Box>
   );
 }
