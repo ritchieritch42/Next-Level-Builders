@@ -20,7 +20,7 @@ function ContactStatement() {
         </Box>
         <Box stack="horizontal" gap="60px">
           <a
-            href="https://www.facebook.com/profile.php?id=61572441690192"
+            href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.facebook.com/61572441690192&ved=2ahUKEwjT7IiH5vOPAxWEnWoFHRUlBKwQFnoECBQQAQ&usg=AOvVaw2vkGKA9EgIa18am3LIp0EL"
             target="_blank"
           >
             <FaFacebook size={50} style={{ fill: "var(--color-tan-100)" }} />
