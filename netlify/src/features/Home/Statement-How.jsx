@@ -39,7 +39,7 @@ const steps = [
 function HowStatement() {
   return (
     <Box margin="40px 0px 30px 0px" gap="0px">
-      <Header as="h2" color="var(--color-tan-100)">
+      <Header as="h3" color="var(--color-tan-100)">
         Our Contracting Methods
       </Header>
       <Box>

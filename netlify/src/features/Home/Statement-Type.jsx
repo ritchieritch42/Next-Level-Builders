@@ -36,7 +36,7 @@ const StyledCustomSlide = styled.div`
   background-image: url(${(props) => props.image});
   background-repeat: no-repeat;
   background-size: 100vw;
-  height: 40vh;
+  height: 33vh;
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -53,7 +53,7 @@ function CustomSlide(typeObject) {
         padding="15px 15px 15px 15px"
         bgColor="var(--color-grey-700)"
         transparency="0.85"
-        margin="0px 0px 20px 0px"
+        margin="auto"
         borderRadius="50px"
       >
         {type}
