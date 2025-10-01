@@ -11,7 +11,7 @@ function CommitmentHeader() {
         <FixedImage
           alt="BVD Phase 1 Reception Desk.jpg"
           src="BVD Phase 1 Reception Desk.jpg"
-          brightness="60%"
+          brightness="45%"
         />
         <TextOverlay>
           <Header color="var(--color-tan-100)" as="h3">
