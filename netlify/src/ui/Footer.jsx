@@ -8,7 +8,7 @@ function Footer() {
   return (
     <Card gap="10px">
       <Box wrap="nowrap">
-        <Line width="95%" color="var(--color-tan-100)" />
+        <Line width="95%" color="var(--color-neutral-light)" />
       </Box>
       <Box gap="2px">
         <Text color="var(--color-tan-100)">
