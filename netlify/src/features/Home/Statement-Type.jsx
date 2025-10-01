@@ -1,55 +1,85 @@
-import Box from "../../ui/Box";
-import Card from "../../ui/Card";
 import Header from "../../ui/Header";
-import Text from "../../ui/Text";
+import styled from "styled-components";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
 
 const typesOfWork = [
-  "Industrial & Warehousing",
-  "Office Spaces",
-  "Religious Facilities",
-  "Financial Institutions",
-  "Sitework & Improvements",
-  "Commercial Properties",
+  {
+    id: 1,
+    type: "Office Spaces",
+    image: "oproom2.JPG",
+  },
+  {
+    id: 2,
+    type: "Tenant Finish",
+    image: "office1.JPG",
+  },
+  {
+    id: 3,
+    type: "Improvements",
+    image: "admin2.JPG",
+  },
 ];
+
+const StyledContainer = styled.div`
+  .slick-dots li button:before {
+    font-size: 0.75rem;
+  }
+
+  .slick-dots {
+    margin: 5px 0px 5px 0px;
+  }
+`;
+
+const StyledCustomSlide = styled.div`
+  background-image: url(${(props) => props.image});
+  background-repeat: no-repeat;
+  background-size: 100vw;
+  height: 33vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+`;
+
+function CustomSlide(typeObject) {
+  const { type, image } = typeObject;
+
+  return (
+    <StyledCustomSlide key={type} image={image}>
+      <Header
+        as="h3"
+        color="var(--color-tan-100)"
+        padding="15px 15px 15px 15px"
+        bgColor="var(--color-grey-700)"
+        transparency="0.85"
+        margin="auto"
+        borderRadius="50px"
+      >
+        {type}
+      </Header>
+    </StyledCustomSlide>
+  );
+}
+
+const settings = {
+  dots: true,
+  arrows: false,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+};
 
 function TypeStatement() {
   return (
-    <Card bgcolor="var(--color-tan-100)" gap="10px">
-      <Card bgcolor="var(--color-blue-200)">
-        <Box placement="center" gap="5px">
-          {typesOfWork.map((type) => (
-            <Header
-              color="var(--color-tan-100)"
-              as="h3"
-              textcase="upper"
-              align="center"
-              key={type}
-            >
-              {type}
-            </Header>
-          ))}
-        </Box>
-      </Card>
-      <Box placement="center" gap="5px">
-        <Box>
-          <Header color="var(--color-blue-400)" as="h3">
-            What we do best
-          </Header>
-          <Text align="center">
-            We take on projects of all sizes, from ground-up builds to
-            renovations and tenant improvements.
-          </Text>
-        </Box>
-        <Box placement="start">
-          <ul>
-            <li>Ground-Up Construction</li>
-            <li>Renovation & Tenant Finish</li>
-            <li>Sitework</li>
-            <li>Speciality</li>
-          </ul>
-        </Box>
-      </Box>
-    </Card>
+    <StyledContainer>
+      <Slider {...settings}>
+        {typesOfWork.map((type) => (
+          <CustomSlide index={type.id} type={type.type} image={type.image} />
+        ))}
+      </Slider>
+    </StyledContainer>
   );
 }
 

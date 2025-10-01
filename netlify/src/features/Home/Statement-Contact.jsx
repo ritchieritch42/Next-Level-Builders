@@ -7,10 +7,10 @@ import { BiLogoLinkedinSquare } from "react-icons/bi";
 
 function ContactStatement() {
   return (
-    <Card bgcolor="var(--color-tan-100)">
-      <Box>
-        <Box>
-          <Header color="var(--color-blue-400)" as="h3" align="center">
+    <>
+      <Card gap="20px" id="contact">
+        <Box gap="20px">
+          <Header color="var(--color-tan-100)" as="h3" align="center">
             Ready to build the future of your business?
           </Header>
           <Text align="center">
@@ -18,33 +18,25 @@ function ContactStatement() {
             vision to life.
           </Text>
         </Box>
-        <Box placement="center">
-          <Header color="var(--color-red-500)" as="h3">
-            Contact Craig Ritchie
-          </Header>
-          <Box stack="horizontal" placement="center" gap="60px">
-            <a
-              href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.facebook.com/61572441690192&ved=2ahUKEwjT7IiH5vOPAxWEnWoFHRUlBKwQFnoECBQQAQ&usg=AOvVaw2vkGKA9EgIa18am3LIp0EL"
-              target="_blank"
-            >
-              <FaFacebook
-                size={50}
-                style={{ fill: "var(--color-socials-fb)" }}
-              />
-            </a>
-            <a
-              href="https://www.linkedin.com/company/next-level-bldrs-llc/"
-              target="_blank"
-            >
-              <BiLogoLinkedinSquare
-                size={60}
-                style={{ fill: "var(--color-socials-li)" }}
-              />
-            </a>
-          </Box>
+        <Box stack="horizontal" gap="60px">
+          <a
+            href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.facebook.com/61572441690192&ved=2ahUKEwjT7IiH5vOPAxWEnWoFHRUlBKwQFnoECBQQAQ&usg=AOvVaw2vkGKA9EgIa18am3LIp0EL"
+            target="_blank"
+          >
+            <FaFacebook size={50} style={{ fill: "var(--color-tan-100)" }} />
+          </a>
+          <a
+            href="https://www.linkedin.com/company/next-level-bldrs-llc/"
+            target="_blank"
+          >
+            <BiLogoLinkedinSquare
+              size={60}
+              style={{ fill: "var(--color-tan-100)" }}
+            />
+          </a>
         </Box>
-      </Box>
-    </Card>
+      </Card>
+    </>
   );
 }
 

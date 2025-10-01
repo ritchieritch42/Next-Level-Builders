@@ -1,6 +1,13 @@
 import { createGlobalStyle } from "styled-components";
 const GlobalStyles = createGlobalStyle`
 :root {
+    --color-base: #2C2C2C;
+    --color-secondary: #8B0016;
+    --color-accent: #004B87;
+    --color-neutral-light: #F2F2F2;
+    --color-neutral-dark: #1B1B1B;
+
+
     --color-blue-100: #749db7;
     --color-blue-200: #5b8baa;
     --color-blue-300: #41799c;
@@ -28,11 +35,15 @@ const GlobalStyles = createGlobalStyle`
     --color-socials-fb: #0866ff;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     margin: 0;
     min-height: 100vh;
     font-family: "Montserrat", sans-serif;
-    background-color: var(--color-red-500);
+    background-color: var(--color-base);
   }
 `;
 

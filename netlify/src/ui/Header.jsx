@@ -33,14 +33,17 @@ const StyledHeader = styled.header`
     props.as === "h3" &&
     css`
       font-size: 1.25rem;
-      font-weight: 600;
+      font-weight: 400;
     `}
 
   text-transform: ${({ textcase }) => caseMap[textcase]};
   color: ${(props) => props.color};
-  margin: 0;
+  margin: ${(props) => props.margin || 0};
   padding: ${(props) => props.padding || "0px 10px"};
   text-align: ${(align) => alignMap[align] || "center"};
+  background-color: ${(props) => props.bgColor};
+  opacity: ${(props) => props.transparency};
+  border-radius: ${(props) => props.borderRadius};
 `;
 
 function Header({ children, ...rest }) {

@@ -7,7 +7,6 @@ import ContactStatement from "../features/Home/Statement-Contact";
 function Homepage() {
   return (
     <>
-      <IntroHeader />
       <CommitmentHeader />
       <TypeStatement />
       <HowStatement />

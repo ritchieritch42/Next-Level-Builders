@@ -2,10 +2,14 @@ import Text from "./Text";
 import { SiNetlify } from "react-icons/si";
 import Box from "./Box";
 import Card from "./Card";
+import Line from "./Line";
 
 function Footer() {
   return (
-    <Card>
+    <Card gap="10px">
+      <Box wrap="nowrap">
+        <Line width="95%" color="var(--color-tan-100)" />
+      </Box>
       <Box gap="2px">
         <Text color="var(--color-tan-100)">
           &copy; 2025 Next Level Builders, LLC

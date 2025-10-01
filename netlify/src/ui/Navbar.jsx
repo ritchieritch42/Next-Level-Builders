@@ -19,7 +19,7 @@ const StyledNavbar = styled.div`
 
 const StyledDropDown = styled.div`
   background-color: var(--color-tan-100);
-  height: ${(props) => props.height + 5}px;
+  height: ${(props) => props.height}px;
   transition: height 0.55s ease;
   overflow: hidden;
 `;
@@ -55,14 +55,14 @@ function Navbar() {
       <StyledNavbar isOpen={isOpen}>
         <Box stack="horizontal" placement="evenly">
           <HorizontalLogo />
-          <Logo onClick={() => setIsOpen(!isOpen)}>
+          <Logo onClick={() => setIsOpen(!isOpen)} cursor="pointer">
             {isOpen && <HiOutlineXMark />}
             {!isOpen && <HiOutlineBars3 />}
           </Logo>
         </Box>
       </StyledNavbar>
       <StyledDropDown isOpen={isOpen} ref={ref} height={height}>
-        <Box stack="vertical" gap="2px">
+        <Box stack="vertical" margin="5px">
           {linkRoutes.map((link) => (
             <Link key={link.route} route={link.route} setIsOpen={setIsOpen}>
               {link.title}

@@ -6,25 +6,27 @@ import Image from "../../ui/Image";
 
 function OwnerStatement() {
   return (
-    <Card bgcolor="var(--color-tan-100)">
+    <Card bgcolor="var(--color-base)">
       <Box>
         <Box>
-          <Header
-            padding="0px"
-            color="var(--color-blue-400)"
-            as="h3"
-            align="right"
-          >
-            Craig Ritchie, Owner, Next Level Builders LLC
-          </Header>
-          <Box>
+          <Card bgcolor="var(--color-accent)">
+            <Header
+              padding="0px"
+              color="var(--color-neutral-light)"
+              as="h3"
+              align="right"
+            >
+              Craig Ritchie, Owner, Next Level Builders LLC
+            </Header>
+          </Card>
+          {/* <Box>
             <Image
               alt="Craig Ritchie Profile Picture"
               src="/profilepicture.png"
               borderradius="20px 10px 10px 10px"
               width="100px"
             />
-          </Box>
+          </Box> */}
         </Box>
         <Box stack="horizontal" wrap="nowrap" gap="5px">
           <Box placement="start">

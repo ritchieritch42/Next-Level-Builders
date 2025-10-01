@@ -4,18 +4,18 @@ const StyledLogoWrapper = styled.div`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
+  cursor: ${(props) => props.cursor};
 
   svg {
-    width: 10vw;
-    height: 10vw;
+    width: ${(props) => props.width || "10vw"};
+    height: ${(props) => props.height || "10vw"};
     fill: ${(props) => props.color || "black"};
   }
 `;
 
-function Logo({ children, onClick, color }) {
+function Logo({ children, ...rest }) {
   return (
-    <StyledLogoWrapper role="button" onClick={onClick} color={color}>
+    <StyledLogoWrapper role="button" {...rest}>
       {children}
     </StyledLogoWrapper>
   );

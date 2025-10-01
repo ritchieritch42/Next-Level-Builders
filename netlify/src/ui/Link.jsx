@@ -2,11 +2,11 @@ import { NavLink, useLocation } from "react-router";
 import styled, { css } from "styled-components";
 
 const StyledLink = styled(NavLink)`
-  color: #000000;
+  color: rgb(0, 0, 0);
   font-size: 1.3rem;
   font-weight: 400;
   text-decoration: none;
-  padding: 5px;
+  margin: 5px;
   transition: 0.5s;
 
   ${({ $disabled }) =>

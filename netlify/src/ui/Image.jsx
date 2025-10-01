@@ -5,6 +5,7 @@ const StyledImage = styled.img`
   height: ${(props) => props.height || "auto"};
   padding: ${(props) => props.padding};
   border-radius: ${(props) => props.borderradius};
+  background-size: ${(props) => props.backgroundsize};
   filter: ${(props) => `brightness(${props.brightness})`};
 `;
 

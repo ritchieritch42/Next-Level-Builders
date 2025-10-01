@@ -19,6 +19,7 @@ const StyledBox = styled.div`
   justify-content: ${({ placement }) => justifyMap[placement] || "center"};
   align-items: ${({ placement }) => justifyMap[placement] || "center"};
   gap: ${(props) => props.gap || "10px"};
+  margin: ${(props) => props.margin || "0px"};
   width: 100%;
 `;
 
