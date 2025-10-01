@@ -6,8 +6,9 @@ const caseMap = {
   cap: "capitalize",
 };
 
-const StyledTextOverlay = styled.p`
+const StyledTextOverlay = styled.div`
   margin: 0px;
+  width: 75%;
   padding: 5px 0px 0px 0px;
   color: ${(props) => props.color};
   font-weight: ${(props) => props.fontWeight};

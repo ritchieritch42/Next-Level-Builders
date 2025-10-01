@@ -13,9 +13,10 @@ const alignMap = {
 };
 
 const StyledText = styled.p`
-  margin: 0px;
-  padding: 0px 12px;
+  margin: ${(props) => props.margin || "0px"};
+  padding: ${(props) => props.margin || "0px 12px"};
   color: ${(props) => props.color || "var(--color-tan-100)"};
+  background-color: ${(props) => props.bgColor};
   font-weight: ${(props) => props.fontWeight};
   text-transform: ${({ textcase }) => caseMap[textcase]};
   font-style: ${(props) => props.fontstyle};

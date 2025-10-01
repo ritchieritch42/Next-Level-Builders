@@ -32,7 +32,7 @@ const StyledHeader = styled.header`
   ${(props) =>
     props.as === "h3" &&
     css`
-      font-size: 1.25rem;
+      font-size: 1.4rem;
       font-weight: 400;
     `}
 
