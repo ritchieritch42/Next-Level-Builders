@@ -10,13 +10,13 @@ function ContactStatement() {
     <>
       <Card gap="20px" id="contact">
         <Box gap="20px">
-          <Header color="var(--color-tan-100)" as="h3" align="center">
+          <Header color="var(--color-tan-100)" as="h1" align="center">
             Ready to build the future of your business?
           </Header>
-          <Text align="center">
+          <Header as="h3" color="var(--color-tan-100)" align="center">
             Let's talk about how Next Level Builders can help you bring your
             vision to life.
-          </Text>
+          </Header>
         </Box>
         <Box stack="horizontal" gap="60px">
           <a
