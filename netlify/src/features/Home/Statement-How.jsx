@@ -2,6 +2,7 @@ import Box from "../../ui/Box";
 import Card from "../../ui/Card";
 import Text from "../../ui/Text";
 import Logo from "../../ui/Logo";
+import Line from "../../ui/Line";
 import { FaBookOpen } from "react-icons/fa";
 import { FaRegHandshake } from "react-icons/fa";
 import { FaHammer } from "react-icons/fa";
@@ -39,8 +40,8 @@ const steps = [
 function HowStatement() {
   return (
     <Box margin="40px 0px 30px 0px" gap="0px">
-      <Header as="h3" color="var(--color-tan-100)">
-        Our Contracting Methods
+      <Header as="h1" color="var(--color-tan-100)" textcase="upper">
+        How We Build
       </Header>
       <Box>
         {steps.map((step) => (
