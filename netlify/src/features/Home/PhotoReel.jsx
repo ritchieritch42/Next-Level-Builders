@@ -1,4 +1,4 @@
-import Header from "../../ui/Header";
+import Text from "../../ui/Text";
 import Box from "../../ui/Box";
 import styled from "styled-components";
 import "slick-carousel/slick/slick.css";
@@ -8,22 +8,29 @@ import Slider from "react-slick";
 const typesOfWork = [
   {
     id: 1,
-    type: "Tenant Improvement",
     image: "oproom2.JPG",
   },
   {
     id: 2,
-    type: "Full Building Renovation",
     image: "office1.JPG",
   },
   {
     id: 3,
-    type: "Ground Up Construction",
     image: "admin2.JPG",
+  },
+  {
+    id: 4,
+    image: "admin1.JPG",
+  },
+  {
+    id: 5,
+    image: "rcptn2.JPG",
   },
 ];
 
 const StyledContainer = styled.div`
+  margin-top: 50px;
+
   .slick-dots li button:before {
     font-size: 0.75rem;
   }
@@ -46,21 +53,7 @@ const StyledCustomSlide = styled.div`
 function CustomSlide(typeObject) {
   const { type, image } = typeObject;
 
-  return (
-    <StyledCustomSlide key={type} image={image}>
-      <Header
-        as="h3"
-        color="var(--color-tan-100)"
-        padding="15px 15px 15px 15px"
-        bgColor="var(--color-grey-700)"
-        transparency="0.85"
-        margin="auto"
-        borderRadius="50px"
-      >
-        {type}
-      </Header>
-    </StyledCustomSlide>
-  );
+  return <StyledCustomSlide key={type} image={image} />;
 }
 
 const settings = {
@@ -72,14 +65,9 @@ const settings = {
   slidesToScroll: 1,
 };
 
-function TypeStatement() {
+function PhotoReel() {
   return (
     <>
-      <Box margin="0px 0px 20px 0px">
-        <Header color="var(--color-tan-100)" as="h3">
-          What We Build
-        </Header>
-      </Box>
       <StyledContainer>
         <Slider {...settings}>
           {typesOfWork.map((type) => (
@@ -87,8 +75,13 @@ function TypeStatement() {
           ))}
         </Slider>
       </StyledContainer>
+      <Box margin="30px 0px 10px 0px">
+        <Text fontstyle="italic" color="var(--color-tan-100)">
+          (Blue Valley Dermatology Phase One)
+        </Text>
+      </Box>
     </>
   );
 }
 
-export default TypeStatement;
+export default PhotoReel;

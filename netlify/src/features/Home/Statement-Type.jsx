@@ -13,75 +13,73 @@ import {
 } from "react-icons/fa";
 import { AiOutlineRedo } from "react-icons/ai";
 import { MdMeetingRoom } from "react-icons/md";
+import Line from "../../ui/Line";
 
 function TypeStatement() {
   return (
-    <>
-      <Header
-        as="h1"
-        color="var(--color-tan-100)"
-        textcase="upper"
-        margin="10px 0px"
-      >
+    <Box margin="30px 0px">
+      <Header as="h1" color="var(--color-tan-100)" textcase="upper">
         What we build
       </Header>
       <Card
-        bgcolor="var(--color-secondary)"
+        bgcolor="#ffffff"
         margin="10px 10px 10px 10px"
         padding="30px"
         borderradius="40px 25px 25px 25px"
         gap="10px"
       >
         <Box>
-          <Header as="h2" color="var(--color-tan-100)">
+          <Header as="h2" color="#000000">
             Tenant Improvement
           </Header>
           <Box stack="horizontal">
-            <Logo color="#ffffff" width="8vw">
+            <Logo color="#000000" width="8vw">
               <FaUserEdit />
             </Logo>
-            <Logo color="#ffffff" width="8vw">
+            <Logo color="#000000" width="8vw">
               <MdMeetingRoom />
             </Logo>
           </Box>
-          <Text color="var(--color-neutral-light)" margin="0px 20px">
+          <Text color="var(--color-base)" margin="0px 20px">
             Customizing interior leased spaces to suit tenant needs.
           </Text>
+          <Line />
         </Box>
         <Box>
-          <Header as="h2" color="var(--color-tan-100)">
+          <Header as="h2" color="000000">
             Full Building Renovation
           </Header>
           <Box stack="horizontal">
-            <Logo color="#ffffff" width="8vw">
+            <Logo color="#000000" width="8vw">
               <FaBuilding />
             </Logo>
-            <Logo color="#ffffff" width="8vw">
+            <Logo color="#000000" width="8vw">
               <AiOutlineRedo />
             </Logo>
           </Box>
-          <Text color="var(--color-neutral-light)" margin="0px 20px">
+          <Text color="var(--color-base)" margin="0px 20px">
             Overhauling an entire existing structure to improve value.
           </Text>
+          <Line />
         </Box>
         <Box>
-          <Header as="h2" color="var(--color-tan-100)">
+          <Header as="h2" color="000000">
             Ground Up Construction
           </Header>
           <Box stack="horizontal">
-            <Logo color="#ffffff" width="8vw">
+            <Logo color="#000000" width="8vw">
               <FaHardHat />
             </Logo>
-            <Logo color="#ffffff" width="8vw">
+            <Logo color="#000000" width="8vw">
               <FaDraftingCompass />
             </Logo>
           </Box>
-          <Text color="var(--color-neutral-light)" margin="0px 20px">
+          <Text color="var(--color-base)" margin="0px 20px">
             Building new structures from an empty site.
           </Text>
         </Box>
       </Card>
-    </>
+    </Box>
   );
 }
 
