@@ -7,13 +7,36 @@ import {
   FaBuilding,
   FaDraftingCompass,
   FaHardHat,
-  FaIndent,
-  FaIndustry,
   FaUserEdit,
 } from "react-icons/fa";
 import { AiOutlineRedo } from "react-icons/ai";
 import { MdMeetingRoom } from "react-icons/md";
 import Line from "../../ui/Line";
+
+const types = [
+  {
+    type: "Tenant Improvement",
+    logo1: <FaUserEdit />,
+    logo2: <MdMeetingRoom />,
+    description: "Customizing interior leased spaces to suit tenant needs.",
+    line: true,
+  },
+  {
+    type: "Full Building Renovation",
+    logo1: <FaBuilding />,
+    logo2: <AiOutlineRedo />,
+    description: "Overhauling an entire existing structure to improve value.",
+    line: true,
+  },
+  {
+    type: "Ground Up Construction",
+    logo1: <FaHardHat />,
+    logo2: <FaDraftingCompass />,
+    description: "Building new structures from an empty site.",
+  },
+];
+
+console.log(types);
 
 function TypeStatement() {
   return (
@@ -23,61 +46,31 @@ function TypeStatement() {
       </Header>
       <Card
         bgcolor="#ffffff"
+        colorGradient="linear-gradient(to bottom left, var(--color-secondary), #310f0f)"
         margin="10px 10px 10px 10px"
         padding="30px"
         borderradius="40px 25px 25px 25px"
         gap="10px"
       >
-        <Box>
-          <Header as="h2" color="#000000">
-            Tenant Improvement
-          </Header>
-          <Box stack="horizontal">
-            <Logo color="#000000" width="8vw">
-              <FaUserEdit />
-            </Logo>
-            <Logo color="#000000" width="8vw">
-              <MdMeetingRoom />
-            </Logo>
+        {types.map((type) => (
+          <Box key={type.type}>
+            <Header as="h2" color="#ffffff">
+              {type.type}
+            </Header>
+            <Box stack="horizontal">
+              <Logo color="#ffffff" width="8vw">
+                {type.logo1}
+              </Logo>
+              <Logo color="#ffffff" width="8vw">
+                {type.logo2}
+              </Logo>
+            </Box>
+            <Text color="#ffffff" margin="0px 20px">
+              {type.description}
+            </Text>
+            {type.line && <Line color="#ffffff" />}
           </Box>
-          <Text color="var(--color-base)" margin="0px 20px">
-            Customizing interior leased spaces to suit tenant needs.
-          </Text>
-          <Line />
-        </Box>
-        <Box>
-          <Header as="h2" color="000000">
-            Full Building Renovation
-          </Header>
-          <Box stack="horizontal">
-            <Logo color="#000000" width="8vw">
-              <FaBuilding />
-            </Logo>
-            <Logo color="#000000" width="8vw">
-              <AiOutlineRedo />
-            </Logo>
-          </Box>
-          <Text color="var(--color-base)" margin="0px 20px">
-            Overhauling an entire existing structure to improve value.
-          </Text>
-          <Line />
-        </Box>
-        <Box>
-          <Header as="h2" color="000000">
-            Ground Up Construction
-          </Header>
-          <Box stack="horizontal">
-            <Logo color="#000000" width="8vw">
-              <FaHardHat />
-            </Logo>
-            <Logo color="#000000" width="8vw">
-              <FaDraftingCompass />
-            </Logo>
-          </Box>
-          <Text color="var(--color-base)" margin="0px 20px">
-            Building new structures from an empty site.
-          </Text>
-        </Box>
+        ))}
       </Card>
     </Box>
   );

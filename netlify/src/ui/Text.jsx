@@ -17,6 +17,7 @@ const StyledText = styled.p`
   padding: ${(props) => props.margin || "0px 12px"};
   color: ${(props) => props.color || "var(--color-tan-100)"};
   background-color: ${(props) => props.bgColor};
+  background-image: ${(props) => props.colorGradient};
   font-weight: ${(props) => props.fontWeight};
   text-transform: ${({ textcase }) => caseMap[textcase]};
   font-style: ${(props) => props.fontstyle};

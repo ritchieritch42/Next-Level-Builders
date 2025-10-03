@@ -18,6 +18,7 @@ function OwnerStatement() {
       <Card
         gap="10px"
         bgcolor="var(--color-accent)"
+        colorGradient="linear-gradient(to bottom right, var(--color-accent), #16162e)"
         margin="10px 10px 10px 10px"
         padding="30px"
         borderradius="40px 25px 25px 25px"

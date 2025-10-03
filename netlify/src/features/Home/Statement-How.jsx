@@ -13,13 +13,13 @@ const steps = [
   {
     step: "Traditional General Contracting",
     description:
-      "We use the plans drawn by your design team to bid and build your project. This approach is preferred by some Owners as they have a direct line of Communication with their design team",
+      "We use the plans drawn by your design team to bid and build your project. This approach is preferred by some owners as they have a direct line of communication with their design team.",
     logo: <FaBookOpen />,
   },
   {
     step: "Negotiated",
     description:
-      "We work with your design team to provide the most efficient and cost effective design. This approach allows your design team to work directly with you but allows us to constantly review the drawings to keep buildability and budget in mind",
+      "We work with your design team to provide the most efficient and cost effective design. This approach allows your design team to work directly with you but allows us to constantly review the drawings to keep buildability and budget in mind.",
     logo: <FaRegHandshake />,
   },
   {
@@ -47,6 +47,7 @@ function HowStatement() {
         {steps.map((step) => (
           <Card
             bgcolor="var(--color-accent)"
+            colorGradient="linear-gradient(to bottom right, var(--color-accent), #16162e)"
             margin="10px 10px 10px 10px"
             padding="30px"
             borderradius="40px 25px 25px 25px"

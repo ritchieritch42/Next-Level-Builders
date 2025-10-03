@@ -17,7 +17,12 @@ function CommitmentHeader() {
           <Header color="var(--color-tan-100)" as="h3">
             We provide construction services in the Kansas City metro area.
           </Header>
-          <Text bgColor="var(--color-secondary)" margin="10px" padding="20px">
+          <Text
+            colorGradient="linear-gradient(to bottom, var(--color-secondary), #4e0808)"
+            bgColor="var(--color-secondary)"
+            margin="10px"
+            padding="20px"
+          >
             <a
               href="#contact"
               style={{ textDecoration: "none", color: "var(--color-tan-100" }}
