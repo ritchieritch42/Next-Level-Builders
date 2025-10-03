@@ -4,8 +4,14 @@ import Text from "../../ui/Text";
 
 function ReviewStatement() {
   return (
-    <Card bgcolor="var(--color-blue-300)">
-      <Box gap="15px">
+    <Box margin="30px 0px">
+      <Card
+        bgcolor="var(--color-blue-300)"
+        gap="10px"
+        borderradius="200px"
+        margin="10px 10px 10px 10px"
+        padding="30px"
+      >
         <Text color="var(--color-tan-100)" fontstyle="italic" align="center">
           "What sets Craig apart is his willingness to dive into the details to
           make each project the best it can be."
@@ -16,8 +22,8 @@ function ReviewStatement() {
         <Text color="var(--color-tan-100)" align="center">
           CEO & Property Manager Blue Valley Dermatology & BVD Properties
         </Text>
-      </Box>
-    </Card>
+      </Card>
+    </Box>
   );
 }
 

@@ -33,10 +33,6 @@ const linkRoutes = [
     route: "/about",
     title: "About",
   },
-  {
-    route: "/projects",
-    title: "Projects",
-  },
 ];
 
 function Navbar() {

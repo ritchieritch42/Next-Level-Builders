@@ -7,9 +7,9 @@ function About() {
   return (
     <>
       <OwnerStatement />
-      <ExperienceStatement />
-      <ReviewStatement />
-      <JobsStatement />
+      <ExperienceStatement>
+        <ReviewStatement />
+      </ExperienceStatement>
     </>
   );
 }

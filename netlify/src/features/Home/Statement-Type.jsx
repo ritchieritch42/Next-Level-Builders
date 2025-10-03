@@ -77,7 +77,7 @@ function TypeStatement() {
             </Logo>
           </Box>
           <Text color="var(--color-neutral-light)" margin="0px 20px">
-            Building new structures from an empty site
+            Building new structures from an empty site.
           </Text>
         </Box>
       </Card>
