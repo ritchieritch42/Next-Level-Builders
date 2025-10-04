@@ -21,6 +21,7 @@ const StyledBox = styled.div`
   gap: ${(props) => props.gap || "10px"};
   margin: ${(props) => props.margin || "0px"};
   width: 100%;
+  z-index: 10;
 `;
 
 function Box({ children, ...rest }) {
