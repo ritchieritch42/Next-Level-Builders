@@ -2,7 +2,6 @@ import Card from "../../ui/Card";
 import Box from "../../ui/Box";
 import Header from "../../ui/Header";
 import Text from "../../ui/Text";
-import Image from "../../ui/Image";
 
 function OwnerStatement() {
   return (

@@ -29,31 +29,34 @@ const typesOfWork = [
 ];
 
 const StyledContainer = styled.div`
-  margin-top: 50px;
-
   .slick-dots li button:before {
-    font-size: 0.75rem;
+    font-size: 1rem;
   }
 
   .slick-dots {
-    margin: 5px 0px 5px 0px;
+    margin: 40px 0px 0px 0px;
   }
 `;
 
+const StyledImage = styled.img`
+  width: 100%;
+  height: 100%;
+  border-radius: 25px; /* <--- Apply border-radius directly to the image */
+`;
+
 const StyledCustomSlide = styled.div`
-  background-image: url(${(props) => props.image});
-  background-repeat: no-repeat;
-  background-size: 100vw;
-  height: 33vh;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
+  height: 30vh;
+  padding: 0 10px;
 `;
 
 function CustomSlide(typeObject) {
   const { type, image } = typeObject;
 
-  return <StyledCustomSlide key={type} image={image} />;
+  return (
+    <StyledCustomSlide key={type}>
+      <StyledImage src={image} alt={`Work type ${type}`} />
+    </StyledCustomSlide>
+  );
 }
 
 const settings = {
