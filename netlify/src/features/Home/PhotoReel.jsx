@@ -4,6 +4,7 @@ import styled from "styled-components";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import TextOverlay from "../../ui/Text-Overlay";
 
 const typesOfWork = [
   {
@@ -29,6 +30,8 @@ const typesOfWork = [
 ];
 
 const StyledContainer = styled.div`
+  position: relative;
+
   .slick-dots li button:before {
     font-size: 1rem;
   }
@@ -79,9 +82,17 @@ function PhotoReel() {
           ))}
         </Slider>
         <Box margin="30px 0px 10px 0px">
-          <Text fontstyle="italic" color="var(--color-tan-100)">
-            (Blue Valley Dermatology Phase One)
-          </Text>
+          <TextOverlay
+            fontstyle="italic"
+            color="var(--color-tan-100)"
+            bgColor="rgba(44, 44, 44, 0.8)"
+            padding="10px"
+            borderRadius="25px"
+            topPosition="80%"
+            leftPosition="50%"
+          >
+            Blue Valley Dermatology Phase One
+          </TextOverlay>
         </Box>
       </StyledContainer>
     </>

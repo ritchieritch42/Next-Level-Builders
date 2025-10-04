@@ -39,7 +39,7 @@ const steps = [
 
 function HowStatement() {
   return (
-    <Box margin="40px 0px 30px 0px" gap="0px">
+    <Box margin="10px 0px 30px 0px" gap="0px">
       <Header as="h1" color="var(--color-tan-100)" textcase="upper">
         How We Build
       </Header>

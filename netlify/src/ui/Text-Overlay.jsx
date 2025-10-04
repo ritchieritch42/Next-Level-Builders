@@ -9,16 +9,18 @@ const caseMap = {
 const StyledTextOverlay = styled.div`
   margin: 0px;
   width: 75%;
-  padding: 5px 0px 0px 0px;
+  padding: ${(props) => props.padding || "5px 0px 0px 0px"};
   color: ${(props) => props.color};
   font-weight: ${(props) => props.fontWeight};
   text-transform: ${({ textcase }) => caseMap[textcase]};
   font-style: ${(props) => props.fontstyle};
+  background-color: ${(props) => props.bgColor};
+  border-radius: ${(props) => props.borderRadius};
+  text-align: center;
 
-  /* Centered */
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: ${(props) => props.topPosition || "50%"};
+  left: ${(props) => props.leftPosition || "50%"};
   transform: translate(-50%, -50%);
 `;
 
