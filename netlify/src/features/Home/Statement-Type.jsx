@@ -1,5 +1,6 @@
 import Card from "../../ui/Card";
 import Box from "../../ui/Box";
+import Linef from "../../ui/Line";
 import Logo from "../../ui/Logo";
 import Header from "../../ui/Header";
 import Text from "../../ui/Text";
@@ -41,7 +42,13 @@ console.log(types);
 function TypeStatement() {
   return (
     <Box margin="30px 0px">
-      <Header as="h1" color="var(--color-tan-100)" textcase="upper">
+      <Header
+        as="h1"
+        color="var(--color-tan-100)"
+        textcase="upper"
+        shadow="0 0 3px #333333"
+        fontWeight="600"
+      >
         What we build
       </Header>
       <Card

@@ -3,19 +3,26 @@ import Text from "../../ui/Text";
 import FixedImage from "../../ui/Image-Fixed";
 import ImageBackgroundBox from "../../ui/Box-ImageBackground";
 import TextOverlay from "../../ui/Text-Overlay";
+import Box from "../../ui/Box";
 
 function CommitmentHeader() {
   return (
-    <>
+    <Box>
       <ImageBackgroundBox>
         <FixedImage
           alt="BVD Phase 1 Reception Desk.jpg"
           src="BVD Phase 1 Reception Desk.jpg"
-          brightness="45%"
+          brightness="40%"
         />
-        <TextOverlay>
-          <Header color="var(--color-tan-100)" as="h3">
-            We provide construction services in the Kansas City metro area.
+        <TextOverlay width="90%">
+          <Header
+            color="var(--color-tan-100)"
+            as="h3"
+            textcase="upper"
+            shadow="0 0 3px #333333"
+            fontWeight="600"
+          >
+            We provide construction services in the Kansas City metro area
           </Header>
           <Text
             colorGradient="linear-gradient(to bottom, var(--color-secondary), #4e0808)"
@@ -27,12 +34,12 @@ function CommitmentHeader() {
               href="#contact"
               style={{ textDecoration: "none", color: "var(--color-tan-100" }}
             >
-              START PLANNING YOUR BUILD
+              Start Planning Your Build
             </a>
           </Text>
         </TextOverlay>
       </ImageBackgroundBox>
-    </>
+    </Box>
   );
 }
 

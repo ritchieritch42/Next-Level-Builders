@@ -1,4 +1,3 @@
-import Text from "../../ui/Text";
 import Box from "../../ui/Box";
 import styled from "styled-components";
 import "slick-carousel/slick/slick.css";

@@ -44,6 +44,10 @@ const StyledHeader = styled.header`
   background-color: ${(props) => props.bgColor};
   opacity: ${(props) => props.transparency};
   border-radius: ${(props) => props.borderRadius};
+  text-shadow: ${(props) => props.shadow};
+  font-weight: ${(props) => props.fontWeight};
+  letter-spacing: ${(props) => props.letterSpacing};
+  border-bottom: ${(props) => props.borderBottom};
 `;
 
 function Header({ children, ...rest }) {
