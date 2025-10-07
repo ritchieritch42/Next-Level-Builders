@@ -2,7 +2,6 @@ import Box from "../../ui/Box";
 import Card from "../../ui/Card";
 import Text from "../../ui/Text";
 import Logo from "../../ui/Logo";
-import Line from "../../ui/Line";
 import { FaBookOpen } from "react-icons/fa";
 import { FaRegHandshake } from "react-icons/fa";
 import { FaHammer } from "react-icons/fa";
@@ -49,7 +48,7 @@ function HowStatement() {
       >
         How We Build
       </Header>
-      <Box>
+      <Box margin="10px 0px 0px 0px">
         {steps.map((step) => (
           <Card
             bgcolor="var(--color-neutral-light)"
