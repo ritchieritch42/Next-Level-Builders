@@ -43,7 +43,7 @@ const StyledContainer = styled.div`
 const StyledImage = styled.img`
   width: 100%;
   height: 100%;
-  border-radius: 25px;
+  border-radius: 5px;
   box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.1);
 `;
 
@@ -86,7 +86,7 @@ function PhotoReel() {
             color="var(--color-tan-100)"
             bgColor="rgba(44, 44, 44, 0.8)"
             padding="10px"
-            borderRadius="25px"
+            borderRadius="5px"
             topPosition="80%"
             leftPosition="50%"
           >

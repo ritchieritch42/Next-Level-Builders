@@ -52,21 +52,32 @@ function HowStatement() {
       <Box>
         {steps.map((step) => (
           <Card
-            bgcolor="var(--color-accent)"
-            colorGradient="linear-gradient(to bottom right, var(--color-accent), #16162e)"
+            bgcolor="var(--color-neutral-light)"
+            // colorGradient="linear-gradient(to bottom right, var(--color-neutral-light), #16162e)"
             margin="10px 10px 10px 10px"
             padding="30px"
-            borderradius="40px 25px 25px 25px"
+            borderradius="5px"
             key={step.step}
           >
             <Box stack="horizontal" wrap="nowrap" placement="evenly">
               <Box placement="start">
-                <Text fontWeight="700" textcase="upper" align="left">
+                <Text
+                  fontWeight="700"
+                  textcase="upper"
+                  align="left"
+                  color="var(--color-base)"
+                >
                   {step.step}
                 </Text>
-                <Text align="left">{step.description}</Text>
+                <Text align="left" color="var(--color-base)">
+                  {step.description}
+                </Text>
               </Box>
-              <Logo color="#ffffff" width={step.width} height={step.height}>
+              <Logo
+                color="var(--color-base)"
+                width={step.width}
+                height={step.height}
+              >
                 {step.logo}
               </Logo>
             </Box>

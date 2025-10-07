@@ -20,6 +20,7 @@ const StyledBox = styled.div`
   align-items: ${({ placement }) => justifyMap[placement] || "center"};
   gap: ${(props) => props.gap || "10px"};
   margin: ${(props) => props.margin || "0px"};
+  background-image: ${(props) => props.colorGradient || "0px"};
   width: 100%;
   z-index: 10;
 `;

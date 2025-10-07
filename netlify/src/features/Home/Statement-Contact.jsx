@@ -11,7 +11,7 @@ function ContactStatement() {
       <Box gap="20px" id="contact">
         <Header
           color="var(--color-tan-100)"
-          as="h1"
+          as="h2"
           align="center"
           shadow="0 0 3px #333333"
           fontWeight="600"
