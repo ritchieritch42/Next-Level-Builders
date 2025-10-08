@@ -44,7 +44,8 @@ function HowStatement() {
         color="var(--color-tan-100)"
         textcase="upper"
         shadow="0 0 3px #333333"
-        fontWeight="600"
+        fontWeight="700"
+        font="domine"
       >
         How We Build
       </Header>

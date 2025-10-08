@@ -46,6 +46,8 @@ const StyledHeader = styled.header`
   border-radius: ${(props) => props.borderRadius};
   text-shadow: ${(props) => props.shadow};
   font-weight: ${(props) => props.fontWeight};
+  font-family: ${(props) => props.font};
+  font-size: ${(props) => props.fontSize};
   letter-spacing: ${(props) => props.letterSpacing};
   border-bottom: ${(props) => props.borderBottom};
 `;

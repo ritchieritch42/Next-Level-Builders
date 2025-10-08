@@ -21,6 +21,7 @@ const StyledText = styled.p`
   font-weight: ${(props) => props.fontWeight};
   text-transform: ${({ textcase }) => caseMap[textcase]};
   font-style: ${(props) => props.fontstyle};
+  font-size: ${(props) => props.fontSize};
   text-align: ${({ align }) => alignMap[align] || "center"};
 `;
 

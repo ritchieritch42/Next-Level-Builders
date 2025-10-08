@@ -8,7 +8,13 @@ import Line from "../../ui/Line";
 function ExperienceStatement() {
   return (
     <Box margin="30px 0px">
-      <Header as="h1" color="var(--color-neutral-light)" align="center">
+      <Header
+        as="h1"
+        color="var(--color-neutral-light)"
+        align="center"
+        fontWeight="700"
+        font="domine"
+      >
         Next Level Builders Experience
       </Header>
       <Card
@@ -16,7 +22,7 @@ function ExperienceStatement() {
         colorGradient="linear-gradient(to bottom left, var(--color-secondary), #310f0f)"
         margin="10px 10px 10px 10px"
         padding="30px"
-        borderradius="40px 25px 25px 25px"
+        borderradius="5px"
         gap="10px"
       >
         <Box gap="5px" margin="0">

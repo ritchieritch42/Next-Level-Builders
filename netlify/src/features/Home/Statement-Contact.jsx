@@ -14,14 +14,16 @@ function ContactStatement() {
           as="h2"
           align="center"
           shadow="0 0 3px #333333"
-          fontWeight="600"
+          fontWeight="700"
+          font="domine"
+          textcase="upper"
         >
           Ready to build the future of your business?
         </Header>
-        <Header as="h3" color="var(--color-tan-100)" align="center">
+        <Text color="var(--color-tan-100)" align="center" fontSize="1.25rem">
           Let's talk about how Next Level Builders can help you bring your
           vision to life.
-        </Header>
+        </Text>
       </Box>
       <Box stack="horizontal" gap="60px" margin="20px 0px">
         <a
