@@ -7,6 +7,7 @@ import { FaRegHandshake } from "react-icons/fa";
 import { FaHammer } from "react-icons/fa";
 import { FaPen } from "react-icons/fa";
 import Header from "../../ui/Header";
+import ReviewStatement from "./Statement-Review";
 
 const steps = [
   {
@@ -38,7 +39,7 @@ const steps = [
 
 function HowStatement() {
   return (
-    <Box margin="10px 0px 30px 0px" gap="0px">
+    <Box margin="30px 0px 30px 0px" gap="0px">
       <Header
         as="h1"
         color="var(--color-tan-100)"
@@ -83,6 +84,9 @@ function HowStatement() {
             </Box>
           </Card>
         ))}
+      </Box>
+      <Box>
+        <ReviewStatement />
       </Box>
     </Box>
   );

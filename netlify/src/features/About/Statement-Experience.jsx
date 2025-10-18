@@ -32,6 +32,7 @@ function ExperienceStatement() {
           <span style={{ color: "#ffffff" }}>Lenexa, KS</span>
           <span style={{ color: "#ffffff" }}>3,500 SF Tenant Remodel</span>
         </Box>
+        <Line color="#ffffff" />
         <Box gap="5px">
           <Header as="h2" color="#ffffff">
             Blue Valley Dermatology Phase 2
@@ -39,17 +40,6 @@ function ExperienceStatement() {
           <span style={{ color: "#ffffff" }}>Overland Park</span>
           <span style={{ color: "#ffffff" }}>5,000 SF Tenant Remodel</span>
         </Box>
-        <Line color="#ffffff" />
-        <Text color="#ffffff" fontstyle="italic" align="center">
-          "What sets Craig apart is his willingness to dive into the details to
-          make each project the best it can be."
-        </Text>
-        <Header color="#ffffff" as="h2">
-          Tom Tkachuk
-        </Header>
-        <Text color="#ffffff" align="center">
-          CEO & Property Manager Blue Valley Dermatology & BVD Properties
-        </Text>
       </Card>
     </Box>
   );

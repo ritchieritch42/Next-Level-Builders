@@ -8,7 +8,7 @@ import { BiLogoLinkedinSquare } from "react-icons/bi";
 function ContactStatement() {
   return (
     <>
-      <Box gap="20px" id="contact">
+      <Box gap="20px" id="contact" margin="30px 0px">
         <Header
           color="var(--color-tan-100)"
           as="h2"
