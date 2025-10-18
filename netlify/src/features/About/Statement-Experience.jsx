@@ -19,7 +19,7 @@ function ExperienceStatement() {
       </Header>
       <Card
         bgcolor="var(--color-neutral-light)"
-        colorGradient="linear-gradient(to bottom left, var(--color-secondary), #310f0f)"
+        colorGradient="linear-gradient(to bottom left, var(--color-accent), #042947)"
         margin="10px 10px 10px 10px"
         padding="30px"
         borderradius="5px"
