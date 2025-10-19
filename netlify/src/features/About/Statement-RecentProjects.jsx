@@ -1,11 +1,9 @@
 import Card from "../../ui/Card";
 import Header from "../../ui/Header";
 import Box from "../../ui/Box";
-import Text from "../../ui/Text";
-import Image from "../../ui/Image";
 import Line from "../../ui/Line";
 
-function ExperienceStatement() {
+function RecentProjects() {
   return (
     <Box margin="30px 0px">
       <Header
@@ -15,7 +13,7 @@ function ExperienceStatement() {
         fontWeight="700"
         font="domine"
       >
-        Next Level Builders Experience
+        NEXT LEVEL RECENT PROJECTS
       </Header>
       <Card
         bgcolor="var(--color-neutral-light)"
@@ -27,22 +25,20 @@ function ExperienceStatement() {
       >
         <Box gap="5px" margin="0">
           <Header as="h2" color="#ffffff">
-            Blue Valley Dermatology
+            Blue Valley Dermatology, Overland Park
           </Header>
-          <span style={{ color: "#ffffff" }}>Lenexa, KS</span>
-          <span style={{ color: "#ffffff" }}>3,500 SF Tenant Remodel</span>
+          <span style={{ color: "#ffffff" }}>5,000 SF Tenant Remodel</span>
         </Box>
         <Line color="#ffffff" />
         <Box gap="5px">
           <Header as="h2" color="#ffffff">
-            Blue Valley Dermatology Phase 2
+            Blue Valley Dermatology, Lenexa
           </Header>
-          <span style={{ color: "#ffffff" }}>Overland Park</span>
-          <span style={{ color: "#ffffff" }}>5,000 SF Tenant Remodel</span>
+          <span style={{ color: "#ffffff" }}>3,500 SF Tenant Remodel</span>
         </Box>
       </Card>
     </Box>
   );
 }
 
-export default ExperienceStatement;
+export default RecentProjects;

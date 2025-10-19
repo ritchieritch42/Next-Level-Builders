@@ -70,7 +70,12 @@ function HowStatement() {
                 >
                   {step.step}
                 </Text>
-                <Text align="left" color="var(--color-base)">
+                <Text
+                  align="left"
+                  color="var(--color-base)"
+                  fontWeight="400"
+                  fontSize="1.2rem"
+                >
                   {step.description}
                 </Text>
               </Box>

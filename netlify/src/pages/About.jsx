@@ -1,13 +1,13 @@
 import OwnerStatement from "../features/About/Statement-Owner";
-import ExperienceStatement from "../features/About/Statement-Experience";
-import ReviewStatement from "../features/Home/Statement-Review";
-import JobsStatement from "../features/About/Statement-Jobs";
+import RecentProjects from "../features/About/Statement-RecentProjects";
+import UpcomingProjects from "../features/About/Statement-UpcomingProjects";
 
 function About() {
   return (
     <>
       <OwnerStatement />
-      <ExperienceStatement />
+      <RecentProjects />
+      <UpcomingProjects />
     </>
   );
 }
