@@ -32,7 +32,7 @@ const steps = [
   {
     step: "Negotiated",
     description:
-      "We work with your design team to provide the most efficient an cost effective design and construction services.",
+      "We work with your design team to provide the most efficient and cost effective design and construction services.",
     logo: <FaRegHandshake />,
   },
 ];

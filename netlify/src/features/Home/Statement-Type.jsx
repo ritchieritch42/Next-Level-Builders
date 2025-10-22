@@ -19,21 +19,21 @@ const types = [
     type: "Tenant Improvement",
     logo1: <FaUserEdit />,
     logo2: <MdMeetingRoom />,
-    description: "Customizing interior leased spaces to suit tenant needs.",
+    description: "Customizing existing spaces to meet tenant needs",
     line: true,
   },
   {
     type: "Full Building Renovation",
     logo1: <FaBuilding />,
     logo2: <AiOutlineRedo />,
-    description: "Overhauling an entire existing structure to improve value.",
+    description: "Modernizing an entire existing structure to improve value",
     line: true,
   },
   {
     type: "Ground Up Construction",
     logo1: <FaHardHat />,
     logo2: <FaDraftingCompass />,
-    description: "Building new structures from an empty site.",
+    description: "Building new structures on an existing or new site",
   },
 ];
 
