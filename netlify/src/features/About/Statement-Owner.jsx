@@ -13,6 +13,7 @@ function OwnerStatement() {
         align="right"
         fontWeight="700"
         font="domine"
+        textcase="upper"
       >
         Craig Ritchie, Owner, Next Level Builders LLC
       </Header>
