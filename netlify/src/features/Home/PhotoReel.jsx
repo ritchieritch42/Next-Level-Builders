@@ -38,6 +38,8 @@ const StyledContainer = styled.div`
   .slick-dots {
     margin: 40px 0px 0px 0px;
   }
+
+  margin: 30px 0px 40px 0px;
 `;
 
 const StyledImage = styled.img`
@@ -80,19 +82,18 @@ function PhotoReel() {
             <CustomSlide index={type.id} type={type.type} image={type.image} />
           ))}
         </Slider>
-        <Box margin="30px 0px 10px 0px">
-          <TextOverlay
-            fontstyle="italic"
-            color="var(--color-tan-100)"
-            bgColor="rgba(44, 44, 44, 0.8)"
-            padding="10px"
-            borderRadius="5px"
-            topPosition="80%"
-            leftPosition="50%"
-          >
-            Blue Valley Dermatology Phase One
-          </TextOverlay>
-        </Box>
+        <TextOverlay
+          fontstyle="italic"
+          color="var(--color-tan-100)"
+          bgColor="rgba(44, 44, 44, 0.8)"
+          padding="10px"
+          borderRadius="5px"
+          topPosition="85%"
+          leftPosition="50%"
+          width="79%"
+        >
+          Blue Valley Dermatology Phase One
+        </TextOverlay>
       </StyledContainer>
     </>
   );

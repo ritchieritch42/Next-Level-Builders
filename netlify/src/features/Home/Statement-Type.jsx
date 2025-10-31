@@ -41,7 +41,7 @@ console.log(types);
 
 function TypeStatement() {
   return (
-    <Box margin="30px 0px">
+    <Box margin="15px 0px">
       <Header
         as="h1"
         color="var(--color-tan-100)"
@@ -55,7 +55,7 @@ function TypeStatement() {
       <Card
         bgcolor="#ffffff"
         colorGradient="linear-gradient(to bottom left, var(--color-accent), #042947)"
-        margin="10px 10px 10px 10px"
+        margin="5px 10px"
         padding="30px"
         borderradius="5px"
         gap="10px"

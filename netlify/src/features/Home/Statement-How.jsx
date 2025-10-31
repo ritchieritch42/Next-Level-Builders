@@ -39,7 +39,7 @@ const steps = [
 
 function HowStatement() {
   return (
-    <Box margin="30px 0px 30px 0px" gap="0px">
+    <>
       <Header
         as="h1"
         color="var(--color-tan-100)"
@@ -50,7 +50,7 @@ function HowStatement() {
       >
         How We Build
       </Header>
-      <Box margin="10px 0px 0px 0px">
+      <Box margin="5px 0px 0px 0px">
         {steps.map((step) => (
           <Card
             bgcolor="var(--color-neutral-light)"
@@ -90,10 +90,7 @@ function HowStatement() {
           </Card>
         ))}
       </Box>
-      <Box>
-        <ReviewStatement />
-      </Box>
-    </Box>
+    </>
   );
 }
 

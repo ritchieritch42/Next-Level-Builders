@@ -20,7 +20,7 @@ function ReviewStatement() {
         colorGradient="linear-gradient(to bottom left, var(--color-accent), #042947)"
         gap="10px"
         borderradius="5px"
-        margin="10px 10px 10px 10px"
+        margin="5px 10px"
         padding="30px"
       >
         <Text color="var(--color-tan-100)" fontstyle="italic" align="center">
