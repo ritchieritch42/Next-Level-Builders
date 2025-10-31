@@ -19,21 +19,21 @@ const types = [
     type: "Tenant Improvement",
     logo1: <FaUserEdit />,
     logo2: <MdMeetingRoom />,
-    description: "Customizing existing spaces to meet tenant needs",
+    description: "Customizing interior leased spaces to suit tenant needs.",
     line: true,
   },
   {
     type: "Full Building Renovation",
     logo1: <FaBuilding />,
     logo2: <AiOutlineRedo />,
-    description: "Modernizing an entire existing structure to improve value",
+    description: "Overhauling an entire existing structure to improve value.",
     line: true,
   },
   {
     type: "Ground Up Construction",
     logo1: <FaHardHat />,
     logo2: <FaDraftingCompass />,
-    description: "Building new structures on an existing or new site",
+    description: "Building new structures from an empty site.",
   },
 ];
 
@@ -41,21 +41,20 @@ console.log(types);
 
 function TypeStatement() {
   return (
-    <Box margin="15px 0px">
+    <Box margin="30px 0px">
       <Header
         as="h1"
         color="var(--color-tan-100)"
         textcase="upper"
         shadow="0 0 3px #333333"
-        fontWeight="700"
-        font="domine"
+        fontWeight="600"
       >
         What we build
       </Header>
       <Card
         bgcolor="#ffffff"
-        colorGradient="linear-gradient(to bottom left, var(--color-accent), #042947)"
-        margin="5px 10px"
+        colorGradient="linear-gradient(to bottom left, var(--color-secondary), #310f0f)"
+        margin="10px 10px 10px 10px"
         padding="30px"
         borderradius="5px"
         gap="10px"

@@ -1,10 +1,11 @@
 import styled from "styled-components";
 
-const StyledLine = styled.hr`
+const StyledLine = styled.p`
   width: ${(props) => props.width || "100%"};
   height: 0.5px;
-  color: ${(props) => props.color || "var(--color-red-500)"};
-  background-color: ${(props) => props.color || "var(--color-red-500)"};
+  border-bottom: solid;
+  border-color: ${(props) => props.color || "var(--color-red-500)"};
+  border-width: 2px;
   margin: 3px;
 `;
 

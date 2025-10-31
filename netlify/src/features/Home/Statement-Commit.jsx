@@ -1,47 +1,47 @@
-import Box from "../../ui/Box";
 import Header from "../../ui/Header";
-import Card from "../../ui/Card";
 import Text from "../../ui/Text";
-import { HiClipboardDocumentCheck } from "react-icons/hi2";
-import { HiClock } from "react-icons/hi2";
-import { HiCurrencyDollar } from "react-icons/hi2";
-import Logo from "../../ui/Logo";
+import FixedImage from "../../ui/Image-Fixed";
+import ImageBackgroundBox from "../../ui/Box-ImageBackground";
+import TextOverlay from "../../ui/Text-Overlay";
+import Box from "../../ui/Box";
 
 function CommitmentHeader() {
   return (
-    <Card margin="0px" padding="60px 0px 60px 0px">
-      {/*
-        CALEB TO DO:
-        Add button to go to the bottom of the page to contact
-      */}
-      <Box>
-        <Header color="var(--color-tan-100)" as="h3">
-          We are committed to delivering quality construction on time and within
-          budget.
-        </Header>
-        <Card bgcolor="var(--color-secondary)" padding="10px">
-          <Text>
+    <Box>
+      <ImageBackgroundBox>
+        <FixedImage
+          alt="BVD Phase 1 Reception Desk.jpg"
+          src="BVD Phase 1 Reception Desk.jpg"
+          brightness="40%"
+        />
+        <TextOverlay width="90%">
+          <Header
+            color="var(--color-tan-100)"
+            as="h3"
+            textcase="upper"
+            shadow="0 0 3px #333333"
+            fontWeight="700"
+            font="domine"
+            fontSize="1.85rem"
+          >
+            We provide construction services in the Kansas City metro area
+          </Header>
+          <Text
+            colorGradient="linear-gradient(to bottom, var(--color-secondary), #4e0808)"
+            bgColor="var(--color-secondary)"
+            margin="10px"
+            padding="20px"
+          >
             <a
               href="#contact"
               style={{ textDecoration: "none", color: "var(--color-tan-100" }}
             >
-              START PLANNING YOUR BUILD
+              Start Planning Your Build
             </a>
           </Text>
-        </Card>
-        {/* <Box stack="horizontal" gap="20vw">
-        <Logo color="var(--color-red-400)">
-        <HiClipboardDocumentCheck />
-        </Logo>
-        <Logo color="var(--color-red-400)">
-        <HiClock />
-        </Logo>
-        <Logo color="var(--color-red-400)">
-        <HiCurrencyDollar />
-        </Logo>
-        </Box> */}
-      </Box>
-    </Card>
+        </TextOverlay>
+      </ImageBackgroundBox>
+    </Box>
   );
 }
 

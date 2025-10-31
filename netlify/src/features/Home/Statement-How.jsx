@@ -7,24 +7,19 @@ import { FaRegHandshake } from "react-icons/fa";
 import { FaHammer } from "react-icons/fa";
 import { FaPen } from "react-icons/fa";
 import Header from "../../ui/Header";
+import ReviewStatement from "./Statement-Review";
 
 const steps = [
   {
     step: "Traditional General Contracting",
     description:
-      "We use the plans drawn by your design team to bid and build your project. This approach is preferred by some Owners as they have a direct line of Communication with their design team",
+      "We use the plans drawn by your design team to build your project.",
     logo: <FaBookOpen />,
-  },
-  {
-    step: "Negotiated",
-    description:
-      "We work with your design team to provide the most efficient and cost effective design. This approach allows your design team to work directly with you but allows us to constantly review the drawings to keep buildability and budget in mind",
-    logo: <FaRegHandshake />,
   },
   {
     step: "Design Build",
     description:
-      "We start with your concept and provide complete design and construction services. Providing both design and construction allows us to customize your building to give you the best structure at the best price in the shortest time frame.",
+      "We provide complete design and construction services for your project.",
     logo: (
       <>
         <FaPen key="pen" />
@@ -34,38 +29,68 @@ const steps = [
     height: "8vw",
     width: "8vw",
   },
+  {
+    step: "Negotiated",
+    description:
+      "We work with your design team to provide the most efficient and cost effective design and construction services.",
+    logo: <FaRegHandshake />,
+  },
 ];
 
 function HowStatement() {
   return (
-    <Box margin="40px 0px 30px 0px" gap="0px">
-      <Header as="h3" color="var(--color-tan-100)">
-        Our Contracting Methods
+    <>
+      <Header
+        as="h1"
+        color="var(--color-tan-100)"
+        textcase="upper"
+        shadow="0 0 3px #333333"
+        fontWeight="700"
+        font="domine"
+      >
+        How We Build
       </Header>
-      <Box>
+      <Box margin="5px 0px 0px 0px">
         {steps.map((step) => (
           <Card
-            bgcolor="var(--color-accent)"
+            bgcolor="var(--color-neutral-light)"
+            // colorGradient="linear-gradient(to bottom right, var(--color-neutral-light), #16162e)"
             margin="10px 10px 10px 10px"
             padding="30px"
-            borderradius="40px 25px 25px 25px"
+            borderradius="5px"
             key={step.step}
           >
             <Box stack="horizontal" wrap="nowrap" placement="evenly">
               <Box placement="start">
-                <Text fontWeight="700" textcase="upper" align="left">
+                <Text
+                  fontWeight="700"
+                  textcase="upper"
+                  align="left"
+                  color="var(--color-base)"
+                >
                   {step.step}
                 </Text>
-                <Text align="left">{step.description}</Text>
+                <Text
+                  align="left"
+                  color="var(--color-base)"
+                  fontWeight="400"
+                  fontSize="1.2rem"
+                >
+                  {step.description}
+                </Text>
               </Box>
-              <Logo color="#ffffff" width={step.width} height={step.height}>
+              <Logo
+                color="var(--color-base)"
+                width={step.width}
+                height={step.height}
+              >
                 {step.logo}
               </Logo>
             </Box>
           </Card>
         ))}
       </Box>
-    </Box>
+    </>
   );
 }
 

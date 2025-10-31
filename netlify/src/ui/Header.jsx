@@ -17,7 +17,7 @@ const StyledHeader = styled.header`
     props.as === "h1" &&
     css`
       font-size: 2rem;
-      font-weight: 600;
+      font-weight: 400;
 
       @media (height < 805px), screen and (orientation: portrait) {
         font-size: 1.7rem;
@@ -27,12 +27,12 @@ const StyledHeader = styled.header`
     props.as === "h2" &&
     css`
       font-size: 1.5rem;
-      font-weight: 600;
+      font-weight: 400;
     `}
   ${(props) =>
     props.as === "h3" &&
     css`
-      font-size: 1.25rem;
+      font-size: 1.4rem;
       font-weight: 400;
     `}
 
@@ -44,6 +44,12 @@ const StyledHeader = styled.header`
   background-color: ${(props) => props.bgColor};
   opacity: ${(props) => props.transparency};
   border-radius: ${(props) => props.borderRadius};
+  text-shadow: ${(props) => props.shadow};
+  font-weight: ${(props) => props.fontWeight};
+  font-family: ${(props) => props.font};
+  font-size: ${(props) => props.fontSize};
+  letter-spacing: ${(props) => props.letterSpacing};
+  border-bottom: ${(props) => props.borderBottom};
 `;
 
 function Header({ children, ...rest }) {

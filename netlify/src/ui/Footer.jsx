@@ -6,9 +6,9 @@ import Line from "./Line";
 
 function Footer() {
   return (
-    <Card gap="10px">
+    <Box margin="20px 0px">
       <Box wrap="nowrap">
-        <Line width="95%" color="var(--color-tan-100)" />
+        <Line width="95%" color="var(--color-neutral-light)" />
       </Box>
       <Box gap="2px">
         <Text color="var(--color-tan-100)">
@@ -23,7 +23,7 @@ function Footer() {
           <SiNetlify size={30} style={{ fill: "var(--color-tan-100)" }} />
         </a>
       </Box>
-    </Card>
+    </Box>
   );
 }
 
