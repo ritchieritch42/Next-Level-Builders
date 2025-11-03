@@ -21,7 +21,7 @@ const StyledBox = styled.div`
   gap: ${(props) => props.gap || "10px"};
   margin: ${(props) => props.margin || "0px"};
   background-image: ${(props) => props.colorGradient || "0px"};
-  width: 100%;
+  width: ${(props) => props.width || "100%"};
   z-index: 10;
 `;
 

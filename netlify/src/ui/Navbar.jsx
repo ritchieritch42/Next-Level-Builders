@@ -50,7 +50,9 @@ function Navbar() {
     <>
       <StyledNavbar isOpen={isOpen}>
         <Box stack="horizontal" placement="evenly">
-          <HorizontalLogo />
+          <Box width="350px">
+            <HorizontalLogo />
+          </Box>
           <Logo onClick={() => setIsOpen(!isOpen)} cursor="pointer">
             {isOpen && <HiOutlineXMark />}
             {!isOpen && <HiOutlineBars3 />}
