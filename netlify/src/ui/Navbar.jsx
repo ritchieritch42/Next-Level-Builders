@@ -50,7 +50,7 @@ function Navbar() {
     <>
       <StyledNavbar isOpen={isOpen}>
         <Box stack="horizontal" placement="evenly">
-          <Box width="350px">
+          <Box width="275px" placement="start">
             <HorizontalLogo />
           </Box>
           <Logo onClick={() => setIsOpen(!isOpen)} cursor="pointer">
