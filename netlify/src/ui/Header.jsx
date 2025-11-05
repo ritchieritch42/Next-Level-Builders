@@ -19,8 +19,9 @@ const StyledHeader = styled.header`
       font-size: 2rem;
       font-weight: 400;
 
-      @media (height < 805px), screen and (orientation: portrait) {
-        font-size: 1.7rem;
+      @media screen and (min-width: 550px) {
+        font-size: 2.25rem;
+        font-weight: 450;
       }
     `}
   ${(props) =>
