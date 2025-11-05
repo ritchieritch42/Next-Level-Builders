@@ -23,7 +23,7 @@ const StyledTextOverlay = styled.div`
   left: ${(props) => props.leftPosition || "50%"};
   transform: translate(-50%, -50%);
 
-  @media screen and (min-width: 750px) {
+  @media screen and (min-width: 550px) {
     display: flex;
     flex-direction: column;
     justify-content: center;

@@ -28,12 +28,22 @@ const StyledHeader = styled.header`
     css`
       font-size: 1.5rem;
       font-weight: 400;
+
+      @media screen and (min-width: 550px) {
+        font-size: 2rem;
+        font-weight: 450;
+      }
     `}
   ${(props) =>
     props.as === "h3" &&
     css`
       font-size: 1.4rem;
       font-weight: 400;
+
+      @media screen and (min-width: 550px) {
+        font-size: 1.75rem;
+        font-weight: 450;
+      }
     `}
 
   text-transform: ${({ textcase }) => caseMap[textcase]};
