@@ -15,6 +15,10 @@ const StyledNavbar = styled.div`
   align-items: center;
   gap: 5px;
   padding: 8px;
+
+  @media screen and (min-width: 550px) {
+    height: 8vh;
+  }
 `;
 
 const StyledDropDown = styled.div`

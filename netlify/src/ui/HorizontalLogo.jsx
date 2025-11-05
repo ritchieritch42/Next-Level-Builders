@@ -8,7 +8,7 @@ const StyledHorizontalLogo = styled.img`
 
   @media screen and (min-width: 550px) {
     width: 100%;
-    height: 150px;
+    height: 8vh;
     object-fit: contain;
   }
 `;
