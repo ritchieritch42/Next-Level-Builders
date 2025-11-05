@@ -22,6 +22,13 @@ const StyledTextOverlay = styled.div`
   top: ${(props) => props.topPosition || "50%"};
   left: ${(props) => props.leftPosition || "50%"};
   transform: translate(-50%, -50%);
+
+  @media screen and (min-width: 750px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 function TextOverlay({ children, ...rest }) {
