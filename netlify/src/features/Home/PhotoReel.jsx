@@ -43,15 +43,22 @@ const StyledContainer = styled.div`
 `;
 
 const StyledImage = styled.img`
-  width: 100%;
-  height: 100%;
+  width: 393px;
+  height: auto;
   border-radius: 5px;
   box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.1);
+
+  @media screen and (min-width: 550px) {
+    width: 750px;
+  }
 `;
 
 const StyledCustomSlide = styled.div`
-  height: 30vh;
+  height: 300px;
   padding: 0 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 function CustomSlide(typeObject) {
@@ -90,7 +97,6 @@ function PhotoReel() {
           borderRadius="5px"
           topPosition="85%"
           leftPosition="50%"
-          width="79%"
         >
           Blue Valley Dermatology Phase One
         </TextOverlay>
