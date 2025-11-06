@@ -29,6 +29,10 @@ const StyledTextOverlay = styled.div`
     justify-content: center;
     align-items: center;
   }
+
+  @media screen and (min-width: 1250px) {
+    width: 50%;
+  }
 `;
 
 function TextOverlay({ children, ...rest }) {
