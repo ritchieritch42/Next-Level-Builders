@@ -20,7 +20,7 @@ const StyledHeader = styled.header`
       font-weight: 400;
 
       @media screen and (min-width: 550px) {
-        font-size: 2.25rem;
+        font-size: 2.5rem;
         font-weight: 450;
       }
     `}

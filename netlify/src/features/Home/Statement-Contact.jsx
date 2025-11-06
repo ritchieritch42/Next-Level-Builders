@@ -1,6 +1,5 @@
 import Box from "../../ui/Box";
 import Header from "../../ui/Header";
-import Card from "../../ui/Card";
 import Text from "../../ui/Text";
 import { FaFacebook } from "react-icons/fa";
 import { BiLogoLinkedinSquare } from "react-icons/bi";
@@ -8,10 +7,10 @@ import { BiLogoLinkedinSquare } from "react-icons/bi";
 function ContactStatement() {
   return (
     <>
-      <Box gap="20px" id="contact" margin="35px 0px 20px 0px">
+      <Box gap="20px" id="contact" margin="35px 0px 20px 0px" stack="vertical">
         <Header
           color="var(--color-tan-100)"
-          as="h2"
+          as="h1"
           align="center"
           shadow="0 0 3px #333333"
           fontWeight="700"

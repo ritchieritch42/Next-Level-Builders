@@ -6,11 +6,11 @@ import Line from "./Line";
 
 function Footer() {
   return (
-    <Box margin="20px 0px">
+    <Box margin="20px 0px" stack="vertical">
       <Box wrap="nowrap">
         <Line width="95%" color="var(--color-neutral-light)" />
       </Box>
-      <Box gap="2px">
+      <Box gap="2px" stack="vertical">
         <Text color="var(--color-tan-100)">
           &copy; 2025 Next Level Builders, LLC
         </Text>

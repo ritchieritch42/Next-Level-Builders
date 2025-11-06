@@ -1,6 +1,5 @@
 import Card from "../../ui/Card";
 import Box from "../../ui/Box";
-import Linef from "../../ui/Line";
 import Logo from "../../ui/Logo";
 import Header from "../../ui/Header";
 import Text from "../../ui/Text";

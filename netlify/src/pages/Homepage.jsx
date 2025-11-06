@@ -4,14 +4,17 @@ import HowStatement from "../features/Home/Statement-How";
 import ContactStatement from "../features/Home/Statement-Contact";
 import PhotoReel from "../features/Home/PhotoReel";
 import ReviewStatement from "../features/Home/Statement-Review";
+import Box from "../ui/Box";
 
 function Homepage() {
   return (
     <>
       <CommitmentHeader />
-      <TypeStatement />
+      <Box>
+        <TypeStatement />
+        <HowStatement />
+      </Box>
       <PhotoReel />
-      <HowStatement />
       <ReviewStatement />
       <ContactStatement />
     </>

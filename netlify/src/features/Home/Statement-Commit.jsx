@@ -17,7 +17,7 @@ function CommitmentHeader() {
         <TextOverlay width="90%">
           <Header
             color="var(--color-tan-100)"
-            as="h3"
+            as="h1"
             textcase="upper"
             shadow="0 0 3px #333333"
             fontWeight="700"

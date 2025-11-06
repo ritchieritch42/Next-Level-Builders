@@ -5,6 +5,7 @@ const StyledDiv = styled.div`
   background-image: ${(props) => props.colorGradient || ""};
   padding: ${(props) => props.padding || "5px"};
   display: grid;
+  place-items: ${(props) => props.placement || ""};
   gap: ${(props) => props.gap};
   margin: ${(props) => props.margin || "10px"};
   border-radius: ${(props) => props.borderradius || "0px"};

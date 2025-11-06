@@ -49,7 +49,7 @@ const StyledImage = styled.img`
   box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.1);
 
   @media screen and (min-width: 550px) {
-    width: 750px;
+    width: 90%;
   }
 `;
 

@@ -23,6 +23,11 @@ const StyledBox = styled.div`
   background-image: ${(props) => props.colorGradient || "0px"};
   width: ${(props) => props.width || "100%"};
   z-index: 10;
+
+  @media screen and (min-width: 1250px) {
+    flex-direction: ${({ stack }) => stackMap[stack] || "row"};
+    flex-wrap: ${({ wrap }) => wrap || "nowrap"};
+  }
 `;
 
 function Box({ children, ...rest }) {
