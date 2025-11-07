@@ -5,7 +5,7 @@ import ImageBackgroundBox from "../../ui/Box-ImageBackground";
 import TextOverlay from "../../ui/Text-Overlay";
 import Box from "../../ui/Box";
 
-function CommitmentHeader() {
+function IntroHeader() {
   return (
     <Box>
       <ImageBackgroundBox>
@@ -45,4 +45,4 @@ function CommitmentHeader() {
   );
 }
 
-export default CommitmentHeader;
+export default IntroHeader;
