@@ -14,7 +14,7 @@ const StyledNavbar = styled.div`
   justify-content: space-between;
   align-items: center;
   gap: 5px;
-  padding: 8px;
+  padding: 6px;
 
   @media screen and (min-width: 550px) {
     height: 8vh;
@@ -54,7 +54,7 @@ function Navbar() {
     <>
       <StyledNavbar isOpen={isOpen}>
         <Box stack="horizontal" placement="evenly">
-          <Box width="275px" placement="start">
+          <Box width="200px" placement="start">
             <HorizontalLogo />
           </Box>
           <Logo onClick={() => setIsOpen(!isOpen)} cursor="pointer">
