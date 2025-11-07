@@ -10,10 +10,8 @@ function Homepage() {
   return (
     <>
       <CommitmentHeader />
-      <Box>
-        <TypeStatement />
-        <HowStatement />
-      </Box>
+      <TypeStatement />
+      <HowStatement />
       <PhotoReel />
       <ReviewStatement />
       <ContactStatement />

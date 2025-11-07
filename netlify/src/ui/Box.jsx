@@ -25,7 +25,6 @@ const StyledBox = styled.div`
   z-index: 10;
 
   @media screen and (min-width: 1250px) {
-    flex-direction: ${({ stack }) => stackMap[stack] || "row"};
     flex-wrap: ${({ wrap }) => wrap || "nowrap"};
   }
 `;

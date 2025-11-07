@@ -58,6 +58,7 @@ function TypeStatement() {
         padding="30px"
         borderradius="5px"
         gap="10px"
+        maxWidth="1250px"
       >
         {types.map((type) => (
           <Box key={type.type}>
