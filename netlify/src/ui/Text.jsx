@@ -25,7 +25,7 @@ const StyledText = styled.p`
   text-align: ${({ align }) => alignMap[align] || "center"};
 
   @media screen and (min-width: 550px) {
-    width: 50%;
+    width: 80%;
     font-size: 1.5rem;
   }
 `;

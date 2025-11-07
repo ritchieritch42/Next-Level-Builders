@@ -30,7 +30,7 @@ const StyledTextOverlay = styled.div`
     align-items: center;
   }
 
-  @media screen and (min-width: 1250px) {
+  @media screen and (min-width: 800px) {
     width: 50%;
   }
 `;
