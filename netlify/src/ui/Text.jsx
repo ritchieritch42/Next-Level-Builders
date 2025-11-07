@@ -26,7 +26,7 @@ const StyledText = styled.p`
 
   @media screen and (min-width: 550px) {
     width: 80%;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
 `;
 
