@@ -13,10 +13,10 @@ const StyledLogoWrapper = styled.div`
     fill: ${(props) => props.color || "black"};
   }
 
-  @media screen and (min-width: 750px) {
+  @media screen and (min-width: 550px) {
     svg {
-      width: 40px;
-      height: 40px;
+      width: 28px;
+      height: 28px;
     }
   }
 `;
