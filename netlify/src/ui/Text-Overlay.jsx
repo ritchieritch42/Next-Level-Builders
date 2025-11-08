@@ -28,10 +28,15 @@ const StyledTextOverlay = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 50%;
   }
 
   @media screen and (min-width: 800px) {
-    width: 50%;
+    width: 35%;
+  }
+
+  @media screen and (min-width: 1250px) {
+    width: 25%;
   }
 `;
 
