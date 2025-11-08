@@ -4,7 +4,10 @@ const StyledDiv = styled.div`
   background-color: ${(props) => props.bgcolor || "var(--color-base)"};
   background-image: ${(props) => props.colorGradient || ""};
   padding: ${(props) => props.padding || "5px"};
-  display: grid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   place-items: ${(props) => props.placement || ""};
   gap: ${(props) => props.gap};
   margin: ${(props) => props.margin || "10px"};

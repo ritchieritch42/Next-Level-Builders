@@ -10,7 +10,7 @@ function OwnerStatement() {
         padding="0px"
         color="var(--color-neutral-light)"
         as="h1"
-        align="right"
+        align="center"
         fontWeight="700"
         font="domine"
         textcase="upper"
@@ -20,7 +20,6 @@ function OwnerStatement() {
       <Card
         gap="10px"
         bgcolor="var(--color-neutral-light)"
-        // colorGradient="linear-gradient(to bottom right, var(--color-accent), #16162e)"
         margin="10px 10px 10px 10px"
         padding="30px"
         borderradius="5px"
