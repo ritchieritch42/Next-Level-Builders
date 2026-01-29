@@ -36,8 +36,6 @@ const types = [
   },
 ];
 
-console.log(types);
-
 function TypeStatement() {
   return (
     <Box margin="15px 0px">

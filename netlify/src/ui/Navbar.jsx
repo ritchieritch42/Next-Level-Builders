@@ -17,7 +17,11 @@ const StyledNavbar = styled.div`
   padding: 6px;
 
   @media screen and (min-width: 550px) {
-    height: 8vh;
+    height: 10vh;
+  }
+
+  @media screen and (min-width: 1000px) and (max-height: 800px) {
+    height: 14vh;
   }
 `;
 
