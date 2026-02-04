@@ -54,7 +54,7 @@ function ContactStatement() {
                 (913)-488-9750
               </Text>
             </Box>
-            <Box>
+            <Box wrap="nowrap">
               <Header
                 color="var(--color-tan-100)"
                 as="h1"
