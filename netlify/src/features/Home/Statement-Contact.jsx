@@ -28,7 +28,7 @@ function ContactStatement() {
           bgcolor="#ffffff"
           colorGradient="linear-gradient(to bottom, var(--color-secondary), #4e0808)"
           margin="5px 10px"
-          padding="30px 30px 10px 30px"
+          padding="30px 20px 10px 20px"
           borderradius="5px"
           gap="10px"
           maxWidth="1250px"
