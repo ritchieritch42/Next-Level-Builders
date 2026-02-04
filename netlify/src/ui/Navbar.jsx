@@ -21,7 +21,7 @@ const StyledNavbar = styled.div`
   }
 
   @media screen and (min-width: 1000px) and (max-height: 800px) {
-    height: 14vh;
+    height: 16vh;
   }
 `;
 

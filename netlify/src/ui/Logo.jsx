@@ -19,6 +19,13 @@ const StyledLogoWrapper = styled.div`
       height: 28px;
     }
   }
+
+  @media screen and (min-width: 1000px) {
+    svg {
+      width: 35px;
+      height: 35px;
+    }
+  }
 `;
 
 function Logo({ children, ...rest }) {
