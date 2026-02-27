@@ -15,9 +15,6 @@ function Footer() {
           &copy; 2025 Next Level Builders, LLC
         </Text>
         <Text color="var(--color-tan-100)">All Rights Reserved</Text>
-        <a href="https://www.netlify.com/" target="_blank">
-          <SiNetlify size={30} style={{ fill: "var(--color-tan-100)" }} />
-        </a>
       </Box>
     </Box>
   );
