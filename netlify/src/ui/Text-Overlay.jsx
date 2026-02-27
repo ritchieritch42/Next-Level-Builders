@@ -8,7 +8,7 @@ const caseMap = {
 
 const StyledTextOverlay = styled.div`
   margin: 0px;
-  width: ${(props) => props.width || "75%"};
+  width: ${(props) => props.width};
   padding: ${(props) => props.padding || "5px 0px 0px 0px"};
   color: ${(props) => props.color};
   font-weight: ${(props) => props.fontWeight};
@@ -22,6 +22,22 @@ const StyledTextOverlay = styled.div`
   top: ${(props) => props.topPosition || "50%"};
   left: ${(props) => props.leftPosition || "50%"};
   transform: translate(-50%, -50%);
+
+  @media screen and (min-width: 550px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+  }
+
+  @media screen and (min-width: 800px) {
+    width: 35%;
+  }
+
+  @media screen and (min-width: 1250px) {
+    width: 25%;
+  }
 `;
 
 function TextOverlay({ children, ...rest }) {

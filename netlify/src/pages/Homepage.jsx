@@ -1,4 +1,4 @@
-import CommitmentHeader from "../features/Home/Statement-Commit";
+import IntroHeader from "../features/Home/Statement-Intro";
 import TypeStatement from "../features/Home/Statement-Type";
 import HowStatement from "../features/Home/Statement-How";
 import ContactStatement from "../features/Home/Statement-Contact";
@@ -8,10 +8,10 @@ import ReviewStatement from "../features/Home/Statement-Review";
 function Homepage() {
   return (
     <>
-      <CommitmentHeader />
+      <IntroHeader />
       <TypeStatement />
-      <PhotoReel />
       <HowStatement />
+      <PhotoReel />
       <ReviewStatement />
       <ContactStatement />
     </>

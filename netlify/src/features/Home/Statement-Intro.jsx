@@ -5,7 +5,7 @@ import ImageBackgroundBox from "../../ui/Box-ImageBackground";
 import TextOverlay from "../../ui/Text-Overlay";
 import Box from "../../ui/Box";
 
-function CommitmentHeader() {
+function IntroHeader() {
   return (
     <Box>
       <ImageBackgroundBox>
@@ -17,7 +17,7 @@ function CommitmentHeader() {
         <TextOverlay width="90%">
           <Header
             color="var(--color-tan-100)"
-            as="h3"
+            as="h1"
             textcase="upper"
             shadow="0 0 3px #333333"
             fontWeight="700"
@@ -45,4 +45,4 @@ function CommitmentHeader() {
   );
 }
 
-export default CommitmentHeader;
+export default IntroHeader;

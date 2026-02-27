@@ -1,6 +1,5 @@
 import Card from "../../ui/Card";
 import Box from "../../ui/Box";
-import Linef from "../../ui/Line";
 import Logo from "../../ui/Logo";
 import Header from "../../ui/Header";
 import Text from "../../ui/Text";
@@ -37,8 +36,6 @@ const types = [
   },
 ];
 
-console.log(types);
-
 function TypeStatement() {
   return (
     <Box margin="15px 0px">
@@ -59,6 +56,7 @@ function TypeStatement() {
         padding="30px"
         borderradius="5px"
         gap="10px"
+        maxWidth="1250px"
       >
         {types.map((type) => (
           <Box key={type.type}>

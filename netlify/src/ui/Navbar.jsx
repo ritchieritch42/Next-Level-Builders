@@ -14,7 +14,15 @@ const StyledNavbar = styled.div`
   justify-content: space-between;
   align-items: center;
   gap: 5px;
-  padding: 8px;
+  padding: 6px;
+
+  @media screen and (min-width: 550px) {
+    height: 10vh;
+  }
+
+  @media screen and (min-width: 1000px) and (max-height: 800px) {
+    height: 16vh;
+  }
 `;
 
 const StyledDropDown = styled.div`
@@ -50,7 +58,9 @@ function Navbar() {
     <>
       <StyledNavbar isOpen={isOpen}>
         <Box stack="horizontal" placement="evenly">
-          <HorizontalLogo />
+          <Box width="275px" placement="start">
+            <HorizontalLogo />
+          </Box>
           <Logo onClick={() => setIsOpen(!isOpen)} cursor="pointer">
             {isOpen && <HiOutlineXMark />}
             {!isOpen && <HiOutlineBars3 />}

@@ -5,11 +5,26 @@ const StyledLogoWrapper = styled.div`
   align-items: center;
   justify-content: center;
   cursor: ${(props) => props.cursor};
+  width: 50px;
 
   svg {
-    width: ${(props) => props.width || "10vw"};
-    height: ${(props) => props.height || "10vw"};
+    width: ${(props) => props.width || "50px"};
+    height: ${(props) => props.height || "50px"};
     fill: ${(props) => props.color || "black"};
+  }
+
+  @media screen and (min-width: 550px) {
+    svg {
+      width: 28px;
+      height: 28px;
+    }
+  }
+
+  @media screen and (min-width: 1000px) {
+    svg {
+      width: 35px;
+      height: 35px;
+    }
   }
 `;
 

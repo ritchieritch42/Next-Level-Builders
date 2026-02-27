@@ -5,7 +5,7 @@ import Text from "../../ui/Text";
 
 function ReviewStatement() {
   return (
-    <Box margin="30px 0px">
+    <Box margin="30px 0px" stack="vertical" wrap="wrap" placement="center">
       <Header
         as="h1"
         color="var(--color-tan-100)"
@@ -22,6 +22,7 @@ function ReviewStatement() {
         borderradius="5px"
         margin="5px 10px"
         padding="30px"
+        placement="center"
       >
         <Text color="var(--color-tan-100)" fontstyle="italic" align="center">
           "What sets Craig apart is his willingness to dive into the details to

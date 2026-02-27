@@ -23,6 +23,11 @@ const StyledText = styled.p`
   font-style: ${(props) => props.fontstyle};
   font-size: ${(props) => props.fontSize};
   text-align: ${({ align }) => alignMap[align] || "center"};
+
+  @media screen and (min-width: 550px) {
+    width: 80%;
+    font-size: 1.25rem;
+  }
 `;
 
 function Text({ children, ...rest }) {

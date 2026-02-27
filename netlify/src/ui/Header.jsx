@@ -18,10 +18,6 @@ const StyledHeader = styled.header`
     css`
       font-size: 2rem;
       font-weight: 400;
-
-      @media (height < 805px), screen and (orientation: portrait) {
-        font-size: 1.7rem;
-      }
     `}
   ${(props) =>
     props.as === "h2" &&
