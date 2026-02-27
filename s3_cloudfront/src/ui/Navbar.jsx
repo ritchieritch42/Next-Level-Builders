@@ -1,0 +1,83 @@
+import styled from "styled-components";
+import HorizontalLogo from "./HorizontalLogo";
+import Box from "./Box";
+import Logo from "./Logo";
+import { HiOutlineBars3, HiOutlineXMark } from "react-icons/hi2";
+
+import { useEffect, useRef, useState } from "react";
+import Link from "./Link";
+
+const StyledNavbar = styled.div`
+  background-color: var(--color-tan-100);
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+  padding: 6px;
+
+  @media screen and (min-width: 550px) {
+    height: 10vh;
+  }
+
+  @media screen and (min-width: 1000px) and (max-height: 800px) {
+    height: 16vh;
+  }
+`;
+
+const StyledDropDown = styled.div`
+  background-color: var(--color-tan-100);
+  height: ${(props) => props.height}px;
+  transition: height 0.55s ease;
+  overflow: hidden;
+`;
+
+const linkRoutes = [
+  {
+    route: "/",
+    title: "Home",
+  },
+  {
+    route: "/about",
+    title: "About",
+  },
+];
+
+function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [height, setHeight] = useState(0);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    if (ref.current) {
+      setHeight(isOpen ? ref.current.scrollHeight : 0);
+    }
+  }, [isOpen]);
+
+  return (
+    <>
+      <StyledNavbar isOpen={isOpen}>
+        <Box stack="horizontal" placement="evenly">
+          <Box width="275px" placement="start">
+            <HorizontalLogo />
+          </Box>
+          <Logo onClick={() => setIsOpen(!isOpen)} cursor="pointer">
+            {isOpen && <HiOutlineXMark />}
+            {!isOpen && <HiOutlineBars3 />}
+          </Logo>
+        </Box>
+      </StyledNavbar>
+      <StyledDropDown isOpen={isOpen} ref={ref} height={height}>
+        <Box stack="vertical" margin="5px">
+          {linkRoutes.map((link) => (
+            <Link key={link.route} route={link.route} setIsOpen={setIsOpen}>
+              {link.title}
+            </Link>
+          ))}
+        </Box>
+      </StyledDropDown>
+    </>
+  );
+}
+
+export default Navbar;
