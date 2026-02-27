@@ -49,4 +49,4 @@ Amazon Route 53 manages DNS routing for the custom domain.
 
 - Fully client-side rendered (CSR)
 - No server-side runtime required
-- Optimized for low-cost static hosting infrastructure
+- Optimized for low-cost static hosting
