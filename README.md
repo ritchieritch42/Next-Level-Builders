@@ -1,8 +1,52 @@
-# next-level-builders-website
+# Next Level Builders, LLC Website
 
-This is the repository for Next Level Builders LLC website. They're based in Kansas City.
-Includes Elastic Beanstalk and serverless AWS versions, then a version to deploy on Netlify.
+**Live Site:** https://www.nextlevelbuildersllc.com
 
-The current version of the website is built with static HTML, CSS, and JavaScript, hosted in an Amazon S3 bucket, delivered through Amazon CloudFront, and managed via Amazon Route 53.
+This repository contains the source code for the Next Level Builders, LLC website, a Kansas City–based construction company.
 
-Check out the original version and the intent behind building this website in the Elastic Beanstalk directory’s README file.
+---
+
+## 🏗️ Architecture Overview
+
+The current production deployment uses:
+
+- **Amazon S3** – Static site hosting
+- **Amazon CloudFront** – Global content delivery (CDN)
+- **Amazon Route 53** – DNS management
+
+The project previously supported deployment via AWS Elastic Beanstalk.
+
+This architecture was used to optimize cost efficiency, scalability, and performance using a CDN-based static hosting model.
+
+---
+
+## ⚙️ Tech Stack
+
+The site is built with:
+
+- **Vite**
+- **JS React**
+- **Styled Components** – Used to keep styling in components
+
+### Additional Libraries
+
+- **React DOM**
+- **React Router**
+- **React Icons**
+- **React Slick** – Photo Carousel
+
+---
+
+## 🚀 Deployment Model
+
+The application is built as a static bundle and deployed to an Amazon S3 bucket.  
+Amazon CloudFront distributes content globally with caching for performance optimization.  
+Amazon Route 53 manages DNS routing for the custom domain.
+
+---
+
+## 📌 Notes
+
+- Fully client-side rendered (CSR)
+- No server-side runtime required
+- Optimized for low-cost static hosting infrastructure
